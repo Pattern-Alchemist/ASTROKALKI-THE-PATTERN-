@@ -1,0 +1,722 @@
+- generic
+  - link "SKIP TO CONTENT" [ref=e1]
+  - navigation "Main navigation" [ref=e2]
+    - link "AstroKalki" [ref=e4]
+      - StaticText "AstroKalki"
+    - link "FRAMEWORK" [ref=e5]
+    - link "METHOD" [ref=e6]
+    - link "SERVICES" [ref=e7]
+    - link "ASSESSMENT" [ref=e8]
+    - link "BEGIN PATTERN INDEX" [ref=e9]
+  - main
+    - generic
+      - generic
+        - image "The Pattern Recognition Institute — Decoding invisible loops"
+      - image
+      - StaticText "THE PATTERN RECOGNITION INSTITUTE"
+      - heading "SAME PATTERN. DIFFERENT FACE." [level=1, ref=e68]
+        - StaticText "SAME PATTERN."
+        - LineBreak "\n"
+        - StaticText "DIFFERENT FACE."
+      - paragraph
+        - StaticText "Psychology. Karma. Shadow work. Pattern intelligence. We don't predict futures — we decode the invisible architecture creating your present. Built for those who demand absolute truth."
+      - link "BEGIN THE PATTERN INDEX" [ref=e69]
+      - link "THE METHOD" [ref=e70]
+      - generic
+        - strong
+        - StaticText " Patterns Decoded"
+        - strong
+        - StaticText " Accuracy Rate"
+    - image
+    - StaticText "THE DIAGNOSIS"
+    - heading "The architecture of your loop" [level=2, ref=e15]
+      - StaticText "The architecture of your loop"
+    - paragraph
+      - StaticText "Every stagnation points to an invisible program operating beneath your nervous system. The loops you are living are not your destiny. They are your programming."
+    - generic [ref=e16] clickable [cursor:pointer]
+      - generic
+        - image "Repeating heartbreak pattern — same ghost, different bodies"
+      - generic
+        - StaticText "0"
+        - StaticText "1"
+        - StaticText " — LOOP TYPE"
+        - heading "Repeating Heartbreak" [level=4, ref=e112]
+        - paragraph
+        - StaticText "SHADOW TRIGGERS:"
+        - list
+    - generic [ref=e17] clickable [cursor:pointer]
+      - generic
+        - image "Self-sabotage emotional pattern — nervous system override"
+      - generic
+        - StaticText "0"
+        - StaticText "2"
+        - StaticText " — LOOP TYPE"
+        - heading "Self-Sabotage" [level=4, ref=e113]
+        - paragraph
+        - StaticText "SHADOW TRIGGERS:"
+        - list
+    - generic [ref=e18] clickable [cursor:pointer]
+      - generic
+        - image "Glass ceiling stagnation pattern — invisible program"
+      - generic
+        - StaticText "0"
+        - StaticText "3"
+        - StaticText " — LOOP TYPE"
+        - heading "The Glass Ceiling" [level=4, ref=e114]
+        - paragraph
+        - StaticText "SHADOW TRIGGERS:"
+        - list
+    - generic [ref=e19] clickable [cursor:pointer]
+      - generic
+        - image "Emotional masking shadow pattern — the false self"
+      - generic
+        - StaticText "0"
+        - StaticText "4"
+        - StaticText " — LOOP TYPE"
+        - heading "The Mask" [level=4, ref=e115]
+        - paragraph
+        - StaticText "SHADOW TRIGGERS:"
+        - list
+    - link "WHICH PATTERN IS YOURS?" [ref=e71]
+    - paragraph
+      - StaticText "THE DIAGNOSTIC SYSTEM"
+    - heading "Not Prediction. Pattern Recognition." [level=2, ref=e20]
+      - StaticText "Not Prediction. Pattern Recognition."
+    - paragraph
+      - StaticText "A proprietary four-part diagnostic system. Karmic architecture. Jungian depth. Pattern intelligence. Precision strategy."
+    - generic
+      - generic
+        - image
+        - StaticText "01"
+        - StaticText "— "
+        - StaticText "The Architecture"
+        - heading "Vedic Mapping" [level=3, ref=e116]
+        - paragraph
+        - image
+        - StaticText "02"
+        - StaticText "— "
+        - StaticText "The Shadow"
+        - heading "Depth Psychology" [level=3, ref=e117]
+        - paragraph
+        - image
+        - StaticText "03"
+        - StaticText "— "
+        - StaticText "The Diagnosis"
+        - heading "Pattern Recognition" [level=3, ref=e118]
+        - paragraph
+        - image
+        - StaticText "04"
+        - StaticText "— "
+        - StaticText "The Dharma"
+        - heading "Strategic Action" [level=3, ref=e119]
+        - paragraph
+    - blockquote
+      - StaticText "“You cannot heal what you will not face. You cannot face what you cannot see.”"
+    - paragraph
+      - StaticText "THE SHADOW INTEGRATION ARC"
+    - heading "The lifecycle of a blockage" [level=2, ref=e21]
+      - StaticText "The lifecycle of a blockage"
+    - paragraph
+      - StaticText "Every behavioral blockage follows an arc — from unconscious activation through crisis to conscious integration. Hover over each phase."
+    - image "Shadow Integration Timeline — shows the lifecycle of behavioral blockages from activation to integration"
+      - StaticText "activation"
+      - StaticText "escalation"
+      - StaticText "crisis"
+      - StaticText "recognition"
+      - StaticText "integration"
+      - StaticText "Wounded Child"
+      - StaticText "Shadow Self"
+      - StaticText "Destroyer"
+      - StaticText "Witness"
+      - StaticText "Warrior"
+    - paragraph
+      - StaticText "THE KALKI FRAMEWORK"
+    - heading "Four stages. One transformation." [level=2, ref=e22]
+      - StaticText "Four stages. One transformation."
+    - paragraph
+      - StaticText "Progress through four stages designed to realign your life's patterns. Each stage builds on the last. You are not buying sessions — you are progressing through a diagnostic framework."
+    - generic
+      - image "Pattern Snapshot"
+      - StaticText "STAGE 1"
+      - StaticText "—"
+      - StaticText "RECOGNITION"
+      - heading "Pattern Snapshot" [level=3, ref=e120]
+      - StaticText "₹999"
+      - StaticText "45-MINUTE DIAGNOSTIC"
+      - paragraph
+        - StaticText "See your current patterns clearly. A tactical decode of your primary loop — isolation of your nervous-system trigger, Vedic elemental profiling, and one actionable override step."
+      - list
+        - listitem [level=1]
+        - listitem [level=1]
+      - link "BEGIN RECOGNITION" [ref=e121]
+      - generic
+        - image "The Deep Dive"
+        - StaticText "MOST REQUESTED"
+      - StaticText "STAGE 2"
+      - StaticText "—"
+      - StaticText "DIAGNOSIS"
+      - heading "The Deep Dive" [level=3, ref=e122]
+      - StaticText "₹4,999"
+      - StaticText "2-HOUR DIAGNOSTIC + DOCUMENT"
+      - paragraph
+        - StaticText "Understand root causes and their impact. Complete psychological architecture and 12-month roadmap. The most requested session for those ready to stop repeating."
+      - list
+        - listitem [level=1]
+        - listitem [level=1]
+      - link "BEGIN DIAGNOSIS" [ref=e123]
+      - image "Dharma Navigation"
+      - StaticText "STAGE 3"
+      - StaticText "—"
+      - StaticText "REALIGNMENT"
+      - heading "Dharma Navigation" [level=3, ref=e124]
+      - StaticText "₹9,999"
+      - StaticText "2 COMPLETE SESSIONS"
+      - paragraph
+        - StaticText "Navigate your dharma with precision. Professional bottleneck diagnosis, career re-architecting, and authority expansion through Vedic-Jungian sovereignty mapping."
+      - list
+        - listitem [level=1]
+        - listitem [level=1]
+      - link "BEGIN REALIGNMENT" [ref=e125]
+      - generic
+        - image "The Warrior's Journey"
+        - StaticText "BESPOKE S-TIER"
+      - StaticText "STAGE 4"
+      - StaticText "—"
+      - StaticText "INTEGRATION"
+      - heading "The Warrior's Journey" [level=3, ref=e126]
+      - StaticText "Custom"
+      - StaticText "3-MONTH ADVISORY"
+      - paragraph
+        - StaticText "Embody the warrior's journey fully. Bespoke shadow work integration with weekly private clinical advisory, unlimited secure access, and real-time strategic intervention."
+      - list
+        - listitem [level=1]
+        - listitem [level=1]
+      - link "APPLY" [ref=e127]
+    - paragraph
+      - StaticText "SOMATIC CALIBRATION"
+    - heading "The Coherence Orb" [level=2, ref=e23]
+      - StaticText "The Coherence Orb"
+    - paragraph
+      - StaticText "Vedic pranayama translated into clinical nervous-system regulation. Breathe with the orb. The rhythm rewrites your state."
+    - button "Select Box Breathing breathing pattern" [ref=e24]
+      - StaticText "BOX BREATHING"
+    - button "Select Vayu Dissolution breathing pattern" [ref=e25]
+      - StaticText "VAYU DISSOLUTION"
+    - button "Select Tejas Staccato Purge breathing pattern" [ref=e26]
+      - StaticText "TEJAS STACCATO PURGE"
+    - paragraph
+      - StaticText "Sama Vritti — Equal rhythm. Tactical calm. Navy SEAL protocol adapted for nervous system reset."
+    - generic
+      - image
+      - StaticText "INHALE"
+    - paragraph
+      - StaticText "Select a pattern and begin"
+    - button "Begin breath pacer" [ref=e27]
+      - StaticText "BEGIN CALIBRATION"
+    - generic
+      - generic
+        - image "The Warrior's Descent into Shadow"
+      - paragraph
+        - StaticText "THE WARRIOR'S JOURNEY"
+      - heading "Not a spiritual journey. A warrior's descent." [level=2, ref=e72]
+        - StaticText "Not a spiritual journey."
+        - LineBreak "\n"
+        - StaticText "A warrior's descent."
+      - paragraph
+        - StaticText "This is not spiritual coaching. This is a rigorous confrontation with truth. The warrior does not bypass the darkness — the warrior walks through it with eyes open, deploying behavioral strategies to override the loop. Not spiritual bypassing, but actionable dharma alignment that transforms resistance into raw, absolute leverage."
+      - link "EXPLORE THE JOURNEY →" [ref=e128]
+        - StaticText "EXPLORE THE JOURNEY"
+        - StaticText "→"
+    - paragraph
+      - StaticText "VEDIC-SOMATIC INSTRUMENTS"
+    - heading "Diagnostic instruments" [level=2, ref=e28]
+      - StaticText "Diagnostic instruments"
+    - paragraph
+      - StaticText "Interactive tools bridging Vedic cognitive maps and clinical depth psychology. All processing happens on your device."
+    - StaticText "EPIGENETIC MAPPING"
+    - paragraph
+      - StaticText "Generational Shadow Map"
+    - paragraph
+      - StaticText "Click nodes to explore inherited behavioral scripts. Every ancestor carries unresolved shadow that flows downstream."
+    - image "Generational Shadow Map — click nodes to explore inherited behavioral scripts"
+      - group [ref=e73] clickable [cursor:pointer, onclick]
+        - StaticText "You"
+      - group [ref=e74] clickable [cursor:pointer, onclick]
+        - StaticText "Mother"
+      - group [ref=e75] clickable [cursor:pointer, onclick]
+        - StaticText "Maternal GM"
+      - group [ref=e76] clickable [cursor:pointer, onclick]
+        - StaticText "Maternal GF"
+      - group [ref=e77] clickable [cursor:pointer, onclick]
+        - StaticText "Father"
+      - group [ref=e78] clickable [cursor:pointer, onclick]
+        - StaticText "Paternal GM"
+      - group [ref=e79] clickable [cursor:pointer, onclick]
+        - StaticText "Paternal GF"
+    - StaticText "You"
+    - StaticText "THE PATTERN BEARER"
+    - StaticText "SHADOW PATTERN"
+    - paragraph
+      - StaticText "Carrying unresolved scripts from both lineages. The intersection of two unresolved histories."
+    - StaticText "DEFENSE CASCADE"
+    - paragraph
+      - StaticText "Recognition — seeing the pattern is the first override."
+    - StaticText "ALCHEMICAL FORGE"
+    - paragraph
+      - StaticText "Element Transmutation"
+    - paragraph
+      - StaticText "Adjust your Ayurvedic elemental ratios. Observe how dominance in one element transmutes others — the behavioral architecture shifts in real-time."
+    - StaticText "TEJAS"
+    - StaticText " ("
+    - StaticText "FIRE"
+    - StaticText ")"
+    - StaticText "30"
+    - StaticText "%"
+    - slider "Tejas element level" [ref=e29]: 30
+    - paragraph
+      - StaticText "High: Burnout, aggression, spiritual bypassing through intensity"
+    - StaticText "APAS"
+    - StaticText " ("
+    - StaticText "WATER"
+    - StaticText ")"
+    - StaticText "50"
+    - StaticText "%"
+    - slider "Apas element level" [ref=e30]: 50
+    - paragraph
+      - StaticText "High: Emotional flooding, attachment, codependency"
+    - StaticText "VAYU"
+    - StaticText " ("
+    - StaticText "AIR"
+    - StaticText ")"
+    - StaticText "60"
+    - StaticText "%"
+    - slider "Vayu element level" [ref=e31]: 60
+    - paragraph
+      - StaticText "High: Anxiety, restlessness, nervous system hyperactivation"
+    - StaticText "PRITHVI"
+    - StaticText " ("
+    - StaticText "EARTH"
+    - StaticText ")"
+    - StaticText "40"
+    - StaticText "%"
+    - slider "Prithvi element level" [ref=e32]: 40
+    - paragraph
+      - StaticText "High: Rigidity, stubbornness, refusal to evolve"
+    - StaticText "SOMATIC DIAGNOSTIC READOUT"
+    - paragraph
+      - StaticText "Excessive Vayu dominance: Your nervous system is in chronic activation. Anxiety is not a personality trait — it is a Vayu imbalance. Thoughts race but never land. The pattern is: activate → scatter → overwhelm → shut down → reactivate. You need Apas to cool and cohere the scattered impulses. Deficient Fire (Tejas): Inertia, lack of drive, spiritual complacency."
+    - StaticText "NEURAL FLOW ANALYSIS"
+    - paragraph
+      - StaticText "Cognitive Bottleneck Diagram"
+    - paragraph
+      - StaticText "How emotional floodwaters bypass cognitive containment. Hover nodes to trace the flow."
+    - image "Cognitive bottleneck sankey flow diagram"
+      - generic [ref=e80] clickable [cursor:pointer]
+        - StaticText "Sensory Overload"
+      - generic [ref=e81] clickable [cursor:pointer]
+        - StaticText "Ancestral Scrip…"
+      - generic [ref=e82] clickable [cursor:pointer]
+        - StaticText "Attachment Alarm"
+      - generic [ref=e83] clickable [cursor:pointer]
+        - StaticText "Identity Threat"
+      - generic [ref=e84] clickable [cursor:pointer]
+        - StaticText "Amygdala Hijack"
+      - generic [ref=e85] clickable [cursor:pointer]
+        - StaticText "Prefrontal Over…"
+      - generic [ref=e86] clickable [cursor:pointer]
+        - StaticText "Freeze Response"
+      - generic [ref=e87] clickable [cursor:pointer]
+        - StaticText "Dissociation"
+      - generic [ref=e88] clickable [cursor:pointer]
+        - StaticText "Compulsive Reen…"
+      - StaticText "EMOTIONAL INPUT"
+      - StaticText "BOTTLENECK"
+      - StaticText "SOMATIC OUTPUT"
+    - StaticText "CHRONOBIOLOGICAL ALIGNMENT"
+    - paragraph
+      - StaticText "Hora Clock"
+    - generic
+      - SvgRoot
+        - StaticText "☉"
+        - StaticText "♀"
+        - StaticText "☿"
+        - StaticText "☽"
+        - StaticText "♄"
+        - StaticText "♃"
+      - generic
+        - StaticText "21:23 IST"
+    - StaticText "CURRENT PLANETARY RULER"
+    - paragraph
+      - StaticText "☉ Sun"
+    - paragraph
+      - StaticText "Surya — Tejas (Fire)"
+    - StaticText "SUNRISE"
+    - paragraph
+      - StaticText "00:34"
+    - StaticText "SUNSET"
+    - paragraph
+      - StaticText "13:42"
+    - StaticText "HORA #"
+    - StaticText "9"
+    - paragraph
+      - StaticText "Night Hora"
+    - StaticText "HORA WINDOW"
+    - paragraph
+      - StaticText "20:56–21:51"
+    - StaticText "OPTIMAL NOW"
+    - paragraph
+      - StaticText "Strategic decisions, leadership actions, boundary declarations"
+    - StaticText "AVOID NOW"
+    - paragraph
+      - StaticText "Self-doubt, deferring to others, hiding from visibility"
+    - StaticText "SOMATIC SCANNER"
+    - paragraph
+      - StaticText "Facial Tension Monitor"
+    - paragraph
+      - StaticText "Simulated biometric interface. Identifies micro-somatic tension blocks that form during intellectual processing. Click zones for diagnostic."
+    - SvgRoot
+      - group [ref=e129] clickable [cursor:pointer, onclick]
+        - StaticText "Jaw"
+      - group [ref=e130] clickable [cursor:pointer, onclick]
+        - StaticText "Brow"
+      - group [ref=e131] clickable [cursor:pointer, onclick]
+        - StaticText "Temples"
+      - group [ref=e132] clickable [cursor:pointer, onclick]
+        - StaticText "Throat"
+    - button "INITIATE SCAN" [ref=e33]
+    - image
+    - StaticText "NOT REVIEWS. RECOGNITIONS."
+    - heading "After" [level=2, ref=e34]
+    - blockquote
+      - StaticText "“He described patterns I never told anyone. Not general things — specific, exact patterns. I had to sit down.”"
+    - StaticText "R.K."
+    - StaticText "After Pattern Analysis — Mumbai"
+    - blockquote
+      - StaticText "“It was never about the job or the relationship. It was the same pattern repeating. AstroKalki didn't give me a horoscope; they handed me the architecture of my own reality.”"
+    - StaticText "ANONYMOUS"
+    - StaticText "Pattern Snapshot Client"
+    - blockquote
+      - StaticText "“This is not for the faint of heart. If you want spiritual bypassing, go elsewhere. If you want to actually break the karmic loop, this is the only methodology that works.”"
+    - StaticText "R. MEHTA"
+    - StaticText "Dharma Navigation"
+    - paragraph
+      - StaticText "2,400+"
+    - paragraph
+      - StaticText "PATTERNS DECODED"
+    - paragraph
+      - StaticText "97%"
+    - paragraph
+      - StaticText "RETURN RATE"
+    - paragraph
+      - StaticText "12+"
+    - paragraph
+      - StaticText "YEARS DEPTH"
+    - paragraph
+      - StaticText "38"
+    - paragraph
+      - StaticText "AVG BREAKTHROUGH"
+    - image
+    - StaticText "DANGEROUS KNOWLEDGE"
+    - heading "Read only if you're ready to stop pretending" [level=2, ref=e35]
+      - StaticText "Read only if you're ready to stop pretending"
+    - generic
+      - StaticText "Breakthrough insights rooted in psychology and karma. Where trauma, "
+      - button "Learn more about: shadow work" [ref=e89]
+        - StaticText "shadow work"
+      - StaticText ", and "
+      - button "Learn more about: attachment theory" [ref=e90]
+        - StaticText "attachment theory"
+      - StaticText " are not just concepts — they are decoded and transformed. Click highlighted terms for clinical annotations."
+    - StaticText "✦"
+    - StaticText "CLICK GOLD-HIGHLIGHTED TERMS FOR CLINICAL ANNOTATIONS"
+    - StaticText "TRAUMA BONDING"
+    - StaticText "8 min"
+    - heading "The Mother Wound in the Chart" [level=4, ref=e36]
+    - generic
+      - StaticText "How parental conditioning becomes "
+      - button "Learn more about: karmic architecture" [ref=e91]
+        - StaticText "karmic architecture"
+      - StaticText " — and why you keep recreating the same emotional dynamic with every partner."
+    - StaticText "READ →"
+    - StaticText "SHADOW WORK"
+    - StaticText "7 min"
+    - heading "Why We Choose the Same Heartbreak" [level=4, ref=e37]
+    - generic
+      - StaticText "The neurochemistry of "
+      - button "Learn more about: intermittent reinforcement" [ref=e92]
+        - StaticText "intermittent reinforcement"
+      - StaticText " — the same mechanism that keeps gamblers addicted is running your love life."
+    - StaticText "READ →"
+    - StaticText "KALIYUG PSYCHOLOGY"
+    - StaticText "9 min"
+    - heading "The Trap of Spiritual Bypassing" [level=4, ref=e38]
+    - generic
+      - StaticText "Telling a traumatized person they attracted their abuse is not spirituality. It is "
+      - button "Learn more about: spiritual bypassing" [ref=e93]
+        - StaticText "spiritual bypassing"
+      - StaticText " weaponized against the vulnerable."
+    - StaticText "READ →"
+    - StaticText "SELF-DECEPTION"
+    - StaticText "6 min"
+    - heading "The Lie You Tell Yourself Every Morning" [level=4, ref=e39]
+    - StaticText "The most dangerous lie is the one you tell yourself to survive. The one that sounds like 'this time it is different.'"
+    - StaticText "READ →"
+    - StaticText "EMOTIONAL WARFARE"
+    - StaticText "5 min"
+    - heading "The Fear of Being Seen" [level=4, ref=e40]
+    - StaticText "You attract unavailable people because available people require you to be real. And being real was never safe."
+    - StaticText "READ →"
+    - StaticText "PATTERN RECOGNITION"
+    - StaticText "7 min"
+    - heading "You Didn't Choose This Pain. But You Keep Choosing It." [level=4, ref=e41]
+    - StaticText "The first time was karma. The second time was a pattern. The third time is a choice your unconscious is making on your behalf."
+    - StaticText "READ →"
+    - paragraph
+      - StaticText "THE CODEX"
+    - heading "The Radical Self-Sovereignty Manifesto" [level=2, ref=e42]
+      - StaticText "The Radical Self-Sovereignty Manifesto"
+    - paragraph
+      - StaticText "Foundational essays of the Pattern Recognition Institute. Text unscrambles as you scroll. Hover for clinical footnotes."
+    - heading "The Thesis of Invisible Imprisonment" [level=3, ref=e43]
+    - button "Show clinical footnote for The Thesis of Invisible Imprisonment" [ref=e44]
+      - StaticText "[†]"
+    - paragraph
+      - StaticText "You are not stuck. You are not broken. You are not lacking willpower or discipline or intelligence. You are running a program that was installed before you had language to name it. Every repeating pattern in your life — the relationships that collapse, the opportunities you self-destruct, the authority you cannot claim — is not a character flaw. It is an architecture. And architectures can be redesigned."
+    - heading "On Radical Self-Sovereignty" [level=3, ref=e45]
+    - button "Show clinical footnote for On Radical Self-Sovereignty" [ref=e46]
+      - StaticText "[†]"
+    - paragraph
+      - StaticText "Self-sovereignty is not independence. It is not isolation or hyper-individualism. It is the capacity to witness your own patterns without being controlled by them. The sovereign self does not eliminate the shadow — the sovereign self negotiates with it from a position of awareness, not reaction."
+    - heading "The Nervous System Is the First Territory" [level=3, ref=e47]
+    - button "Show clinical footnote for The Nervous System Is the First Territory" [ref=e48]
+      - StaticText "[†]"
+    - paragraph
+      - StaticText "Before you can change any pattern, you must regulate the nervous system that runs it. Your intellect cannot override your biology. The amygdala responds in 200 milliseconds; conscious thought takes 600. The pattern always wins the first 400ms. Regulation is not optional — it is the prerequisite for all transformation."
+    - heading "Diagnosis Is Not Destiny" [level=3, ref=e49]
+    - button "Show clinical footnote for Diagnosis Is Not Destiny" [ref=e50]
+      - StaticText "[†]"
+    - paragraph
+      - StaticText "When a pattern is named, it does not disappear. It becomes visible. Visibility is not the same as freedom — but it is the prerequisite. You cannot leave a prison you cannot see. The moment of recognition is not the end of the work. It is the beginning of choice."
+    - heading "The Warrior Does Not Bypass" [level=3, ref=e51]
+    - paragraph
+      - StaticText "The warrior archetype in the Kalki Framework is not a metaphor for aggression. It is the principle of conscious engagement with difficulty. The warrior does not bypass the dark — the warrior enters it with awareness, with breath, with the specific tools of pattern override. Bypass is the enemy. Engagement is the method."
+    - heading "Dharma Is Not Duty" [level=3, ref=e52]
+    - button "Show clinical footnote for Dharma Is Not Duty" [ref=e53]
+      - StaticText "[†]"
+    - paragraph
+      - StaticText "Dharma is not what you should do. It is what you are built to do when the karmic overlay is removed. Your dharma is not a burden — it is the trajectory your life takes when it is no longer driven by unconscious repetition. Dharma is what remains when the pattern is seen through."
+    - paragraph
+      - StaticText "COGNITIVE FIELD TOPOLOGY"
+    - heading "Pattern Gravity Map" [level=2, ref=e54]
+      - StaticText "Pattern Gravity Map"
+    - paragraph
+      - StaticText "Every pattern exerts gravitational pull on others. The stronger the pull, the harder it is to escape the orbit. Drag nodes to rearrange. Hover for diagnostics."
+    - StaticText "CORE"
+    - StaticText "SHADOW"
+    - StaticText "DEFENSE"
+    - StaticText "SOMATIC"
+    - StaticText "REINFORCES"
+    - StaticText "TRIGGERS"
+    - StaticText "SUPPRESSES"
+    - image "Cognitive Gravity Map — force-directed graph showing pattern interconnections"
+      - group [ref=e94] clickable [cursor:pointer]
+        - StaticText "Core Pattern"
+      - group [ref=e95] clickable [cursor:pointer]
+        - StaticText "Attachment Wo…"
+      - group [ref=e96] clickable [cursor:pointer]
+        - StaticText "Inner Critic"
+      - group [ref=e97] clickable [cursor:pointer]
+        - StaticText "Nervous Dysre…"
+      - group [ref=e98] clickable [cursor:pointer]
+        - StaticText "Compulsive Ca…"
+      - group [ref=e99] clickable [cursor:pointer]
+        - StaticText "Emotional Flo…"
+      - group [ref=e100] clickable [cursor:pointer]
+        - StaticText "Ancestral Scr…"
+      - group [ref=e101] clickable [cursor:pointer]
+        - StaticText "Self-Abandonm…"
+      - group [ref=e102] clickable [cursor:pointer]
+        - StaticText "Perfectionism"
+      - group [ref=e103] clickable [cursor:pointer]
+        - StaticText "Identity Frag…"
+    - paragraph
+      - StaticText "THE OPERATING THEATER"
+    - heading "Clinical workspace" [level=2, ref=e55]
+      - StaticText "Clinical workspace"
+    - paragraph
+      - StaticText "Full-spectrum interactive tools. Encrypt. Dream. Diagnose. Purge. Your data never leaves your device."
+    - StaticText "CLINICAL SIMULATOR"
+    - paragraph
+      - StaticText "Pattern Recognition Officer"
+    - StaticText "DISPATCH #AK-2024-0147"
+    - StaticText "AROUSAL"
+    - StaticText "COHERENCE"
+    - paragraph
+      - StaticText "A 34-year-old executive presents with chronic relationship collapse. Three partnerships ended identically: intense early bonding → partner withdrawal → pursuit escalation → catastrophic rupture. The executive reports: \"I always choose people who need saving.\" Biometric scan shows elevated Vayu (nervous system activation) and suppressed Tejas (transformative will). What is your first diagnostic move?"
+    - generic
+      - button "OPTION 1 Map the attachment architecture" [ref=e104]
+        - StaticText "OPTION 1"
+        - paragraph
+      - button "OPTION 2 Probe the self-sabotage loop" [ref=e105]
+        - StaticText "OPTION 2"
+        - paragraph
+      - button "OPTION 3 Initiate shadow confrontation" [ref=e106]
+        - StaticText "OPTION 3"
+        - paragraph
+    - StaticText "UNCONSCIOUS CHANNEL"
+    - paragraph
+      - StaticText "Dream-Weave Log"
+    - paragraph
+      - StaticText "Register dream dispatches. The archetype extractor identifies Jungian patterns in your unconscious narrative."
+    - textbox "Dream description input" [ref=e56]
+    - button "WEAVE ENTRY" [disabled, ref=e57]
+    - StaticText "SECURE DISPATCH PROTOCOL"
+    - paragraph
+      - StaticText "How your narrative is protected"
+    - paragraph
+      - StaticText "Every piece of sensitive data you share undergoes a multi-stage encryption pipeline before storage or transit. Type below to visualize the process."
+    - generic
+      - textbox "Enter text to visualize encryption process" [ref=e107]
+      - button "Begin encryption visualization" [disabled, ref=e108]
+        - StaticText "ENCRYPT"
+    - StaticText "PATTERN LEDGER"
+    - paragraph
+      - StaticText "Your secure pattern archive"
+    - button "Toggle security information" [ref=e58]
+      - StaticText "SECURITY"
+    - paragraph
+      - StaticText "Record patterns you recognize in yourself. Track your diagnostic progression over time. All data stays on your device."
+    - LabelText
+      - StaticText "PATTERN TYPE"
+    - combobox "Select pattern type" [expanded=false, ref=e59]: Select a pattern...
+      - MenuListPopup
+        - option "Select a pattern..." [selected, ref=e133]
+        - option "Repeating Heartbreak" [ref=e134]
+        - option "Self-Sabotage" [ref=e135]
+        - option "Glass Ceiling" [ref=e136]
+        - option "The Mask" [ref=e137]
+        - option "Trauma Bond" [ref=e138]
+        - option "Spiritual Bypassing" [ref=e139]
+        - option "People-Pleasing" [ref=e140]
+    - LabelText
+      - StaticText "CONFIDENCE: 70%"
+    - slider "Confidence level" [ref=e60]: 70
+    - LabelText
+      - StaticText "RECOMMENDED STAGE"
+    - combobox "Recommended diagnostic stage" [expanded=false, ref=e61]: Stage 1 — Recognition
+      - MenuListPopup
+        - option "Stage 1 — Recognition" [selected, ref=e141]
+        - option "Stage 2 — Diagnosis" [ref=e142]
+        - option "Stage 3 — Realignment" [ref=e143]
+        - option "Stage 4 — Integration" [ref=e144]
+    - LabelText
+      - StaticText "NOTES (OPTIONAL)"
+    - textbox "Personal notes about this pattern" [ref=e62]
+    - button "Record pattern entry" [disabled, ref=e63]
+      - StaticText "RECORD PATTERN"
+    - paragraph
+      - StaticText "No patterns recorded yet. Begin your diagnostic above."
+    - StaticText "SECURE-DISPATCH://TERMINAL"
+    - StaticText "> Secure Dispatch Terminal v1.0"
+    - StaticText "> Type /help for available commands"
+    - form
+      - StaticText ">"
+      - textbox "Terminal command input" [ref=e109]
+    - image
+    - paragraph
+      - StaticText "THE PATTERN INDEX"
+    - heading "Unlock clarity in 60 seconds" [level=2, ref=e64]
+      - StaticText "Unlock clarity in 60 seconds"
+    - paragraph
+      - StaticText "Identify repeating patterns that hold you back or propel you forward. This is not prediction — this is deep pattern recognition. Three questions. One truth you've been avoiding."
+    - link "TAKE THE PATTERN INDEX" [ref=e110]
+    - paragraph
+      - StaticText "60-SECOND DIAGNOSTIC · NO CHART REQUIRED · JUST HONESTY"
+    - paragraph
+      - StaticText "BEFORE YOU STEP THROUGH THE THRESHOLD"
+    - heading "Questions" [level=2, ref=e65]
+    - list
+      - listitem [level=1]
+        - button "Is this astrology?" [expanded=true, ref=e145]
+        - region "Is this astrology?" [ref=e146]
+      - listitem [level=1]
+        - button "How is this different from therapy?" [expanded=false, ref=e147]
+      - listitem [level=1]
+        - button "What do I need to provide for a session?" [expanded=false, ref=e148]
+      - listitem [level=1]
+        - button "Do I need to believe in anything for this to work?" [expanded=false, ref=e149]
+      - listitem [level=1]
+        - button "How long until I see results?" [expanded=false, ref=e150]
+      - listitem [level=1]
+        - button "Are sessions confidential?" [expanded=false, ref=e151]
+      - listitem [level=1]
+        - button "What if I want to go deeper after the first session?" [expanded=false, ref=e152]
+    - generic
+      - generic
+        - image
+        - heading "READY TO DISCOVER THE PATTERN BENEATH?" [level=2, ref=e111]
+        - paragraph
+        - link "TAKE THE PATTERN INDEX" [ref=e153]
+    - sectionfooter
+      - paragraph
+        - StaticText "AstroKalki"
+      - paragraph
+        - StaticText "THE PATTERN RECOGNITION INSTITUTE"
+      - paragraph
+        - StaticText "DECODER"
+      - paragraph
+        - StaticText "Kaustubh"
+      - paragraph
+        - StaticText "SESSIONS"
+      - list
+        - listitem [level=1]
+          - link "All Sessions" [ref=e154]
+        - listitem [level=1]
+          - link "Pattern Snapshot" [ref=e155]
+        - listitem [level=1]
+          - link "Relationship Decode" [ref=e156]
+        - listitem [level=1]
+          - link "Emotional Decode" [ref=e157]
+        - listitem [level=1]
+          - link "Shadow Work" [ref=e158]
+      - paragraph
+        - StaticText "KNOWLEDGE"
+      - list
+        - listitem [level=1]
+          - link "Pattern Atlas" [ref=e159]
+        - listitem [level=1]
+          - link "The Mirror Method" [ref=e160]
+        - listitem [level=1]
+          - link "Long-form Guides" [ref=e161]
+        - listitem [level=1]
+          - link "Pattern Library" [ref=e162]
+      - paragraph
+        - StaticText "THE PRACTICE"
+      - list
+        - listitem [level=1]
+          - link "About AstroKalki" [ref=e163]
+        - listitem [level=1]
+          - link "Methodology" [ref=e164]
+        - listitem [level=1]
+          - link "Testimonials" [ref=e165]
+        - listitem [level=1]
+          - link "FAQ" [ref=e166]
+      - paragraph
+        - StaticText "CONNECT"
+      - list
+        - listitem [level=1]
+          - link "+91 89208 62931" [ref=e167]
+        - listitem [level=1]
+          - link "Book a Session →" [ref=e168]
+      - link "Unsubscribe" [ref=e66]
+      - link "Sitemap" [ref=e67]
+  - button "Close soundscape controls" [ref=e3]
+  - button "Open Next.js Dev Tools" [expanded=false, ref=e169]
+  - alert
+  - dialog "Soundscape synthesizer controls"
+    - button "Play soundscape" [ref=e10]
+    - StaticText "BREATH SYNC: STANDBY"
+    - slider "Root Drone volume — Foundation frequency — grounding resonance" [ref=e11]: 0.119999997317791
+    - slider "Harmonic volume — Second harmonic — inner clarity" [ref=e12]: 0.05999999865889549
+    - slider "Sub-Bass volume — Sub-audio pulse — nervous system entrainment" [ref=e13]: 0.07999999821186066
+    - slider "Ethereal volume — Higher overtone — pattern illumination" [ref=e14]: 0.029999999329447743

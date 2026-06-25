@@ -1,0 +1,712 @@
+     1→- link "SKIP TO CONTENT" [ref=e1]
+     2→- navigation "Main navigation" [ref=e2]
+     3→  - link "AstroKalki" [ref=e4]
+     4→  - link "FRAMEWORK" [ref=e5]
+     5→  - link "METHOD" [ref=e6]
+     6→  - link "SERVICES" [ref=e7]
+     7→  - link "ASSESSMENT" [ref=e8]
+     8→  - link "BEGIN PATTERN INDEX" [ref=e9]
+     9→- main
+    10→  - generic
+    11→    - generic
+    12→      - image "The Pattern Recognition Institute — Decoding invisible loops"
+    13→    - image
+    14→    - StaticText "THE PATTERN RECOGNITION INSTITUTE"
+    15→    - heading "SAME PATTERN. DIFFERENT FACE." [level=1, ref=e63]
+    16→      - StaticText "SAME PATTERN."
+    17→      - LineBreak "\n"
+    18→      - StaticText "DIFFERENT FACE."
+    19→    - paragraph
+    20→      - StaticText "Psychology. Karma. Shadow work. Pattern intelligence. We don't predict futures — we decode the invisible architecture creating your present. Built for those who demand absolute truth."
+    21→    - link "BEGIN THE PATTERN INDEX" [ref=e64]
+    22→    - link "THE METHOD" [ref=e65]
+    23→    - generic
+    24→      - strong
+    25→      - StaticText " Patterns Decoded"
+    26→      - strong
+    27→      - StaticText " Accuracy Rate"
+    28→  - image
+    29→  - StaticText "THE DIAGNOSIS"
+    30→  - heading "The architecture of your loop" [level=2, ref=e10]
+    31→    - StaticText "The architecture of your loop"
+    32→  - paragraph
+    33→    - StaticText "Every stagnation points to an invisible program operating beneath your nervous system. The loops you are living are not your destiny. They are your programming."
+    34→  - generic [ref=e11] clickable [cursor:pointer]
+    35→    - generic
+    36→      - image "Repeating heartbreak pattern — same ghost, different bodies"
+    37→    - generic
+    38→      - StaticText "0"
+    39→      - StaticText "1"
+    40→      - StaticText " — LOOP TYPE"
+    41→      - heading "Repeating Heartbreak" [level=4, ref=e107]
+    42→      - paragraph
+    43→      - StaticText "SHADOW TRIGGERS:"
+    44→      - list
+    45→  - generic [ref=e12] clickable [cursor:pointer]
+    46→    - generic
+    47→      - image "Self-sabotage emotional pattern — nervous system override"
+    48→    - generic
+    49→      - StaticText "0"
+    50→      - StaticText "2"
+    51→      - StaticText " — LOOP TYPE"
+    52→      - heading "Self-Sabotage" [level=4, ref=e108]
+    53→      - paragraph
+    54→      - StaticText "SHADOW TRIGGERS:"
+    55→      - list
+    56→  - generic [ref=e13] clickable [cursor:pointer]
+    57→    - generic
+    58→      - image "Glass ceiling stagnation pattern — invisible program"
+    59→    - generic
+    60→      - StaticText "0"
+    61→      - StaticText "3"
+    62→      - StaticText " — LOOP TYPE"
+    63→      - heading "The Glass Ceiling" [level=4, ref=e109]
+    64→      - paragraph
+    65→      - StaticText "SHADOW TRIGGERS:"
+    66→      - list
+    67→  - generic [ref=e14] clickable [cursor:pointer]
+    68→    - generic
+    69→      - image "Emotional masking shadow pattern — the false self"
+    70→    - generic
+    71→      - StaticText "0"
+    72→      - StaticText "4"
+    73→      - StaticText " — LOOP TYPE"
+    74→      - heading "The Mask" [level=4, ref=e110]
+    75→      - paragraph
+    76→      - StaticText "SHADOW TRIGGERS:"
+    77→      - list
+    78→  - link "WHICH PATTERN IS YOURS?" [ref=e66]
+    79→  - paragraph
+    80→    - StaticText "THE DIAGNOSTIC SYSTEM"
+    81→  - heading "Not Prediction. Pattern Recognition." [level=2, ref=e15]
+    82→    - StaticText "Not Prediction. Pattern Recognition."
+    83→  - paragraph
+    84→    - StaticText "A proprietary four-part diagnostic system. Karmic architecture. Jungian depth. Pattern intelligence. Precision strategy."
+    85→  - generic
+    86→    - generic
+    87→      - image
+    88→      - StaticText "01"
+    89→      - StaticText "— "
+    90→      - StaticText "The Architecture"
+    91→      - heading "Vedic Mapping" [level=3, ref=e111]
+    92→      - paragraph
+    93→      - image
+    94→      - StaticText "02"
+    95→      - StaticText "— "
+    96→      - StaticText "The Shadow"
+    97→      - heading "Depth Psychology" [level=3, ref=e112]
+    98→      - paragraph
+    99→      - image
+   100→      - StaticText "03"
+   101→      - StaticText "— "
+   102→      - StaticText "The Diagnosis"
+   103→      - heading "Pattern Recognition" [level=3, ref=e113]
+   104→      - paragraph
+   105→      - image
+   106→      - StaticText "04"
+   107→      - StaticText "— "
+   108→      - StaticText "The Dharma"
+   109→      - heading "Strategic Action" [level=3, ref=e114]
+   110→      - paragraph
+   111→  - blockquote
+   112→    - StaticText "“You cannot heal what you will not face. You cannot face what you cannot see.”"
+   113→  - paragraph
+   114→    - StaticText "THE SHADOW INTEGRATION ARC"
+   115→  - heading "The lifecycle of a blockage" [level=2, ref=e16]
+   116→    - StaticText "The lifecycle of a blockage"
+   117→  - paragraph
+   118→    - StaticText "Every behavioral blockage follows an arc — from unconscious activation through crisis to conscious integration. Hover over each phase."
+   119→  - image "Shadow Integration Timeline — shows the lifecycle of behavioral blockages from activation to integration"
+   120→    - StaticText "activation"
+   121→    - StaticText "escalation"
+   122→    - StaticText "crisis"
+   123→    - StaticText "recognition"
+   124→    - StaticText "integration"
+   125→    - StaticText "Wounded Child"
+   126→    - StaticText "Shadow Self"
+   127→    - StaticText "Destroyer"
+   128→    - StaticText "Witness"
+   129→    - StaticText "Warrior"
+   130→  - paragraph
+   131→    - StaticText "THE KALKI FRAMEWORK"
+   132→  - heading "Four stages. One transformation." [level=2, ref=e17]
+   133→    - StaticText "Four stages. One transformation."
+   134→  - paragraph
+   135→    - StaticText "Progress through four stages designed to realign your life's patterns. Each stage builds on the last. You are not buying sessions — you are progressing through a diagnostic framework."
+   136→  - generic
+   137→    - image "Pattern Snapshot"
+   138→    - StaticText "STAGE 1"
+   139→    - StaticText "—"
+   140→    - StaticText "RECOGNITION"
+   141→    - heading "Pattern Snapshot" [level=3, ref=e115]
+   142→    - StaticText "₹999"
+   143→    - StaticText "45-MINUTE DIAGNOSTIC"
+   144→    - paragraph
+   145→      - StaticText "See your current patterns clearly. A tactical decode of your primary loop — isolation of your nervous-system trigger, Vedic elemental profiling, and one actionable override step."
+   146→    - list
+   147→      - listitem [level=1]
+   148→      - listitem [level=1]
+   149→    - link "BEGIN RECOGNITION" [ref=e116]
+   150→    - generic
+   151→      - image "The Deep Dive"
+   152→      - StaticText "MOST REQUESTED"
+   153→    - StaticText "STAGE 2"
+   154→    - StaticText "—"
+   155→    - StaticText "DIAGNOSIS"
+   156→    - heading "The Deep Dive" [level=3, ref=e117]
+   157→    - StaticText "₹4,999"
+   158→    - StaticText "2-HOUR DIAGNOSTIC + DOCUMENT"
+   159→    - paragraph
+   160→      - StaticText "Understand root causes and their impact. Complete psychological architecture and 12-month roadmap. The most requested session for those ready to stop repeating."
+   161→    - list
+   162→      - listitem [level=1]
+   163→      - listitem [level=1]
+   164→    - link "BEGIN DIAGNOSIS" [ref=e118]
+   165→    - image "Dharma Navigation"
+   166→    - StaticText "STAGE 3"
+   167→    - StaticText "—"
+   168→    - StaticText "REALIGNMENT"
+   169→    - heading "Dharma Navigation" [level=3, ref=e119]
+   170→    - StaticText "₹9,999"
+   171→    - StaticText "2 COMPLETE SESSIONS"
+   172→    - paragraph
+   173→      - StaticText "Navigate your dharma with precision. Professional bottleneck diagnosis, career re-architecting, and authority expansion through Vedic-Jungian sovereignty mapping."
+   174→    - list
+   175→      - listitem [level=1]
+   176→      - listitem [level=1]
+   177→    - link "BEGIN REALIGNMENT" [ref=e120]
+   178→    - generic
+   179→      - image "The Warrior's Journey"
+   180→      - StaticText "BESPOKE S-TIER"
+   181→    - StaticText "STAGE 4"
+   182→    - StaticText "—"
+   183→    - StaticText "INTEGRATION"
+   184→    - heading "The Warrior's Journey" [level=3, ref=e121]
+   185→    - StaticText "Custom"
+   186→    - StaticText "3-MONTH ADVISORY"
+   187→    - paragraph
+   188→      - StaticText "Embody the warrior's journey fully. Bespoke shadow work integration with weekly private clinical advisory, unlimited secure access, and real-time strategic intervention."
+   189→    - list
+   190→      - listitem [level=1]
+   191→      - listitem [level=1]
+   192→    - link "APPLY" [ref=e122]
+   193→  - paragraph
+   194→    - StaticText "SOMATIC CALIBRATION"
+   195→  - heading "The Coherence Orb" [level=2, ref=e18]
+   196→    - StaticText "The Coherence Orb"
+   197→  - paragraph
+   198→    - StaticText "Vedic pranayama translated into clinical nervous-system regulation. Breathe with the orb. The rhythm rewrites your state."
+   199→  - button "Select Box Breathing breathing pattern" [ref=e19]
+   200→    - StaticText "BOX BREATHING"
+   201→  - button "Select Vayu Dissolution breathing pattern" [ref=e20]
+   202→    - StaticText "VAYU DISSOLUTION"
+   203→  - button "Select Tejas Staccato Purge breathing pattern" [ref=e21]
+   204→    - StaticText "TEJAS STACCATO PURGE"
+   205→  - paragraph
+   206→    - StaticText "Sama Vritti — Equal rhythm. Tactical calm. Navy SEAL protocol adapted for nervous system reset."
+   207→  - generic
+   208→    - image
+   209→    - StaticText "INHALE"
+   210→  - paragraph
+   211→    - StaticText "Select a pattern and begin"
+   212→  - button "Begin breath pacer" [ref=e22]
+   213→    - StaticText "BEGIN CALIBRATION"
+   214→  - generic
+   215→    - generic
+   216→      - image "The Warrior's Descent into Shadow"
+   217→    - paragraph
+   218→      - StaticText "THE WARRIOR'S JOURNEY"
+   219→    - heading "Not a spiritual journey. A warrior's descent." [level=2, ref=e67]
+   220→      - StaticText "Not a spiritual journey."
+   221→      - LineBreak "\n"
+   222→      - StaticText "A warrior's descent."
+   223→    - paragraph
+   224→      - StaticText "This is not spiritual coaching. This is a rigorous confrontation with truth. The warrior does not bypass the darkness — the warrior walks through it with eyes open, deploying behavioral strategies to override the loop. Not spiritual bypassing, but actionable dharma alignment that transforms resistance into raw, absolute leverage."
+   225→    - link "EXPLORE THE JOURNEY →" [ref=e123]
+   226→      - StaticText "EXPLORE THE JOURNEY"
+   227→      - StaticText "→"
+   228→  - paragraph
+   229→    - StaticText "VEDIC-SOMATIC INSTRUMENTS"
+   230→  - heading "Diagnostic instruments" [level=2, ref=e23]
+   231→    - StaticText "Diagnostic instruments"
+   232→  - paragraph
+   233→    - StaticText "Interactive tools bridging Vedic cognitive maps and clinical depth psychology. All processing happens on your device."
+   234→  - StaticText "EPIGENETIC MAPPING"
+   235→  - paragraph
+   236→    - StaticText "Generational Shadow Map"
+   237→  - paragraph
+   238→    - StaticText "Click nodes to explore inherited behavioral scripts. Every ancestor carries unresolved shadow that flows downstream."
+   239→  - image "Generational Shadow Map — click nodes to explore inherited behavioral scripts"
+   240→    - group [ref=e68] clickable [cursor:pointer, onclick]
+   241→      - StaticText "You"
+   242→    - group [ref=e69] clickable [cursor:pointer, onclick]
+   243→      - StaticText "Mother"
+   244→    - group [ref=e70] clickable [cursor:pointer, onclick]
+   245→      - StaticText "Maternal GM"
+   246→    - group [ref=e71] clickable [cursor:pointer, onclick]
+   247→      - StaticText "Maternal GF"
+   248→    - group [ref=e72] clickable [cursor:pointer, onclick]
+   249→      - StaticText "Father"
+   250→    - group [ref=e73] clickable [cursor:pointer, onclick]
+   251→      - StaticText "Paternal GM"
+   252→    - group [ref=e74] clickable [cursor:pointer, onclick]
+   253→      - StaticText "Paternal GF"
+   254→  - StaticText "You"
+   255→  - StaticText "THE PATTERN BEARER"
+   256→  - StaticText "SHADOW PATTERN"
+   257→  - paragraph
+   258→    - StaticText "Carrying unresolved scripts from both lineages. The intersection of two unresolved histories."
+   259→  - StaticText "DEFENSE CASCADE"
+   260→  - paragraph
+   261→    - StaticText "Recognition — seeing the pattern is the first override."
+   262→  - StaticText "ALCHEMICAL FORGE"
+   263→  - paragraph
+   264→    - StaticText "Element Transmutation"
+   265→  - paragraph
+   266→    - StaticText "Adjust your Ayurvedic elemental ratios. Observe how dominance in one element transmutes others — the behavioral architecture shifts in real-time."
+   267→  - StaticText "TEJAS"
+   268→  - StaticText " ("
+   269→  - StaticText "FIRE"
+   270→  - StaticText ")"
+   271→  - StaticText "30"
+   272→  - StaticText "%"
+   273→  - slider "Tejas element level" [ref=e24]: 30
+   274→  - paragraph
+   275→    - StaticText "High: Burnout, aggression, spiritual bypassing through intensity"
+   276→  - StaticText "APAS"
+   277→  - StaticText " ("
+   278→  - StaticText "WATER"
+   279→  - StaticText ")"
+   280→  - StaticText "50"
+   281→  - StaticText "%"
+   282→  - slider "Apas element level" [ref=e25]: 50
+   283→  - paragraph
+   284→    - StaticText "High: Emotional flooding, attachment, codependency"
+   285→  - StaticText "VAYU"
+   286→  - StaticText " ("
+   287→  - StaticText "AIR"
+   288→  - StaticText ")"
+   289→  - StaticText "60"
+   290→  - StaticText "%"
+   291→  - slider "Vayu element level" [ref=e26]: 60
+   292→  - paragraph
+   293→    - StaticText "High: Anxiety, restlessness, nervous system hyperactivation"
+   294→  - StaticText "PRITHVI"
+   295→  - StaticText " ("
+   296→  - StaticText "EARTH"
+   297→  - StaticText ")"
+   298→  - StaticText "40"
+   299→  - StaticText "%"
+   300→  - slider "Prithvi element level" [ref=e27]: 40
+   301→  - paragraph
+   302→    - StaticText "High: Rigidity, stubbornness, refusal to evolve"
+   303→  - StaticText "SOMATIC DIAGNOSTIC READOUT"
+   304→  - paragraph
+   305→    - StaticText "Excessive Vayu dominance: Your nervous system is in chronic activation. Anxiety is not a personality trait — it is a Vayu imbalance. Thoughts race but never land. The pattern is: activate → scatter → overwhelm → shut down → reactivate. You need Apas to cool and cohere the scattered impulses. Deficient Fire (Tejas): Inertia, lack of drive, spiritual complacency."
+   306→  - StaticText "NEURAL FLOW ANALYSIS"
+   307→  - paragraph
+   308→    - StaticText "Cognitive Bottleneck Diagram"
+   309→  - paragraph
+   310→    - StaticText "How emotional floodwaters bypass cognitive containment. Hover nodes to trace the flow."
+   311→  - image "Cognitive bottleneck sankey flow diagram"
+   312→    - generic [ref=e75] clickable [cursor:pointer]
+   313→      - StaticText "Sensory Overload"
+   314→    - generic [ref=e76] clickable [cursor:pointer]
+   315→      - StaticText "Ancestral Scrip…"
+   316→    - generic [ref=e77] clickable [cursor:pointer]
+   317→      - StaticText "Attachment Alarm"
+   318→    - generic [ref=e78] clickable [cursor:pointer]
+   319→      - StaticText "Identity Threat"
+   320→    - generic [ref=e79] clickable [cursor:pointer]
+   321→      - StaticText "Amygdala Hijack"
+   322→    - generic [ref=e80] clickable [cursor:pointer]
+   323→      - StaticText "Prefrontal Over…"
+   324→    - generic [ref=e81] clickable [cursor:pointer]
+   325→      - StaticText "Freeze Response"
+   326→    - generic [ref=e82] clickable [cursor:pointer]
+   327→      - StaticText "Dissociation"
+   328→    - generic [ref=e83] clickable [cursor:pointer]
+   329→      - StaticText "Compulsive Reen…"
+   330→    - StaticText "EMOTIONAL INPUT"
+   331→    - StaticText "BOTTLENECK"
+   332→    - StaticText "SOMATIC OUTPUT"
+   333→  - StaticText "CHRONOBIOLOGICAL ALIGNMENT"
+   334→  - paragraph
+   335→    - StaticText "Hora Clock"
+   336→  - generic
+   337→    - SvgRoot
+   338→      - StaticText "☉"
+   339→      - StaticText "♀"
+   340→      - StaticText "☿"
+   341→      - StaticText "☽"
+   342→      - StaticText "♄"
+   343→      - StaticText "♃"
+   344→    - generic
+   345→      - StaticText "21:22 IST"
+   346→  - StaticText "CURRENT PLANETARY RULER"
+   347→  - paragraph
+   348→    - StaticText "☉ Sun"
+   349→  - paragraph
+   350→    - StaticText "Surya — Tejas (Fire)"
+   351→  - StaticText "SUNRISE"
+   352→  - paragraph
+   353→    - StaticText "00:34"
+   354→  - StaticText "SUNSET"
+   355→  - paragraph
+   356→    - StaticText "13:42"
+   357→  - StaticText "HORA #"
+   358→  - StaticText "9"
+   359→  - paragraph
+   360→    - StaticText "Night Hora"
+   361→  - StaticText "HORA WINDOW"
+   362→  - paragraph
+   363→    - StaticText "20:56–21:51"
+   364→  - StaticText "OPTIMAL NOW"
+   365→  - paragraph
+   366→    - StaticText "Strategic decisions, leadership actions, boundary declarations"
+   367→  - StaticText "AVOID NOW"
+   368→  - paragraph
+   369→    - StaticText "Self-doubt, deferring to others, hiding from visibility"
+   370→  - StaticText "SOMATIC SCANNER"
+   371→  - paragraph
+   372→    - StaticText "Facial Tension Monitor"
+   373→  - paragraph
+   374→    - StaticText "Simulated biometric interface. Identifies micro-somatic tension blocks that form during intellectual processing. Click zones for diagnostic."
+   375→  - SvgRoot
+   376→    - group [ref=e124] clickable [cursor:pointer, onclick]
+   377→      - StaticText "Jaw"
+   378→    - group [ref=e125] clickable [cursor:pointer, onclick]
+   379→      - StaticText "Brow"
+   380→    - group [ref=e126] clickable [cursor:pointer, onclick]
+   381→      - StaticText "Temples"
+   382→    - group [ref=e127] clickable [cursor:pointer, onclick]
+   383→      - StaticText "Throat"
+   384→  - button "INITIATE SCAN" [ref=e28]
+   385→  - image
+   386→  - StaticText "NOT REVIEWS. RECOGNITIONS."
+   387→  - heading "After" [level=2, ref=e29]
+   388→  - blockquote
+   389→    - StaticText "“He described patterns I never told anyone. Not general things — specific, exact patterns. I had to sit down.”"
+   390→  - StaticText "R.K."
+   391→  - StaticText "After Pattern Analysis — Mumbai"
+   392→  - blockquote
+   393→    - StaticText "“It was never about the job or the relationship. It was the same pattern repeating. AstroKalki didn't give me a horoscope; they handed me the architecture of my own reality.”"
+   394→  - StaticText "ANONYMOUS"
+   395→  - StaticText "Pattern Snapshot Client"
+   396→  - blockquote
+   397→    - StaticText "“This is not for the faint of heart. If you want spiritual bypassing, go elsewhere. If you want to actually break the karmic loop, this is the only methodology that works.”"
+   398→  - StaticText "R. MEHTA"
+   399→  - StaticText "Dharma Navigation"
+   400→  - paragraph
+   401→    - StaticText "2,400+"
+   402→  - paragraph
+   403→    - StaticText "PATTERNS DECODED"
+   404→  - paragraph
+   405→    - StaticText "97%"
+   406→  - paragraph
+   407→    - StaticText "RETURN RATE"
+   408→  - paragraph
+   409→    - StaticText "12+"
+   410→  - paragraph
+   411→    - StaticText "YEARS DEPTH"
+   412→  - paragraph
+   413→    - StaticText "38"
+   414→  - paragraph
+   415→    - StaticText "AVG BREAKTHROUGH"
+   416→  - image
+   417→  - StaticText "DANGEROUS KNOWLEDGE"
+   418→  - heading "Read only if you're ready to stop pretending" [level=2, ref=e30]
+   419→    - StaticText "Read only if you're ready to stop pretending"
+   420→  - generic
+   421→    - StaticText "Breakthrough insights rooted in psychology and karma. Where trauma, "
+   422→    - button "Learn more about: shadow work" [ref=e84]
+   423→      - StaticText "shadow work"
+   424→    - StaticText ", and "
+   425→    - button "Learn more about: attachment theory" [ref=e85]
+   426→      - StaticText "attachment theory"
+   427→    - StaticText " are not just concepts — they are decoded and transformed. Click highlighted terms for clinical annotations."
+   428→  - StaticText "✦"
+   429→  - StaticText "CLICK GOLD-HIGHLIGHTED TERMS FOR CLINICAL ANNOTATIONS"
+   430→  - StaticText "TRAUMA BONDING"
+   431→  - StaticText "8 min"
+   432→  - heading "The Mother Wound in the Chart" [level=4, ref=e31]
+   433→  - generic
+   434→    - StaticText "How parental conditioning becomes "
+   435→    - button "Learn more about: karmic architecture" [ref=e86]
+   436→      - StaticText "karmic architecture"
+   437→    - StaticText " — and why you keep recreating the same emotional dynamic with every partner."
+   438→  - StaticText "READ →"
+   439→  - StaticText "SHADOW WORK"
+   440→  - StaticText "7 min"
+   441→  - heading "Why We Choose the Same Heartbreak" [level=4, ref=e32]
+   442→  - generic
+   443→    - StaticText "The neurochemistry of "
+   444→    - button "Learn more about: intermittent reinforcement" [ref=e87]
+   445→      - StaticText "intermittent reinforcement"
+   446→    - StaticText " — the same mechanism that keeps gamblers addicted is running your love life."
+   447→  - StaticText "READ →"
+   448→  - StaticText "KALIYUG PSYCHOLOGY"
+   449→  - StaticText "9 min"
+   450→  - heading "The Trap of Spiritual Bypassing" [level=4, ref=e33]
+   451→  - generic
+   452→    - StaticText "Telling a traumatized person they attracted their abuse is not spirituality. It is "
+   453→    - button "Learn more about: spiritual bypassing" [ref=e88]
+   454→      - StaticText "spiritual bypassing"
+   455→    - StaticText " weaponized against the vulnerable."
+   456→  - StaticText "READ →"
+   457→  - StaticText "SELF-DECEPTION"
+   458→  - StaticText "6 min"
+   459→  - heading "The Lie You Tell Yourself Every Morning" [level=4, ref=e34]
+   460→  - StaticText "The most dangerous lie is the one you tell yourself to survive. The one that sounds like 'this time it is different.'"
+   461→  - StaticText "READ →"
+   462→  - StaticText "EMOTIONAL WARFARE"
+   463→  - StaticText "5 min"
+   464→  - heading "The Fear of Being Seen" [level=4, ref=e35]
+   465→  - StaticText "You attract unavailable people because available people require you to be real. And being real was never safe."
+   466→  - StaticText "READ →"
+   467→  - StaticText "PATTERN RECOGNITION"
+   468→  - StaticText "7 min"
+   469→  - heading "You Didn't Choose This Pain. But You Keep Choosing It." [level=4, ref=e36]
+   470→  - StaticText "The first time was karma. The second time was a pattern. The third time is a choice your unconscious is making on your behalf."
+   471→  - StaticText "READ →"
+   472→  - paragraph
+   473→    - StaticText "THE CODEX"
+   474→  - heading "The Radical Self-Sovereignty Manifesto" [level=2, ref=e37]
+   475→    - StaticText "The Radical Self-Sovereignty Manifesto"
+   476→  - paragraph
+   477→    - StaticText "Foundational essays of the Pattern Recognition Institute. Text unscrambles as you scroll. Hover for clinical footnotes."
+   478→  - heading "The Thesis of Invisible Imprisonment" [level=3, ref=e38]
+   479→  - button "Show clinical footnote for The Thesis of Invisible Imprisonment" [ref=e39]
+   480→    - StaticText "[†]"
+   481→  - paragraph
+   482→    - StaticText "You are not stuck. You are not broken. You are not lacking willpower or discipline or intelligence. You are running a program that was installed before you had language to name it. Every repeating pattern in your life — the relationships that collapse, the opportunities you self-destruct, the authority you cannot claim — is not a character flaw. It is an architecture. And architectures can be redesigned."
+   483→  - heading "On Radical Self-Sovereignty" [level=3, ref=e40]
+   484→  - button "Show clinical footnote for On Radical Self-Sovereignty" [ref=e41]
+   485→    - StaticText "[†]"
+   486→  - paragraph
+   487→    - StaticText "Self-sovereignty is not independence. It is not isolation or hyper-individualism. It is the capacity to witness your own patterns without being controlled by them. The sovereign self does not eliminate the shadow — the sovereign self negotiates with it from a position of awareness, not reaction."
+   488→  - heading "The Nervous System Is the First Territory" [level=3, ref=e42]
+   489→  - button "Show clinical footnote for The Nervous System Is the First Territory" [ref=e43]
+   490→    - StaticText "[†]"
+   491→  - paragraph
+   492→    - StaticText "Before you can change any pattern, you must regulate the nervous system that runs it. Your intellect cannot override your biology. The amygdala responds in 200 milliseconds; conscious thought takes 600. The pattern always wins the first 400ms. Regulation is not optional — it is the prerequisite for all transformation."
+   493→  - heading "Diagnosis Is Not Destiny" [level=3, ref=e44]
+   494→  - button "Show clinical footnote for Diagnosis Is Not Destiny" [ref=e45]
+   495→    - StaticText "[†]"
+   496→  - paragraph
+   497→    - StaticText "When a pattern is named, it does not disappear. It becomes visible. Visibility is not the same as freedom — but it is the prerequisite. You cannot leave a prison you cannot see. The moment of recognition is not the end of the work. It is the beginning of choice."
+   498→  - heading "The Warrior Does Not Bypass" [level=3, ref=e46]
+   499→  - paragraph
+   500→    - StaticText "The warrior archetype in the Kalki Framework is not a metaphor for aggression. It is the principle of conscious engagement with difficulty. The warrior does not bypass the dark — the warrior enters it with awareness, with breath, with the specific tools of pattern override. Bypass is the enemy. Engagement is the method."
+   501→  - heading "Dharma Is Not Duty" [level=3, ref=e47]
+   502→  - button "Show clinical footnote for Dharma Is Not Duty" [ref=e48]
+   503→    - StaticText "[†]"
+   504→  - paragraph
+   505→    - StaticText "Dharma is not what you should do. It is what you are built to do when the karmic overlay is removed. Your dharma is not a burden — it is the trajectory your life takes when it is no longer driven by unconscious repetition. Dharma is what remains when the pattern is seen through."
+   506→  - paragraph
+   507→    - StaticText "COGNITIVE FIELD TOPOLOGY"
+   508→  - heading "Pattern Gravity Map" [level=2, ref=e49]
+   509→    - StaticText "Pattern Gravity Map"
+   510→  - paragraph
+   511→    - StaticText "Every pattern exerts gravitational pull on others. The stronger the pull, the harder it is to escape the orbit. Drag nodes to rearrange. Hover for diagnostics."
+   512→  - StaticText "CORE"
+   513→  - StaticText "SHADOW"
+   514→  - StaticText "DEFENSE"
+   515→  - StaticText "SOMATIC"
+   516→  - StaticText "REINFORCES"
+   517→  - StaticText "TRIGGERS"
+   518→  - StaticText "SUPPRESSES"
+   519→  - image "Cognitive Gravity Map — force-directed graph showing pattern interconnections"
+   520→    - group [ref=e89] clickable [cursor:pointer]
+   521→      - StaticText "Core Pattern"
+   522→    - group [ref=e90] clickable [cursor:pointer]
+   523→      - StaticText "Attachment Wo…"
+   524→    - group [ref=e91] clickable [cursor:pointer]
+   525→      - StaticText "Inner Critic"
+   526→    - group [ref=e92] clickable [cursor:pointer]
+   527→      - StaticText "Nervous Dysre…"
+   528→    - group [ref=e93] clickable [cursor:pointer]
+   529→      - StaticText "Compulsive Ca…"
+   530→    - group [ref=e94] clickable [cursor:pointer]
+   531→      - StaticText "Emotional Flo…"
+   532→    - group [ref=e95] clickable [cursor:pointer]
+   533→      - StaticText "Ancestral Scr…"
+   534→    - group [ref=e96] clickable [cursor:pointer]
+   535→      - StaticText "Self-Abandonm…"
+   536→    - group [ref=e97] clickable [cursor:pointer]
+   537→      - StaticText "Perfectionism"
+   538→    - group [ref=e98] clickable [cursor:pointer]
+   539→      - StaticText "Identity Frag…"
+   540→  - paragraph
+   541→    - StaticText "THE OPERATING THEATER"
+   542→  - heading "Clinical workspace" [level=2, ref=e50]
+   543→    - StaticText "Clinical workspace"
+   544→  - paragraph
+   545→    - StaticText "Full-spectrum interactive tools. Encrypt. Dream. Diagnose. Purge. Your data never leaves your device."
+   546→  - StaticText "CLINICAL SIMULATOR"
+   547→  - paragraph
+   548→    - StaticText "Pattern Recognition Officer"
+   549→  - StaticText "DISPATCH #AK-2024-0147"
+   550→  - StaticText "AROUSAL"
+   551→  - StaticText "COHERENCE"
+   552→  - paragraph
+   553→    - StaticText "A 34-year-old executive presents with chronic relationship collapse. Three partnerships ended identically: intense early bonding → partner withdrawal → pursuit escalation → catastrophic rupture. The executive reports: \"I always choose people who need saving.\" Biometric scan shows elevated Vayu (nervous system activation) and suppressed Tejas (transformative will). What is your first diagnostic move?"
+   554→  - generic
+   555→    - button "OPTION 1 Map the attachment architecture" [ref=e99]
+   556→      - StaticText "OPTION 1"
+   557→      - paragraph
+   558→    - button "OPTION 2 Probe the self-sabotage loop" [ref=e100]
+   559→      - StaticText "OPTION 2"
+   560→      - paragraph
+   561→    - button "OPTION 3 Initiate shadow confrontation" [ref=e101]
+   562→      - StaticText "OPTION 3"
+   563→      - paragraph
+   564→  - StaticText "UNCONSCIOUS CHANNEL"
+   565→  - paragraph
+   566→    - StaticText "Dream-Weave Log"
+   567→  - paragraph
+   568→    - StaticText "Register dream dispatches. The archetype extractor identifies Jungian patterns in your unconscious narrative."
+   569→  - textbox "Dream description input" [ref=e51]
+   570→  - button "WEAVE ENTRY" [disabled, ref=e52]
+   571→  - StaticText "SECURE DISPATCH PROTOCOL"
+   572→  - paragraph
+   573→    - StaticText "How your narrative is protected"
+   574→  - paragraph
+   575→    - StaticText "Every piece of sensitive data you share undergoes a multi-stage encryption pipeline before storage or transit. Type below to visualize the process."
+   576→  - generic
+   577→    - textbox "Enter text to visualize encryption process" [ref=e102]
+   578→    - button "Begin encryption visualization" [disabled, ref=e103]
+   579→      - StaticText "ENCRYPT"
+   580→  - StaticText "PATTERN LEDGER"
+   581→  - paragraph
+   582→    - StaticText "Your secure pattern archive"
+   583→  - button "Toggle security information" [ref=e53]
+   584→    - StaticText "SECURITY"
+   585→  - paragraph
+   586→    - StaticText "Record patterns you recognize in yourself. Track your diagnostic progression over time. All data stays on your device."
+   587→  - LabelText
+   588→    - StaticText "PATTERN TYPE"
+   589→  - combobox "Select pattern type" [expanded=false, ref=e54]: Select a pattern...
+   590→    - MenuListPopup
+   591→      - option "Select a pattern..." [selected, ref=e128]
+   592→      - option "Repeating Heartbreak" [ref=e129]
+   593→      - option "Self-Sabotage" [ref=e130]
+   594→      - option "Glass Ceiling" [ref=e131]
+   595→      - option "The Mask" [ref=e132]
+   596→      - option "Trauma Bond" [ref=e133]
+   597→      - option "Spiritual Bypassing" [ref=e134]
+   598→      - option "People-Pleasing" [ref=e135]
+   599→  - LabelText
+   600→    - StaticText "CONFIDENCE: 70%"
+   601→  - slider "Confidence level" [ref=e55]: 70
+   602→  - LabelText
+   603→    - StaticText "RECOMMENDED STAGE"
+   604→  - combobox "Recommended diagnostic stage" [expanded=false, ref=e56]: Stage 1 — Recognition
+   605→    - MenuListPopup
+   606→      - option "Stage 1 — Recognition" [selected, ref=e136]
+   607→      - option "Stage 2 — Diagnosis" [ref=e137]
+   608→      - option "Stage 3 — Realignment" [ref=e138]
+   609→      - option "Stage 4 — Integration" [ref=e139]
+   610→  - LabelText
+   611→    - StaticText "NOTES (OPTIONAL)"
+   612→  - textbox "Personal notes about this pattern" [ref=e57]
+   613→  - button "Record pattern entry" [disabled, ref=e58]
+   614→    - StaticText "RECORD PATTERN"
+   615→  - paragraph
+   616→    - StaticText "No patterns recorded yet. Begin your diagnostic above."
+   617→  - StaticText "SECURE-DISPATCH://TERMINAL"
+   618→  - StaticText "> Secure Dispatch Terminal v1.0"
+   619→  - StaticText "> Type /help for available commands"
+   620→  - form
+   621→    - StaticText ">"
+   622→    - textbox "Terminal command input" [ref=e104]
+   623→  - image
+   624→  - paragraph
+   625→    - StaticText "THE PATTERN INDEX"
+   626→  - heading "Unlock clarity in 60 seconds" [level=2, ref=e59]
+   627→    - StaticText "Unlock clarity in 60 seconds"
+   628→  - paragraph
+   629→    - StaticText "Identify repeating patterns that hold you back or propel you forward. This is not prediction — this is deep pattern recognition. Three questions. One truth you've been avoiding."
+   630→  - link "TAKE THE PATTERN INDEX" [ref=e105]
+   631→  - paragraph
+   632→    - StaticText "60-SECOND DIAGNOSTIC · NO CHART REQUIRED · JUST HONESTY"
+   633→  - paragraph
+   634→    - StaticText "BEFORE YOU STEP THROUGH THE THRESHOLD"
+   635→  - heading "Questions" [level=2, ref=e60]
+   636→  - list
+   637→    - listitem [level=1]
+   638→      - button "Is this astrology?" [expanded=true, ref=e140]
+   639→      - region "Is this astrology?" [ref=e141]
+   640→    - listitem [level=1]
+   641→      - button "How is this different from therapy?" [expanded=false, ref=e142]
+   642→    - listitem [level=1]
+   643→      - button "What do I need to provide for a session?" [expanded=false, ref=e143]
+   644→    - listitem [level=1]
+   645→      - button "Do I need to believe in anything for this to work?" [expanded=false, ref=e144]
+   646→    - listitem [level=1]
+   647→      - button "How long until I see results?" [expanded=false, ref=e145]
+   648→    - listitem [level=1]
+   649→      - button "Are sessions confidential?" [expanded=false, ref=e146]
+   650→    - listitem [level=1]
+   651→      - button "What if I want to go deeper after the first session?" [expanded=false, ref=e147]
+   652→  - generic
+   653→    - generic
+   654→      - image
+   655→      - heading "READY TO DISCOVER THE PATTERN BENEATH?" [level=2, ref=e106]
+   656→      - paragraph
+   657→      - link "TAKE THE PATTERN INDEX" [ref=e148]
+   658→  - sectionfooter
+   659→    - paragraph
+   660→      - StaticText "AstroKalki"
+   661→    - paragraph
+   662→      - StaticText "THE PATTERN RECOGNITION INSTITUTE"
+   663→    - paragraph
+   664→      - StaticText "DECODER"
+   665→    - paragraph
+   666→      - StaticText "Kaustubh"
+   667→    - paragraph
+   668→      - StaticText "SESSIONS"
+   669→    - list
+   670→      - listitem [level=1]
+   671→        - link "All Sessions" [ref=e149]
+   672→      - listitem [level=1]
+   673→        - link "Pattern Snapshot" [ref=e150]
+   674→      - listitem [level=1]
+   675→        - link "Relationship Decode" [ref=e151]
+   676→      - listitem [level=1]
+   677→        - link "Emotional Decode" [ref=e152]
+   678→      - listitem [level=1]
+   679→        - link "Shadow Work" [ref=e153]
+   680→    - paragraph
+   681→      - StaticText "KNOWLEDGE"
+   682→    - list
+   683→      - listitem [level=1]
+   684→        - link "Pattern Atlas" [ref=e154]
+   685→      - listitem [level=1]
+   686→        - link "The Mirror Method" [ref=e155]
+   687→      - listitem [level=1]
+   688→        - link "Long-form Guides" [ref=e156]
+   689→      - listitem [level=1]
+   690→        - link "Pattern Library" [ref=e157]
+   691→    - paragraph
+   692→      - StaticText "THE PRACTICE"
+   693→    - list
+   694→      - listitem [level=1]
+   695→        - link "About AstroKalki" [ref=e158]
+   696→      - listitem [level=1]
+   697→        - link "Methodology" [ref=e159]
+   698→      - listitem [level=1]
+   699→        - link "Testimonials" [ref=e160]
+   700→      - listitem [level=1]
+   701→        - link "FAQ" [ref=e161]
+   702→    - paragraph
+   703→      - StaticText "CONNECT"
+   704→    - list
+   705→      - listitem [level=1]
+   706→        - link "+91 89208 62931" [ref=e162]
+   707→      - listitem [level=1]
+   708→        - link "Book a Session →" [ref=e163]
+   709→    - link "Unsubscribe" [ref=e61]
+   710→    - link "Sitemap" [ref=e62]
+   711→- button "Open soundscape controls" [ref=e3]
+   712→- button "Open Next.js Dev Tools" [expanded=false, ref=e164]

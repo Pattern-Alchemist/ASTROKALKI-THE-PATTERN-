@@ -29,6 +29,7 @@ import CaseSimulator from '@/components/astrokalki/CaseSimulator';
 import TensionMonitor from '@/components/astrokalki/TensionMonitor';
 import EncryptionSimulator from '@/components/astrokalki/EncryptionSimulator';
 import PatternLedger from '@/components/astrokalki/PatternLedger';
+import GravityMap from '@/components/astrokalki/GravityMap';
 
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '@/components/astrokalki/hooks/useReducedMotion';
@@ -137,6 +138,9 @@ export default function Home() {
 
         {/* 11. Manifesto Codex */}
         <ManifestoCodex />
+
+        {/* 11b. Cognitive Gravity Map */}
+        <GravityMap />
 
         {/* 12. Interactive Lab — Extended */}
         <section className="bg-[#050505] py-14 md:py-20 border-t border-white/[0.04]">

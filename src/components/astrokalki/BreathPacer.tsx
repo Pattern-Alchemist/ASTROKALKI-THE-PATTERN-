@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useReducedMotion } from './hooks/useReducedMotion';
 import { SPRING } from './utils/animation';
+import { somaticSync } from '@/lib/somatic-sync';
 
 /**
  * BreathPacer — Rhythmic Somatic Breath-Pacer & Coherence Orb
@@ -110,6 +111,14 @@ export default function BreathPacer() {
     timerRef.current = setInterval(() => {
       setTimeInPhase(prev => {
         const next = prev + tickInterval;
+        // Emit breath sync data for Soundscape coupling
+        somaticSync.emit({
+          phase: currentPhase.phase,
+          progress: Math.min(next / currentPhase.duration, 1),
+          pattern: activePattern,
+          cycleCount,
+          isActive: true,
+        });
         if (next >= currentPhase.duration) {
           // Move to next phase
           setCurrentPhaseIndex(prevIdx => {
@@ -145,7 +154,8 @@ export default function BreathPacer() {
     setIsRunning(false);
     setCurrentPhaseIndex(0);
     setTimeInPhase(0);
-  }, []);
+    somaticSync.emit({ phase: 'rest', progress: 0, pattern: activePattern, cycleCount: 0, isActive: false });
+  }, [activePattern]);
 
   if (prefersReduced) {
     return (
