@@ -7,7 +7,7 @@ const services = [
   {
     name: 'Pattern Snapshot',
     price: '₹999',
-    duration: '20-Minute Intensive',
+    duration: '20-Minute Diagnostic',
     description: 'A precise diagnostic. Name the pattern running beneath every relationship, every crisis, every self-betrayal.',
     image: '/images/service-pattern.png',
     cta: 'Book Decode',
@@ -15,7 +15,7 @@ const services = [
   {
     name: 'Relationship Decode',
     price: '₹1,999',
-    duration: '60-Minute Intensive',
+    duration: '60-Minute Diagnostic',
     description: 'Why you keep attracting the same dynamic. Why you stay when you should leave. The architecture of your relational loop.',
     image: '/images/service-relationship.png',
     cta: 'Book Decode',
@@ -33,7 +33,7 @@ const services = [
     name: 'Shadow Session',
     price: '₹2,999',
     duration: '90-Minute Deep Work',
-    description: 'The parts you disown choose your partners, start your conflicts, engineer your breakdowns. We meet them.',
+    description: 'The parts you disown choose your partners, start your conflicts, engineer your breakdowns. We map them.',
     image: '/images/service-shadow.png',
     cta: 'Book Decode',
   },
@@ -52,7 +52,7 @@ export default function Services() {
             transition={{ duration: 0.6 }}
             className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] mb-3"
           >
-            The Marketplace
+            The Diagnostic Menu
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -70,7 +70,7 @@ export default function Services() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-2 text-xs text-[#8a8078] font-[var(--font-inter)] font-light"
           >
-            Each session is a precision diagnostic. Clear pricing. No hidden tiers.
+            Each session is a pattern diagnostic. Clear pricing. No hidden tiers.
           </motion.p>
         </div>
 

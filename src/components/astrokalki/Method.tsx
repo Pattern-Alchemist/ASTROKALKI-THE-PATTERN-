@@ -10,14 +10,14 @@ const steps = [
     number: '01',
     title: 'Vedic Mapping',
     subtitle: 'The Architecture',
-    description: 'Your birth chart is a map of what you came here to repeat. Every placement — a tendency. Every house — a room where something unfinished lives. Not what will happen. What keeps happening — until you see why.',
+    description: 'Your karmic architecture is a map of what you came here to repeat. Every placement — a tendency. Every house — a room where something unfinished lives. Not what will happen. What keeps happening — until you see why.',
   },
   {
     icon: MirrorIcon,
     number: '02',
     title: 'Depth Psychology',
     subtitle: 'The Shadow',
-    description: 'Jungian shadow work meets attachment theory. The chart stops being symbolic and becomes personal. Every repeated heartbreak has a root. We don\'t read stars. We read the psyche they describe.',
+    description: 'Jungian shadow work meets attachment theory. The diagnostic stops being symbolic and becomes personal. Every repeated heartbreak has a root. We don\'t read stars. We read the psyche beneath them.',
   },
   {
     icon: PathIcon,
@@ -31,7 +31,7 @@ const steps = [
     number: '04',
     title: 'Strategic Action',
     subtitle: 'The Dharma',
-    description: 'No longer reacting to the pattern, but actively breaking the cycle. This is where insight becomes strategy, and strategy becomes a new architecture for living. The dharma was always there. You just couldn\'t see it through the karma.',
+    description: 'No longer reacting to the pattern, but actively breaking the cycle. This is where insight becomes strategy, and strategy becomes a new architecture for living. The dharma was always there. You just couldn\'t see it through the karmic overlay.',
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Method() {
             transition={{ duration: 0.6 }}
             className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] mb-3"
           >
-            The Engine Room
+            The Diagnostic System
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -75,7 +75,7 @@ export default function Method() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-3 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light"
           >
-            A proprietary four-part diagnostic system. Vedic architecture. Jungian depth. Precision strategy.
+            A proprietary four-part diagnostic system. Karmic architecture. Jungian depth. Pattern intelligence. Precision strategy.
           </motion.p>
         </div>
 

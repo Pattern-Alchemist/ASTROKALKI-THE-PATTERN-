@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-cinematic.png"
-          alt="AstroKalki — Pattern Recognition Through Vedic Psychology"
+          alt="AstroKalki — The Pattern Recognition Institute"
           fill
           priority
           className="object-cover object-center"
@@ -36,7 +36,7 @@ export default function Hero() {
           >
             <EclipseIcon className="w-4 h-4 text-[#c9a96e]" />
             <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
-              Pattern Recognition Through Vedic Psychology
+              The Pattern Recognition Institute
             </span>
           </motion.div>
 
@@ -59,8 +59,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 2.6 }}
             className="mt-5 text-sm md:text-[15px] text-[#f5f3f0]/75 font-[var(--font-inter)] font-light leading-relaxed max-w-lg"
           >
-            Vedic Intelligence meets Jungian Depth. We don&apos;t read stars; we decode the
-            psychological DNA that keeps you in a loop.
+Psychology. Karma. Shadow work. Pattern intelligence.
+            We don&apos;t predict futures — we decode the invisible architecture creating your present.
           </motion.p>
 
           {/* CTAs — Assessment is primary, gold fill */}
