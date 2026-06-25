@@ -18,6 +18,7 @@ export default function WarriorsJourney() {
           src="/images/warrior-desert.jpg"
           alt="The Warrior's Descent into Shadow"
           fill
+          loading="lazy"
           className="object-cover object-center opacity-40"
           sizes="100vw"
         />

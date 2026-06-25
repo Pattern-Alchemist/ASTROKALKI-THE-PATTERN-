@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 import FilmGrain from './FilmGrain';
+import TiltCard from './TiltCard';
 import { useReducedMotion } from './hooks/useReducedMotion';
 import { EASE, SPRING, ctaHover } from './utils/animation';
 
@@ -15,7 +16,7 @@ const stages = [
     price: '₹999',
     duration: '45-Minute Diagnostic',
     description: 'See your current patterns clearly. A tactical decode of your primary loop — isolation of your nervous-system trigger, Vedic elemental profiling, and one actionable override step.',
-    image: '/images/service-pattern.png',
+    image: '/images/service-recognition.png',
     cta: 'Begin Recognition',
     bullets: ['Isolation of primary nervous-system trigger', 'Vedic elemental profiling summary', '1 tactical step to override immediate stagnation'],
   },
@@ -26,7 +27,7 @@ const stages = [
     price: '₹4,999',
     duration: '2-Hour Diagnostic + Document',
     description: 'Understand root causes and their impact. Complete psychological architecture and 12-month roadmap. The most requested session for those ready to stop repeating.',
-    image: '/images/service-emotional.png',
+    image: '/images/service-diagnosis.png',
     cta: 'Begin Diagnosis',
     badge: 'MOST REQUESTED',
     bullets: ['Rigorous shadow confrontation session', 'Complete Vedic blueprint mapping document', '12-month personal behavioral override roadmap', 'Bi-weekly alignment tracking framework'],
@@ -38,7 +39,7 @@ const stages = [
     price: '₹9,999',
     duration: '2 Complete Sessions',
     description: 'Navigate your dharma with precision. Professional bottleneck diagnosis, career re-architecting, and authority expansion through Vedic-Jungian sovereignty mapping.',
-    image: '/images/service-relationship.png',
+    image: '/images/service-realignment.png',
     cta: 'Begin Realignment',
     bullets: ['Professional bottleneck diagnosis', 'Vedic-Jungian sovereignty blueprint', 'Authority expansion and career re-architecting', 'Private audio brief with executive directives'],
   },
@@ -49,7 +50,7 @@ const stages = [
     price: 'Custom',
     duration: '3-Month Advisory',
     description: 'Embody the warrior\'s journey fully. Bespoke shadow work integration with weekly private clinical advisory, unlimited secure access, and real-time strategic intervention.',
-    image: '/images/service-shadow.png',
+    image: '/images/service-integration.png',
     cta: 'Apply',
     badge: 'BESPOKE S-TIER',
     bullets: ['Weekly private clinical advisory', 'Unlimited secure asynchronous access', 'Real-time strategic intervention in crises', 'Bespoke physical/somatic ritual design'],
@@ -140,24 +141,25 @@ export default function Services() {
                     />
                   </div>
 
-                  {/* Small square cinematic image */}
-                  <div className="relative w-20 h-20 md:w-28 md:h-28 shrink-0 overflow-hidden">
+                  {/* Small square cinematic image — with 3D tilt */}
+                  <TiltCard maxTilt={10} glareIntensity={0.1} hoverScale={1.04} className="relative w-20 h-20 md:w-28 md:h-28 shrink-0 overflow-hidden">
                     <Image
                       src={stage.image}
                       alt={stage.service}
                       fill
+                      loading="lazy"
                       className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                       sizes="112px"
                     />
                     <FilmGrain opacity={0.08} />
                     {stage.badge && (
-                      <div className="absolute top-1 left-1 px-1.5 py-0.5 bg-[#c9a96e]/15 border border-[#c9a96e]/30">
+                      <div className="absolute top-1 left-1 px-1.5 py-0.5 bg-[#c9a96e]/15 border border-[#c9a96e]/30 z-30">
                         <span className="text-[6px] md:text-[7px] tracking-[0.15em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
                           {stage.badge}
                         </span>
                       </div>
                     )}
-                  </div>
+                  </TiltCard>
 
                   {/* Content — stage name, service, price, description */}
                   <div className="flex-1 p-3 md:p-4 flex flex-col justify-center min-w-0">

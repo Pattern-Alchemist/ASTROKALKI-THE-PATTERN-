@@ -19,6 +19,7 @@ export default function FinalCTA() {
           src="/images/hero-cinematic.png"
           alt=""
           fill
+          loading="lazy"
           className="object-cover opacity-15"
           sizes="100vw"
           aria-hidden="true"
@@ -27,6 +28,7 @@ export default function FinalCTA() {
           src="/images/shadow-work.png"
           alt=""
           fill
+          loading="lazy"
           className="object-cover opacity-10 mix-blend-overlay"
           sizes="100vw"
           aria-hidden="true"

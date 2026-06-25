@@ -1,35 +1,38 @@
 ---
-Task ID: 1-8
+Task ID: 1-7
 Agent: Super Z (Main)
-Task: Implement premium enhancements for AstroKalki — spring physics, staggered animations, accessibility, code quality
+Task: Implement AI-generated illustrations, cursor-aware 3D tilt, performance optimization, and accessibility deep-dive
 
 Work Log:
-- Created shared animation utilities (utils/animation.ts) — spring presets, easing curves, variant objects, hover micro-interactions
-- Created FilmGrain component — extracted duplicated SVG feTurbulence overlay from 5 components
-- Created useReducedMotion hook — respects prefers-reduced-motion setting
-- Created useCountUp hook — animated number counter for Testimonials stats
-- Upgraded globals.css — skip-to-content link, focus-visible ring styles, prefers-reduced-motion media query
-- Upgraded Hero.tsx — parallax eclipse image (useScroll/useTransform), staggerChildren cascade, spring physics CTAs, spring hover micro-interactions
-- Upgraded Loader.tsx — spring physics for exit and entry animations
-- Upgraded Navbar.tsx — aria-expanded on hamburger, aria-controls on mobile menu, role attributes, spring mobile menu animation, fixed #pattern→#mosaic href
-- Upgraded PatternMosaic.tsx — spring physics card entries, corner stagger (0,2,1,3), card hover spring, FilmGrain extraction
-- Upgraded FAQ.tsx — spring accordion, aria-expanded, aria-controls, id pairing, role="region", role="list"
-- Upgraded Services.tsx — scroll-driven golden thread (useScroll/useTransform like Method), spring card entries, spring CTA hover, FilmGrain extraction, contrast fix (/40→/50,/60)
-- Upgraded Testimonials.tsx — counter animation on stats (useCountUp hook), spring card entries
-- Upgraded Method.tsx — spring physics step entries, prefers-reduced-motion support
-- Upgraded WarriorsJourney.tsx — spring physics, FilmGrain extraction
-- Upgraded DangerousKnowledge.tsx — spring physics entries, contrast fix (/40→/50)
-- Upgraded Assessment.tsx — spring physics, CTA hover spring
-- Upgraded FinalCTA.tsx — spring physics, FilmGrain extraction, CTA hover spring
-- Updated page.tsx — skip-to-content link, main id="main-content"
-- Removed 5 unused components (PatternRecognition, Methodology, ShadowWork, DharmaNavigation, Recognition)
+- Generated 4 AI custom illustrations for service cards using z-ai CLI:
+  - service-recognition.png (golden thread knot in fog — Pattern Recognition)
+  - service-diagnosis.png (cracked mirror with gold light — Depth Psychology/Diagnosis)
+  - service-realignment.png (golden compass in dark desert — Dharma Navigation)
+  - service-integration.png (warrior silhouette with golden aurora — Integration)
+- Generated 4 AI custom illustrations for PatternMosaic cards:
+  - mosaic-heartbreak.png (two silhouettes separated by repeating golden thread)
+  - mosaic-sabotage.png (crumbling golden bridge — self-sabotage)
+  - mosaic-ceiling.png (invisible golden barrier/lattice — glass ceiling)
+  - mosaic-mask.png (golden mask with cracks revealing light beneath)
+- Built TiltCard component — cursor-aware 3D tilt with:
+  - Spring-smoothed rotation (useMotionValue + useSpring)
+  - Gold glare effect that follows cursor position
+  - Configurable maxTilt, glareIntensity, hoverScale
+  - prefers-reduced-motion: renders plain div, no tilt
+  - Keyboard users: tilt disabled (mouse-only interaction)
+- Integrated TiltCard into PatternMosaic — full-card tilt with maxTilt=6, glare=0.06
+- Integrated TiltCard into Services — image thumbnail tilt with maxTilt=10, glare=0.1
+- Updated image references in Services: service-pattern→service-recognition, service-emotional→service-diagnosis, service-relationship→service-realignment, service-shadow→service-integration
+- Updated image references in PatternMosaic: all 4 cards now use mosaic-*.png images
+- Performance optimizations:
+  - Added loading="lazy" to all non-priority images (Services, PatternMosaic, WarriorsJourney, FinalCTA)
+  - Configured Next.js image optimization: AVIF + WebP formats, optimized deviceSizes and imageSizes
+  - Enabled reactStrictMode for development quality
+- Build passes cleanly
 
 Stage Summary:
-- All animations upgraded from duration-based tweens to spring physics (gentle/snappy/stiff/cinematic presets)
-- Hero has parallax effect on eclipse background image
-- Services section now has scroll-driven golden thread (matching Method)
-- Stats count up from 0 with eased animation
-- Full accessibility: skip-to-content, focus-visible rings, aria-expanded/controls, prefers-reduced-motion, contrast fixes
-- FilmGrain extracted from 5 duplicates to 1 reusable component
-- 5 unused components removed
-- Build passes cleanly
+- 8 new AI-generated illustrations with cohesive dark/gold/obsidian aesthetic
+- TiltCard component provides premium 3D hover interaction with accessibility
+- All below-fold images lazy-loaded, Next.js image optimization configured
+- Service cards and PatternMosaic cards both feature 3D tilt + glare
+- Build succeeds with no errors
