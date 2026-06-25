@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://astrokalki.com"),
   title: "AstroKalki — The Same Pain. Different Face. Same Pattern.",
   description:
     "The same pain. Different face. Same pattern. AstroKalki decodes the karmic loops, emotional self-sabotage, and repeating relationship patterns running your life — through Vedic astrology and depth psychology. Not prediction. Pattern recognition.",
