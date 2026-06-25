@@ -17,10 +17,15 @@ import Footer from '@/components/astrokalki/Footer';
 export default function Home() {
   return (
     <>
+      {/* Accessibility: Skip to content link */}
+      <a href="#main-content" className="skip-to-content">
+        Skip to content
+      </a>
+
       <Loader />
       <Navbar />
 
-      <main id="top" className="bg-[#050505] overflow-x-hidden">
+      <main id="main-content" className="bg-[#050505] overflow-x-hidden">
         {/* 1. Hero — 3 seconds to authority */}
         <Hero />
 

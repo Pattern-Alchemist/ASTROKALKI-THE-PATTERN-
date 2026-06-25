@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useReducedMotion } from './hooks/useReducedMotion';
+import { EASE, SPRING } from './utils/animation';
 
 const faqs = [
   {
@@ -36,6 +38,7 @@ const faqs = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const prefersReduced = useReducedMotion();
 
   return (
     <section className="bg-[#050505] py-20 md:py-32 border-t border-white/[0.04]">
@@ -44,7 +47,7 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          transition={prefersReduced ? { duration: 0 } : { duration: 1, ease: EASE.outExpoLegacy }}
           className="text-center mb-12 md:mb-16"
         >
           <p className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/60 mb-4">
@@ -55,52 +58,64 @@ export default function FAQ() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col gap-px bg-white/[0.03]">
-          {faqs.map((faq, index) => (
-            <div key={index} className="bg-[#050505]">
-              <button
-                onClick={() =>
-                  setOpenIndex(openIndex === index ? null : index)
-                }
-                className="w-full flex justify-between items-start text-left py-5 md:py-6 group"
-              >
-                <span
-                  className={`font-[var(--font-cormorant)] text-lg md:text-xl font-light transition-colors duration-500 pr-8 ${
-                    openIndex === index
-                      ? 'text-[#c9a96e]'
-                      : 'text-[#e8e0d4]/80 group-hover:text-[#e8e0d4]'
-                  }`}
+        <div className="flex flex-col gap-px bg-white/[0.03]" role="list">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            const panelId = `faq-panel-${index}`;
+            const buttonId = `faq-button-${index}`;
+
+            return (
+              <div key={index} className="bg-[#050505]" role="listitem">
+                <button
+                  id={buttonId}
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  className="w-full flex justify-between items-start text-left py-5 md:py-6 group"
                 >
-                  {faq.q}
-                </span>
-                <span
-                  className={`text-xl text-[#8a8078] transition-transform duration-500 shrink-0 mt-1 ${
-                    openIndex === index ? 'rotate-45' : ''
-                  }`}
-                >
-                  +
-                </span>
-              </button>
-              <AnimatePresence initial={false}>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className="overflow-hidden"
+                  <span
+                    className={`font-[var(--font-cormorant)] text-lg md:text-xl font-light transition-colors duration-500 pr-8 ${
+                      isOpen
+                        ? 'text-[#c9a96e]'
+                        : 'text-[#e8e0d4]/80 group-hover:text-[#e8e0d4]'
+                    }`}
                   >
-                    <p className="pb-5 md:pb-6 pr-10 text-[#8a8078] text-sm font-[var(--font-inter)] font-light leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
+                    {faq.q}
+                  </span>
+                  <span
+                    className={`text-xl text-[#8a8078] transition-transform duration-500 shrink-0 mt-1 ${
+                      isOpen ? 'rotate-45' : ''
+                    }`}
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={buttonId}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={
+                        prefersReduced
+                          ? { duration: 0 }
+                          : { ...SPRING.stiff }
+                      }
+                      className="overflow-hidden"
+                    >
+                      <p className="pb-5 md:pb-6 pr-10 text-[#8a8078] text-sm font-[var(--font-inter)] font-light leading-relaxed">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

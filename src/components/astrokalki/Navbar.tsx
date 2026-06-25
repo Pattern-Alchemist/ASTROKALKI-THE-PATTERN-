@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useReducedMotion } from './hooks/useReducedMotion';
+import { SPRING, EASE } from './utils/animation';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const prefersReduced = useReducedMotion();
 
   useEffect(() => {
     const onScroll = () => {
@@ -19,12 +22,18 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 1, delay: 2.4, ease: [0.22, 1, 0.36, 1] }}
+      transition={
+        prefersReduced
+          ? { duration: 0 }
+          : { duration: 1, delay: 2.4, ease: EASE.outExpoLegacy }
+      }
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
           ? 'bg-[#050505]/90 backdrop-blur-xl border-b border-white/[0.06] py-3'
           : 'bg-transparent py-5'
       }`}
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-12 flex items-center justify-between">
         <a
@@ -37,7 +46,7 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
           <a
-            href="#pattern"
+            href="#mosaic"
             className="text-[10px] tracking-[0.25em] uppercase text-[#8a8078] hover:text-[#e8e0d4] transition-colors duration-500"
           >
             Framework
@@ -69,11 +78,13 @@ export default function Navbar() {
           Begin Pattern Index
         </a>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger — with aria-expanded */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
         >
           <span
             className={`block w-5 h-px bg-[#e8e0d4] transition-all duration-500 ${
@@ -88,21 +99,28 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — spring animation + aria */}
       <motion.div
+        id="mobile-menu"
         initial={false}
         animate={{
           height: mobileOpen ? 'auto' : 0,
           opacity: mobileOpen ? 1 : 0,
         }}
-        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        transition={
+          prefersReduced
+            ? { duration: 0 }
+            : { ...SPRING.stiff }
+        }
         className="md:hidden overflow-hidden bg-[#050505]/95 backdrop-blur-xl"
+        role="menu"
       >
         <div className="px-5 py-6 flex flex-col gap-5">
           <a
-            href="#pattern"
+            href="#mosaic"
             onClick={() => setMobileOpen(false)}
             className="text-xs tracking-[0.25em] uppercase text-[#8a8078] hover:text-[#e8e0d4] transition-colors"
+            role="menuitem"
           >
             Framework
           </a>
@@ -110,6 +128,7 @@ export default function Navbar() {
             href="#method"
             onClick={() => setMobileOpen(false)}
             className="text-xs tracking-[0.25em] uppercase text-[#8a8078] hover:text-[#e8e0d4] transition-colors"
+            role="menuitem"
           >
             Method
           </a>
@@ -117,6 +136,7 @@ export default function Navbar() {
             href="#services"
             onClick={() => setMobileOpen(false)}
             className="text-xs tracking-[0.25em] uppercase text-[#8a8078] hover:text-[#e8e0d4] transition-colors"
+            role="menuitem"
           >
             Services
           </a>
@@ -124,6 +144,7 @@ export default function Navbar() {
             href="#assessment"
             onClick={() => setMobileOpen(false)}
             className="inline-block px-5 py-3 text-[10px] tracking-[0.25em] uppercase border border-[#c9a96e]/40 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-500 text-center"
+            role="menuitem"
           >
             Begin Pattern Index
           </a>

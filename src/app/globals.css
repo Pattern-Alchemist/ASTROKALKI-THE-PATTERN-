@@ -107,6 +107,35 @@
   }
 }
 
+/* ─── Skip-to-content link (accessibility) ─── */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  padding: 0.75rem 1.5rem;
+  background: #c9a96e;
+  color: #050505;
+  font-family: var(--font-inter);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+/* ─── Focus-visible ring (accessibility) ─── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #c9a96e;
+  outline-offset: 2px;
+}
+
 /* Custom Luxury Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
@@ -165,4 +194,20 @@
 
 .animate-subtle-glow {
   animation: subtle-glow 3s ease-in-out infinite;
+}
+
+/* ─── Reduced Motion (accessibility) ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-gold-line,
+  .animate-subtle-glow,
+  .animate-pulse {
+    animation: none !important;
+  }
 }

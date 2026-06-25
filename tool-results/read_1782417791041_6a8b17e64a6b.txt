@@ -1,0 +1,1297 @@
+     1→import { useState, useEffect, FormEvent } from "react";
+     2→import { motion, AnimatePresence } from "motion/react";
+     3→import {
+     4→  Sparkles,
+     5→  ChevronRight,
+     6→  ArrowRight,
+     7→  CheckCircle2,
+     8→  Lock,
+     9→  X,
+    10→  Clock,
+    11→  Zap,
+    12→  Menu,
+    13→  Compass,
+    14→  Layers,
+    15→  Globe,
+    16→  Eye,
+    17→  Flame,
+    18→  Droplets,
+    19→  Wind,
+    20→  ShieldAlert,
+    21→  BookOpen,
+    22→  ArrowUpRight,
+    23→  FileText,
+    24→  User,
+    25→  Check,
+    26→  Play
+    27→} from "lucide-react";
+    28→import { PatternCard, FrameworkStep, ServiceCard, ArticleCard, DiagnosticReport } from "./types";
+    29→
+    30→// Static Data conforming strictly to the requested architecture
+    31→const PATTERNS: PatternCard[] = [
+    32→  {
+    33→    id: "heartbreak",
+    34→    title: "Repeating Heartbreak",
+    35→    description: "Choosing the same ghost in different bodies.",
+    36→    illustrationSeed: "vibrant",
+    37→    shadowTriggerExamples: [
+    38→      "To be seen and rejected",
+    39→      "To absorb others' projections and lose yourself",
+    40→      "To repeat parental dynamics of validation-seeking"
+    41→    ]
+    42→  },
+    43→  {
+    44→    id: "sabotage",
+    45→    title: "Self-Sabotage",
+    46→    description: "Your intellect cannot override your nervous system.",
+    47→    illustrationSeed: "abstract",
+    48→    shadowTriggerExamples: [
+    49→      "Fear of full exposure or the 'imposter' discovery",
+    50→      "Unconscious guilt of outgrowing family origins",
+    51→      "Recreating familiar chaos to avoid quiet expansion"
+    52→    ]
+    53→  },
+    54→  {
+    55→    id: "ceiling",
+    56→    title: "The Glass Ceiling",
+    57→    description: "Stagnation is a symptom of an invisible program.",
+    58→    illustrationSeed: "architecture",
+    59→    shadowTriggerExamples: [
+    60→      "Fear of absolute authority and responsibility",
+    61→      "Equating peak success with sudden desertion",
+    62→      "Stuck in the 'helper' role instead of sovereign rule"
+    63→    ]
+    64→  },
+    65→  {
+    66→    id: "mask",
+    67→    title: "The Mask",
+    68→    description: "Performing a version of yourself you no longer recognize.",
+    69→    illustrationSeed: "face",
+    70→    shadowTriggerExamples: [
+    71→      "Equating performance with safety",
+    72→      "Hiding professional vulnerability under hyper-competence",
+    73→      "Terrified of stagnant silence without external applause"
+    74→    ]
+    75→  }
+    76→];
+    77→
+    78→const METHOD_STEPS: FrameworkStep[] = [
+    79→  {
+    80→    step: "01",
+    81→    title: "Vedic Mapping",
+    82→    subtitle: "The Architecture of Tendency",
+    83→    description: "We chart your default elemental tendencies (Tejas, Apas, Vayu, Prithvi) and karmic gravity fields. We isolate your natural predispositions before life conditioned them."
+    84→  },
+    85→  {
+    86→    step: "02",
+    87→    title: "Depth Psychology",
+    88→    subtitle: "The Confrontation of Shadow",
+    89→    description: "Using rigorous Jungian clinical protocols, we extract the primary unconscious shadow triggers holding your behavioral patterns hostage under high-stakes pressure."
+    90→  },
+    91→  {
+    92→    step: "03",
+    93→    title: "Pattern Recognition",
+    94→    subtitle: "The Diagnosis of the Loop",
+    95→    description: "We overlay the Vedic blueprint with the Jungian shadow map. This isolates the precise mathematical trigger point where your intellect yields to your nervous system."
+    96→  },
+    97→  {
+    98→    step: "04",
+    99→    title: "Strategic Action",
+   100→    subtitle: "The Dharma Navigation",
+   101→    description: "We deploy rigorous behavioral strategies to override the loop. Not spiritual bypassing, but actionable dharma alignment that transforms resistance into raw, absolute leverage."
+   102→  }
+   103→];
+   104→
+   105→const SERVICES: ServiceCard[] = [
+   106→  {
+   107→    id: "snapshot",
+   108→    title: "PATTERN SNAPSHOT",
+   109→    price: "₹999",
+   110→    description: "A 45-minute tactical decode of your primary loop.",
+   111→    duration: "45 Minutes",
+   112→    bullets: [
+   113→      "Isolation of primary nervous-system trigger",
+   114→      "Vedic elemental profiling summary",
+   115→      "1 tactical step to override immediate stagnation"
+   116→    ]
+   117→  },
+   118→  {
+   119→    id: "deepdive",
+   120→    title: "THE DEEP DIVE",
+   121→    price: "₹4,999",
+   122→    description: "Complete psychological architecture and 12-month roadmap.",
+   123→    duration: "2-Hour Diagnostic + Document",
+   124→    bullets: [
+   125→      "Rigorous 120-minute shadow confrontation session",
+   126→      "Complete Vedic blueprint mapping document",
+   127→      "12-month personal behavioral override roadmap",
+   128→      "Bi-weekly alignment tracking framework"
+   129→    ],
+   130→    badge: "MOST REQUESTED"
+   131→  },
+   132→  {
+   133→    id: "dharma",
+   134→    title: "DHARMA NAVIGATION",
+   135→    price: "₹9,999",
+   136→    description: "Strategic pivot for career and purpose alignment.",
+   137→    duration: "2 Complete Sessions",
+   138→    bullets: [
+   139→      "Professional bottleneck diagnosis",
+   140→      "Vedic-Jungian sovereignty blueprint",
+   141→      "Authority expansion and career re-architecting",
+   142→      "Private audio brief with direct executive directives"
+   143→    ]
+   144→  },
+   145→  {
+   146→    id: "warrior",
+   147→    title: "THE WARRIOR’S JOURNEY",
+   148→    price: "Custom",
+   149→    description: "Bespoke 3-month shadow work integration.",
+   150→    duration: "3-Month Advisory",
+   151→    bullets: [
+   152→      "Weekly private clinical advisory with AstroKalki",
+   153→      "Unlimited secure asynchronous voice/text access",
+   154→      "Real-time strategic intervention in high-stakes crises",
+   155→      "Bespoke physical/somatic ritual design"
+   156→    ],
+   157→    badge: "BESPOKE S-TIER"
+   158→  }
+   159→];
+   160→
+   161→const ARTICLES: ArticleCard[] = [
+   162→  {
+   163→    id: "mother-wound",
+   164→    title: "The Mother Wound in the Chart",
+   165→    category: "Depth Vedic Psychology",
+   166→    excerpt: "How moon placements and early developmental holding environments establish the default nervous-system loop that misinterprets sacrifice for survival.",
+   167→    date: "June 14, 2026",
+   168→    readTime: "9 min read"
+   169→  },
+   170→  {
+   171→    id: "repeating-heartbreak",
+   172→    title: "Why We Choose the Same Heartbreak",
+   173→    category: "Shadow Archetypes",
+   174→    excerpt: "An investigation into our unconscious compulsion to recruit specific individuals to reenact unmet childhood needs, hoping for a different resolution.",
+   175→    date: "May 29, 2026",
+   176→    readTime: "12 min read"
+   177→  },
+   178→  {
+   179→    id: "spiritual-bypassing",
+   180→    title: "The Trap of Spiritual Bypassing",
+   181→    category: "High-Performance Critique",
+   182→    excerpt: "Why meditation, breathwork, and astrological placidity often act as elite defense mechanisms, allowing individuals to escape real material sovereignty.",
+   183→    date: "April 18, 2026",
+   184→    readTime: "7 min read"
+   185→  }
+   186→];
+   187→
+   188→// Content for full magazine articles (simulating high-authority essays)
+   189→const ARTICLE_CONTENTS: Record<string, string[]> = {
+   190→  "mother-wound": [
+   191→    "In high-performance consulting, we frequently witness individuals who can command global boards but crumble under the weight of domestic expectations or parental triggers. In traditional Vedic architecture, the Moon (Chandra) is not a floating symbol of romance; it is the somatic foundation of the early mind—specifically, the maternal holding environment.",
+   192→    "When the early maternal environment is characterized by conditional warmth, the infant's nervous system couples survival with performance. You learn that your existence is valuable only when you are resolving chaos or achieving. This establishes a lifelong pattern of hyper-independence.",
+   193→    "Under Jungian analysis, this manifests as the 'Good Child Shadow.' The individual grows up to be a highly competent leader, yet their private life is a wasteland of exhaustion. They recruit partners who are weak, chaotic, or emotionally unavailable, repeating the childhood template of earning love. To break this, we must dismantle the unconscious belief that stillness equates to death."
+   194→  ],
+   195→  "repeating-heartbreak": [
+   196→    "We do not fall in love; we fall in familiarity. The unconscious mind has no interest in happiness; its only objective is resolution. If you were raised by a critic, your nervous system will find gentle partners boring, misinterpreting calm as a lack of chemistry.",
+   197→    "You will instead feel an electric, magnetic pull toward someone who reflects that familiar childhood critic. You tell yourself they are 'different' because of their face or credentials. Yet, within months, the same loop emerges. You are back on your knees, begging for emotional scraps.",
+   198→    "This is the compulsion to repeat—what Freud called the Wiederholungszwang. Jung understood that until you make the unconscious conscious, it will direct your life and you will call it fate. AstroKalki E) maps this loop precisely to show you that your choice in partners is actually a secure algorithm designed to keep you emotionally starved but comfortable."
+   199→  ],
+   200→  "spiritual-bypassing": [
+   201→    "The modern self-care industrial complex is an elite anesthetic. We see executives traveling to ashrams, drinking plant medicines, or repeating affirmations while their core psychological dynamics remain completely untouched.",
+   202→    "This is 'Spiritual Bypassing'—the usage of mystical systems or placid philosophies to avoid the brutal, necessary work of psychological integration. It is far easier to blame a transit of Saturn or clear an aura than it is to admit you are terrified of absolute authority, or that your ambition is driven by a deep sense of unworthiness.",
+   203→    "At AstroKalki E), we utilize Vedic Mapping not as a tool of prediction, but as a map of gravity. We do not offer escape routes. True sovereignty requires a clean, sober confrontation with the shadow. Your nervous system must be re-trained to tolerate high-stakes peace rather than high-stakes chaos."
+   204→  ]
+   205→};
+   206→
+   207→export default function App() {
+   208→  // Navigation & State
+   209→  const [activeTab, setActiveTab] = useState<string>("home");
+   210→  const [assessmentOpen, setAssessmentOpen] = useState(false);
+   211→  const [activeMethodIndex, setActiveMethodIndex] = useState<number>(0);
+   212→  
+   213→  // Selected state for assessment pre-fill
+   214→  const [selectedPattern, setSelectedPattern] = useState<string>("");
+   215→  const [selectedElement, setSelectedElement] = useState<string>("Fire / Tejas");
+   216→  const [selectedShadow, setSelectedShadow] = useState<string>("To be seen and rejected");
+   217→  const [narrativeText, setNarrativeText] = useState<string>("");
+   218→  
+   219→  // Loading & Report states
+   220→  const [isDecoding, setIsDecoding] = useState(false);
+   221→  const [decodeStepText, setDecodeStepText] = useState("");
+   222→  const [diagnosticReport, setDiagnosticReport] = useState<DiagnosticReport | null>(null);
+   223→  
+   224→  // Magazine state
+   225→  const [selectedArticleId, setSelectedArticleId] = useState<string | null>(null);
+   226→  
+   227→  // Service Booking state
+   228→  const [bookingService, setBookingService] = useState<ServiceCard | null>(null);
+   229→  const [bookingForm, setBookingForm] = useState({ name: "", email: "", phone: "", notes: "" });
+   230→  const [bookingSuccess, setBookingSuccess] = useState(false);
+   231→
+   232→  // Trigger loading text cycle
+   233→  useEffect(() => {
+   234→    if (!isDecoding) return;
+   235→    const steps = [
+   236→      "DECODING THE ARCHITECTURE OF YOUR LOGIC...",
+   237→      "MAPPING KELD-GRAVITY FIELDS & TRANSITS...",
+   238→      "DESTRUCTURING UNCONSCIOUS JUNGIAN SHADOWS...",
+   239→      "CORRELATING VEDIC ARCHETYPES WITH NERVOUS SYSTEM REACTION..."
+   240→    ];
+   241→    let index = 0;
+   242→    setDecodeStepText(steps[0]);
+   243→    const interval = setInterval(() => {
+   244→      index++;
+   245→      if (index < steps.length) {
+   246→        setDecodeStepText(steps[index]);
+   247→      }
+   248→    }, 1500);
+   249→    return () => clearInterval(interval);
+   250→  }, [isDecoding]);
+   251→
+   252→  // Handle Assessment Launch with pre-selection
+   253→  const launchAssessment = (patternId?: string) => {
+   254→    if (patternId) {
+   255→      const match = PATTERNS.find(p => p.id === patternId);
+   256→      if (match) {
+   257→        setSelectedPattern(match.title);
+   258→        setSelectedShadow(match.shadowTriggerExamples[0]);
+   259→      }
+   260→    } else {
+   261→      setSelectedPattern(PATTERNS[0].title);
+   262→      setSelectedShadow(PATTERNS[0].shadowTriggerExamples[0]);
+   263→    }
+   264→    setDiagnosticReport(null);
+   265→    setAssessmentOpen(true);
+   266→  };
+   267→
+   268→  // Submit assessment request to server
+   269→  const submitAssessment = async (e: FormEvent) => {
+   270→    e.preventDefault();
+   271→    setIsDecoding(true);
+   272→    try {
+   273→      const response = await fetch("/api/analyze", {
+   274→        method: "POST",
+   275→        headers: { "Content-Type": "application/json" },
+   276→        body: JSON.stringify({
+   277→          pattern: selectedPattern,
+   278→          element: selectedElement,
+   279→          shadowTrigger: selectedShadow,
+   280→          context: narrativeText
+   281→        })
+   282→      });
+   283→      const data = await response.json();
+   284→      if (data.success && data.report) {
+   285→        setDiagnosticReport(data.report);
+   286→      } else {
+   287→        throw new Error(data.error || "Failed to decode loop.");
+   288→      }
+   289→    } catch (err: any) {
+   290→      alert(err.message || "Decoder engine failed. Ensure server is running and your GEMINI_API_KEY is configured.");
+   291→    } finally {
+   292→      setIsDecoding(false);
+   293→    }
+   294→  };
+   295→
+   296→  const handleBookingSubmit = (e: FormEvent) => {
+   297→    e.preventDefault();
+   298→    setBookingSuccess(true);
+   299→    setTimeout(() => {
+   300→      setBookingSuccess(false);
+   301→      setBookingService(null);
+   302→      setBookingForm({ name: "", email: "", phone: "", notes: "" });
+   303→    }, 3500);
+   304→  };
+   305→
+   306→  return (
+   307→    <div className="relative min-h-screen bg-[#050505] text-[#F5F3F0] font-sans antialiased overflow-x-hidden selection:bg-[#C9A96E]/30 selection:text-[#F5F3F0]">
+   308→      {/* Film Grain overlay */}
+   309→      <div className="film-grain" />
+   310→
+   311→      {/* Header */}
+   312→      <header className="sticky top-0 z-40 bg-[#050505]/90 backdrop-blur-md border-b border-[#C9A96E]/10">
+   313→        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+   314→          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setActiveTab("home")}>
+   315→            <span className="font-serif font-bold text-xl md:text-2xl tracking-[0.1em] text-[#C9A96E] glow-gold">
+   316→              ASTROKALKI E)
+   317→            </span>
+   318→            <div className="hidden sm:inline-block px-2.5 py-0.5 border border-[#C9A96E]/20 text-[9px] font-mono tracking-widest text-[#C9A96E] uppercase bg-[#C9A96E]/5 rounded">
+   319→              Authority Hub
+   320→            </div>
+   321→          </div>
+   322→
+   323→          <nav className="hidden md:flex items-center space-x-8 font-mono text-xs tracking-wider uppercase text-[#F5F3F0]/60">
+   324→            <a href="#mosaic" className="hover:text-[#C9A96E] transition">The Diagnosis</a>
+   325→            <a href="#method" className="hover:text-[#C9A96E] transition">The Method</a>
+   326→            <a href="#services" className="hover:text-[#C9A96E] transition">Services</a>
+   327→            <a href="#moat" className="hover:text-[#C9A96E] transition">Dangerous Knowledge</a>
+   328→          </nav>
+   329→
+   330→          <div className="flex items-center space-x-4">
+   331→            <button
+   332→              onClick={() => launchAssessment()}
+   333→              className="px-5 h-11 border border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E] hover:text-black transition text-xs tracking-widest font-mono uppercase bg-[#C9A96E]/5"
+   334→            >
+   335→              [BEGIN ANALYSIS]
+   336→            </button>
+   337→          </div>
+   338→        </div>
+   339→      </header>
+   340→
+   341→      {/* Hero Section */}
+   342→      <motion.section 
+   343→        initial={{ opacity: 0, y: 35 }}
+   344→        animate={{ opacity: 1, y: 0 }}
+   345→        transition={{ duration: 1, ease: "easeOut" }}
+   346→        className="relative min-h-[90vh] flex flex-col justify-end pb-16 md:pb-24 pt-20 px-6 overflow-hidden"
+   347→      >
+   348→        {/* Background Image of Eclipse/Shadow Figure with severe bottom-fade */}
+   349→        <div className="absolute inset-0 z-0">
+   350→          <img
+   351→            src="/src/assets/images/eclipse_shadow_figure_1782395781663.jpg"
+   352→            alt="Shadow Figure under solar eclipse, Dune aesthetic, warm gold dust"
+   353→            className="w-full h-full object-cover object-center opacity-40 brightness-75 scale-105 transition-transform duration-10000"
+   354→            referrerPolicy="no-referrer"
+   355→          />
+   356→          {/* Heavy bottom and top gradients */}
+   357→          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-[#050505]/80" />
+   358→          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" />
+   359→        </div>
+   360→
+   361→        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
+   362→          {/* Authority Badge floating */}
+   363→          <div className="inline-flex items-center space-x-2 bg-black/60 border border-[#C9A96E]/30 rounded-full px-5 py-2.5 backdrop-blur-md">
+   364→            <span className="w-2 h-2 bg-[#C9A96E] rounded-full animate-pulse" />
+   365→            <span className="font-mono text-[10px] md:text-xs tracking-widest text-[#C9A96E] font-medium uppercase">
+   366→              2,400+ PATTERNS DECODED | 97% ACCURACY RATE
+   367→            </span>
+   368→          </div>
+   369→
+   370→          <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-[#F5F3F0] leading-none text-balance">
+   371→            SAME PATTERN.<br />
+   372→            <span className="text-[#C9A96E] italic font-normal">DIFFERENT FACE.</span>
+   373→          </h1>
+   374→
+   375→          <p className="max-w-2xl mx-auto font-sans text-base md:text-lg text-[#F5F3F0]/80 leading-relaxed font-light">
+   376→            Vedic Intelligence meets Jungian Depth. We don't read stars; we decode the psychological DNA that keeps you in an unconscious cycle. Built for S-tier performers who demand absolute truth.
+   377→          </p>
+   378→
+   379→          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+   380→            <button
+   381→              onClick={() => launchAssessment()}
+   382→              className="w-full sm:w-auto px-10 h-16 bg-[#C9A96E] text-black hover:bg-[#C9A96E]/90 transition text-sm tracking-widest font-mono uppercase font-bold shadow-lg shadow-[#C9A96E]/10"
+   383→            >
+   384→              [BEGIN ANALYSIS]
+   385→            </button>
+   386→            <a
+   387→              href="#method"
+   388→              className="w-full sm:w-auto px-10 h-16 border border-[#F5F3F0]/30 hover:border-[#C9A96E] hover:text-[#C9A96E] transition text-sm tracking-widest font-mono uppercase flex items-center justify-center bg-black/40 backdrop-blur-sm"
+   389→            >
+   390→              [THE METHOD]
+   391→            </a>
+   392→          </div>
+   393→        </div>
+   394→      </motion.section>
+   395→
+   396→      {/* SECTION 2: THE PATTERN MOSAIC (THE DIAGNOSIS) */}
+   397→      <motion.section 
+   398→        id="mosaic" 
+   399→        initial={{ opacity: 0, y: 40 }}
+   400→        whileInView={{ opacity: 1, y: 0 }}
+   401→        viewport={{ once: true, margin: "-100px" }}
+   402→        transition={{ duration: 0.8, ease: "easeOut" }}
+   403→        className="py-24 px-6 max-w-7xl mx-auto border-t border-[#C9A96E]/10"
+   404→      >
+   405→        <div className="text-center space-y-4 mb-16">
+   406→          <span className="font-mono text-xs tracking-widest text-[#C9A96E]/70 uppercase">
+   407→            SECTION 02 // RECURRING SYSTEMS
+   408→          </span>
+   409→          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight">
+   410→            THE ARCHITECTURE OF YOUR LOGIC
+   411→          </h2>
+   412→          <p className="max-w-2xl mx-auto text-sm text-[#F5F3F0]/60 font-light">
+   413→            Every stagnation points to an invisible program operating beneath your nervous system. Locate your primary cycle. Click on a tile to initiate immediate, direct decoding.
+   414→          </p>
+   415→        </div>
+   416→
+   417→        {/* 2x2 Bento Grid */}
+   418→        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+   419→          {PATTERNS.map((pattern, index) => (
+   420→            <motion.div
+   421→              key={pattern.id}
+   422→              onClick={() => launchAssessment(pattern.id)}
+   423→              whileHover={{ y: -4 }}
+   424→              className="group cursor-pointer relative overflow-hidden bg-[#0a0a0a] border border-[#C9A96E]/15 hover:border-[#C9A96E]/50 p-8 md:p-10 transition-all duration-300 rounded-lg flex flex-col justify-between min-h-[300px] shadow-lg shadow-black/40"
+   425→              style={{
+   426→                boxShadow: "inset 0 0 40px rgba(201, 169, 110, 0.02)"
+   427→              }}
+   428→            >
+   429→              {/* Gold dust subtle light-leak decoration on hover */}
+   430→              <div className="absolute inset-0 bg-gradient-to-tr from-[#C9A96E]/0 via-[#C9A96E]/0 to-[#C9A96E]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+   431→
+   432→              <div className="space-y-6">
+   433→                <div className="flex items-center justify-between">
+   434→                  <span className="font-mono text-xs text-[#C9A96E] bg-[#C9A96E]/5 border border-[#C9A96E]/10 px-3 py-1 rounded">
+   435→                    0{index + 1} // LOOP TYPE
+   436→                  </span>
+   437→                  <div className="w-8 h-8 rounded-full bg-[#C9A96E]/5 border border-[#C9A96E]/10 flex items-center justify-center text-[#C9A96E] group-hover:bg-[#C9A96E] group-hover:text-black transition">
+   438→                    <ArrowUpRight className="w-4 h-4" />
+   439→                  </div>
+   440→                </div>
+   441→
+   442→                <h3 className="font-serif text-2xl md:text-3xl font-bold group-hover:text-[#C9A96E] transition">
+   443→                  {pattern.title}
+   444→                </h3>
+   445→                <p className="font-serif text-lg text-[#F5F3F0]/80 italic group-hover:text-[#F5F3F0] transition font-light">
+   446→                  "{pattern.description}"
+   447→                </p>
+   448→              </div>
+   449→
+   450→              <div className="mt-8 pt-6 border-t border-[#C9A96E]/10">
+   451→                <span className="font-mono text-[10px] text-[#C9A96E]/60 uppercase tracking-widest block mb-2">
+   452→                  Shadow manifestation triggers:
+   453→                </span>
+   454→                <ul className="space-y-1 text-xs text-[#F5F3F0]/50 font-light list-disc list-inside">
+   455→                  {pattern.shadowTriggerExamples.slice(0, 2).map((ex, i) => (
+   456→                    <li key={i}>{ex}</li>
+   457→                  ))}
+   458→                </ul>
+   459→              </div>
+   460→            </motion.div>
+   461→          ))}
+   462→        </div>
+   463→      </motion.section>
+   464→
+   465→      {/* SECTION 3: THE METHOD (THE PROPRIETARY SYSTEM) */}
+   466→      <motion.section 
+   467→        id="method" 
+   468→        initial={{ opacity: 0, y: 40 }}
+   469→        whileInView={{ opacity: 1, y: 0 }}
+   470→        viewport={{ once: true, margin: "-100px" }}
+   471→        transition={{ duration: 0.8, ease: "easeOut" }}
+   472→        className="py-24 bg-black/60 border-t border-b border-[#C9A96E]/10 overflow-hidden relative"
+   473→      >
+   474→        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/0 via-[#C9A96E]/2 to-[#050505]/0 pointer-events-none" />
+   475→        
+   476→        <div className="max-w-7xl mx-auto px-6">
+   477→          <div className="text-center space-y-4 mb-20">
+   478→            <span className="font-mono text-xs tracking-widest text-[#C9A96E]/70 uppercase">
+   479→              SECTION 03 // THE PROPRIETARY CORE
+   480→            </span>
+   481→            <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight">
+   482→              THE FOUR CORNERSTONES OF DECODING
+   483→            </h2>
+   484→            <p className="max-w-xl mx-auto text-sm text-[#F5F3F0]/60 font-light">
+   485→              We bridge the gap between ancient diagnostic science and depth psychological frameworks to construct a tactical bypass to your loop.
+   486→            </p>
+   487→          </div>
+   488→
+   489→          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+   490→            {/* The Golden Thread SVG/Animation Column */}
+   491→            <div className="lg:col-span-4 flex flex-col items-center justify-center relative min-h-[400px]">
+   492→              {/* Vertical SVG Golden Thread */}
+   493→              <div className="absolute top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#C9A96E]/10 via-[#C9A96E]/30 to-[#C9A96E]/10" />
+   494→              
+   495→              {/* Active flow highlighter line */}
+   496→              <motion.div
+   497→                className="absolute top-4 w-0.5 bg-[#C9A96E]"
+   498→                animate={{
+   499→                  top: `${(activeMethodIndex / (METHOD_STEPS.length - 1)) * 80}%`,
+   500→                  height: "80px"
+   501→                }}
+   502→                transition={{ type: "spring", stiffness: 80, damping: 15 }}
+   503→                style={{ boxShadow: "0 0 10px #C9A96E" }}
+   504→              />
+   505→
+   506→              <div className="flex flex-col justify-between h-full absolute inset-0 py-4">
+   507→                {METHOD_STEPS.map((step, idx) => (
+   508→                  <button
+   509→                    key={step.step}
+   510→                    onClick={() => setActiveMethodIndex(idx)}
+   511→                    className="flex items-center justify-center focus:outline-none group relative w-full z-10"
+   512→                  >
+   513→                    <div className="flex items-center space-x-6 bg-[#050505] py-2 px-4 rounded-full border border-transparent hover:border-[#C9A96E]/20 transition-all duration-300">
+   514→                      <span className={`font-mono text-xs tracking-widest font-bold ${activeMethodIndex === idx ? "text-[#C9A96E] scale-110" : "text-[#F5F3F0]/30"}`}>
+   515→                        {step.step}
+   516→                      </span>
+   517→                      <span className={`text-xs uppercase tracking-widest font-mono ${activeMethodIndex === idx ? "text-[#F5F3F0]" : "text-[#F5F3F0]/40 group-hover:text-[#F5F3F0]"}`}>
+   518→                        {step.title}
+   519→                      </span>
+   520→                    </div>
+   521→                  </button>
+   522→                ))}
+   523→              </div>
+   524→            </div>
+   525→
+   526→            {/* Active Content Panel */}
+   527→            <div className="lg:col-span-8 bg-[#0a0a0a]/80 border border-[#C9A96E]/10 p-8 md:p-12 rounded-lg relative min-h-[320px] flex flex-col justify-between">
+   528→              <AnimatePresence mode="wait">
+   529→                <motion.div
+   530→                  key={activeMethodIndex}
+   531→                  initial={{ opacity: 0, x: 20 }}
+   532→                  animate={{ opacity: 1, x: 0 }}
+   533→                  exit={{ opacity: 0, x: -20 }}
+   534→                  transition={{ duration: 0.3 }}
+   535→                  className="space-y-6"
+   536→                >
+   537→                  <div className="flex items-center justify-between">
+   538→                    <span className="font-mono text-sm font-bold text-[#C9A96E] tracking-widest">
+   539→                      PHASE {METHOD_STEPS[activeMethodIndex].step} // SYSTEM IMPLEMENTATION
+   540→                    </span>
+   541→                    <Sparkles className="w-5 h-5 text-[#C9A96E]" />
+   542→                  </div>
+   543→
+   544→                  <h3 className="font-serif text-3xl md:text-4xl font-bold">
+   545→                    {METHOD_STEPS[activeMethodIndex].title}
+   546→                  </h3>
+   547→                  <h4 className="font-sans text-xs uppercase tracking-widest text-[#C9A96E]/80 font-bold">
+   548→                    {METHOD_STEPS[activeMethodIndex].subtitle}
+   549→                  </h4>
+   550→                  <p className="font-sans text-base text-[#F5F3F0]/70 leading-relaxed font-light">
+   551→                    {METHOD_STEPS[activeMethodIndex].description}
+   552→                  </p>
+   553→                </motion.div>
+   554→              </AnimatePresence>
+   555→
+   556→              <div className="flex items-center space-x-4 mt-8 pt-8 border-t border-[#C9A96E]/10 font-mono text-[10px] tracking-widest text-[#F5F3F0]/40">
+   557→                <span>ASTROKALKI PROTOCOL // AUTHORITY APPROVED</span>
+   558→                <span>•</span>
+   559→                <span>METHODOLOGY SECURED</span>
+   560→              </div>
+   561→            </div>
+   562→          </div>
+   563→        </div>
+   564→      </motion.section>
+   565→
+   566→      {/* SECTION 4: THE SERVICES (THE LUXURY MARKETPLACE) */}
+   567→      <motion.section 
+   568→        id="services" 
+   569→        initial={{ opacity: 0, y: 40 }}
+   570→        whileInView={{ opacity: 1, y: 0 }}
+   571→        viewport={{ once: true, margin: "-100px" }}
+   572→        transition={{ duration: 0.8, ease: "easeOut" }}
+   573→        className="py-24 px-6 max-w-7xl mx-auto"
+   574→      >
+   575→        <div className="text-center space-y-4 mb-20">
+   576→          <span className="font-mono text-xs tracking-widest text-[#C9A96E]/70 uppercase">
+   577→            SECTION 04 // PREMIUM INTELLIGENCE ADVISORY
+   578→          </span>
+   579→          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight">
+   580→            THE LUXURY SERVICE DIRECTORY
+   581→          </h2>
+   582→          <p className="max-w-2xl mx-auto text-sm text-[#F5F3F0]/60 font-light">
+   583→            We operate at high authority. No free discovery calls. Select the precise tier of behavioral auditing and roadmap construction your sovereignty requires.
+   584→          </p>
+   585→        </div>
+   586→
+   587→        {/* 2x2 Grid (Desktop) / 1-Column Stack (Mobile) */}
+   588→        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+   589→          {SERVICES.map((service) => (
+   590→            <div
+   591→              key={service.id}
+   592→              className="relative bg-[#050505] border border-[#C9A96E]/20 hover:border-[#C9A96E]/60 p-8 md:p-10 flex flex-col justify-between rounded-lg transition-all duration-300 shadow-xl group"
+   593→              style={{
+   594→                boxShadow: "inset 0 0 30px rgba(201, 169, 110, 0.01)"
+   595→              }}
+   596→            >
+   597→              {service.badge && (
+   598→                <div className="absolute -top-3 right-6 bg-[#C9A96E] text-black font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1 rounded">
+   599→                  {service.badge}
+   600→                </div>
+   601→              )}
+   602→
+   603→              <div className="space-y-6">
+   604→                <div className="flex justify-between items-start border-b border-[#C9A96E]/10 pb-6">
+   605→                  <div>
+   606→                    <h3 className="font-serif text-2xl md:text-3xl font-bold tracking-tight uppercase">
+   607→                      {service.title}
+   608→                    </h3>
+   609→                    <p className="font-mono text-[10px] text-[#C9A96E]/80 uppercase tracking-wider mt-1.5 flex items-center">
+   610→                      <Clock className="w-3.5 h-3.5 mr-1.5 inline text-[#C9A96E]" /> {service.duration}
+   611→                    </p>
+   612→                  </div>
+   613→                  <div className="text-right">
+   614→                    <span className="font-serif text-3xl md:text-4xl font-bold text-[#C9A96E] block tracking-tight">
+   615→                      {service.price}
+   616→                    </span>
+   617→                    <span className="font-mono text-[9px] text-[#F5F3F0]/40 uppercase tracking-widest block mt-1">
+   618→                      FIXED HONEST FEE
+   619→                    </span>
+   620→                  </div>
+   621→                </div>
+   622→
+   623→                <p className="font-sans text-sm text-[#F5F3F0]/70 leading-relaxed font-light italic">
+   624→                  "{service.description}"
+   625→                </p>
+   626→
+   627→                <div className="space-y-3 pt-4">
+   628→                  <span className="font-mono text-[10px] text-[#C9A96E]/60 uppercase tracking-widest block">
+   629→                    DELIVERABLES INCLUDED:
+   630→                  </span>
+   631→                  <ul className="space-y-2.5 text-xs text-[#F5F3F0]/70 font-light">
+   632→                    {service.bullets.map((bullet, idx) => (
+   633→                      <li key={idx} className="flex items-start">
+   634→                        <Check className="w-3.5 h-3.5 text-[#C9A96E] mr-2.5 mt-0.5 shrink-0" />
+   635→                        <span>{bullet}</span>
+   636→                      </li>
+   637→                    ))}
+   638→                  </ul>
+   639→                </div>
+   640→              </div>
+   641→
+   642→              <div className="mt-10 pt-6 border-t border-[#C9A96E]/10">
+   643→                <button
+   644→                  onClick={() => {
+   645→                    setBookingService(service);
+   646→                    setBookingSuccess(false);
+   647→                  }}
+   648→                  className="w-full h-[60px] bg-transparent border border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E] hover:text-black transition text-xs tracking-widest font-mono uppercase font-bold"
+   649→                >
+   650→                  SECURE THIS ENGAGEMENT
+   651→                </button>
+   652→              </div>
+   653→            </div>
+   654→          ))}
+   655→        </div>
+   656→      </motion.section>
+   657→
+   658→      {/* SECTION 5: THE FEATURE (THE WARRIOR'S JOURNEY) */}
+   659→      <motion.section 
+   660→        initial={{ opacity: 0, y: 40 }}
+   661→        whileInView={{ opacity: 1, y: 0 }}
+   662→        viewport={{ once: true, margin: "-100px" }}
+   663→        transition={{ duration: 0.8, ease: "easeOut" }}
+   664→        className="relative min-h-[75vh] flex items-center px-6 md:px-12 py-24 overflow-hidden border-t border-b border-[#C9A96E]/10"
+   665→      >
+   666→        <div className="absolute inset-0 z-0">
+   667→          <img
+   668→            src="/src/assets/images/warrior_desert_sun_1782395800524.jpg"
+   669→            alt="Warrior standing in the blinding desert sun, majestic and austere Dune aesthetic"
+   670→            className="w-full h-full object-cover object-center opacity-30 brightness-50"
+   671→            referrerPolicy="no-referrer"
+   672→          />
+   673→          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent" />
+   674→          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]" />
+   675→        </div>
+   676→
+   677→        <div className="max-w-4xl mx-auto relative z-10 w-full">
+   678→          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+   679→            <div className="lg:col-span-8 space-y-6">
+   680→              <span className="font-mono text-xs tracking-widest text-[#C9A96E] uppercase block">
+   681→                THE S-TIER FOCUS // CONFRONTING TRUTH
+   682→              </span>
+   683→              <h2 className="font-serif text-4xl md:text-6xl font-bold tracking-tight text-white uppercase leading-tight">
+   684→                THIS IS NOT <br />
+   685→                SPIRITUAL COACHING.
+   686→              </h2>
+   687→              <div className="w-20 h-0.5 bg-[#C9A96E]" />
+   688→              <p className="font-sans text-base md:text-lg text-[#F5F3F0]/80 font-light leading-relaxed">
+   689→                This is a rigorous, demanding confrontation with absolute truth. It is designed solely for those who have exhausted superficial coaching templates, meditation apps, and self-help scripts. We operate at deep levels of the mind to restore material sovereignty.
+   690→              </p>
+   691→              <div className="pt-4">
+   692→                <button
+   693→                  onClick={() => launchAssessment()}
+   694→                  className="px-8 h-16 bg-[#C9A96E] text-black hover:bg-[#C9A96E]/90 transition text-xs tracking-widest font-mono uppercase font-bold"
+   695→                >
+   696→                  [BEGIN ASSESSMENT DISPATCH]
+   697→                </button>
+   698→              </div>
+   699→            </div>
+   700→
+   701→            <div className="lg:col-span-4 bg-black/80 border border-[#C9A96E]/20 p-6 rounded-lg backdrop-blur-md">
+   702→              <span className="font-mono text-[10px] text-[#C9A96E] tracking-widest uppercase block mb-3">
+   703→                // PLATFORM AUDIT REQUIREMENT
+   704→              </span>
+   705→              <p className="font-mono text-xs text-[#F5F3F0]/60 leading-relaxed">
+   706→                "Until you make the unconscious conscious, it will direct your life and you will call it fate."
+   707→              </p>
+   708→              <span className="font-mono text-[9px] text-[#C9A96E]/80 tracking-widest uppercase block mt-4 text-right">
+   709→                — C.G. JUNG, PSYCHOLOGICAL ANALECTS
+   710→              </span>
+   711→            </div>
+   712→          </div>
+   713→        </div>
+   714→      </motion.section>
+   715→
+   716→      {/* SECTION 6: DANGEROUS KNOWLEDGE (THE INTELLECTUAL MOAT) */}
+   717→      <motion.section 
+   718→        id="moat" 
+   719→        initial={{ opacity: 0, y: 40 }}
+   720→        whileInView={{ opacity: 1, y: 0 }}
+   721→        viewport={{ once: true, margin: "-100px" }}
+   722→        transition={{ duration: 0.8, ease: "easeOut" }}
+   723→        className="py-24 px-6 max-w-7xl mx-auto"
+   724→      >
+   725→        <div className="text-center space-y-4 mb-20">
+   726→          <span className="font-mono text-xs tracking-widest text-[#C9A96E]/70 uppercase">
+   727→            SECTION 06 // INTELLECTUAL MOAT
+   728→          </span>
+   729→          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight uppercase">
+   730→            DANGEROUS KNOWLEDGE
+   731→          </h2>
+   732→          <p className="max-w-2xl mx-auto text-sm text-[#F5F3F0]/60 font-light">
+   733→            Text-heavy, clinical, and uncompromising essays mapping early psychological injury to structural failure. This is our consultant blueprint.
+   734→          </p>
+   735→        </div>
+   736→
+   737→        {/* Magazine-style blog layout */}
+   738→        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+   739→          {ARTICLES.map((article) => (
+   740→            <article
+   741→              key={article.id}
+   742→              onClick={() => setSelectedArticleId(article.id)}
+   743→              className="bg-[#050505] border border-[#C9A96E]/10 hover:border-[#C9A96E]/40 p-8 rounded-lg cursor-pointer transition-all duration-300 group flex flex-col justify-between min-h-[380px]"
+   744→            >
+   745→              <div className="space-y-6">
+   746→                <div className="flex justify-between items-center text-[10px] font-mono tracking-widest uppercase text-[#C9A96E]">
+   747→                  <span>{article.category}</span>
+   748→                  <span>•</span>
+   749→                  <span>{article.readTime}</span>
+   750→                </div>
+   751→
+   752→                <h3 className="font-serif text-2xl font-bold text-white group-hover:text-[#C9A96E] transition leading-tight">
+   753→                  {article.title}
+   754→                </h3>
+   755→
+   756→                <p className="font-sans text-sm text-[#F5F3F0]/60 line-clamp-4 font-light leading-relaxed">
+   757→                  {article.excerpt}
+   758→                </p>
+   759→              </div>
+   760→
+   761→              <div className="mt-8 pt-6 border-t border-[#C9A96E]/10 flex items-center justify-between font-mono text-xs text-[#C9A96E] group-hover:translate-x-1 transition-transform">
+   762→                <span>[READ ESSAY]</span>
+   763→                <ArrowRight className="w-4 h-4" />
+   764→              </div>
+   765→            </article>
+   766→          ))}
+   767→        </div>
+   768→      </motion.section>
+   769→
+   770→      {/* Footer */}
+   771→      <footer className="border-t border-[#C9A96E]/10 bg-black py-16 px-6">
+   772→        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+   773→          <div className="md:col-span-5 space-y-4">
+   774→            <span className="font-serif text-xl tracking-[0.1em] text-[#C9A96E] font-bold block uppercase">
+   775→              ASTROKALKI E)
+   776→            </span>
+   777→            <p className="text-xs text-[#F5F3F0]/40 font-light leading-relaxed max-w-sm">
+   778→              An elite, high-authority Psychological Intelligence Hub blending ancient diagnostic science with contemporary clinical shadow work. Uncompromising truth for sovereign performers.
+   779→            </p>
+   780→          </div>
+   781→
+   782→          <div className="md:col-span-4 space-y-4">
+   783→            <span className="font-mono text-xs tracking-widest text-[#C9A96E] uppercase block">
+   784→              // METHOD CREDENTIALS
+   785→            </span>
+   786→            <ul className="space-y-2 text-xs text-[#F5F3F0]/50 font-light">
+   787→              <li>Vedic Kundli Blueprinting Protocols</li>
+   788→              <li>Jungian Archetypal Destructuring</li>
+   789→              <li>Somatic Nervous-System Overwrite Action</li>
+   790→              <li>Absolute Sovereignty Strategy</li>
+   791→            </ul>
+   792→          </div>
+   793→
+   794→          <div className="md:col-span-3 space-y-4">
+   795→            <span className="font-mono text-xs tracking-widest text-[#C9A96E] uppercase block">
+   796→              // PLATFORM STATEMENT
+   797→            </span>
+   798→            <div className="bg-[#050505] border border-[#C9A96E]/20 p-4 rounded text-[10px] font-mono text-[#F5F3F0]/60 leading-relaxed">
+   799→              All intelligence dispatches are compiled in deep compliance. We protect high-net-worth client identity completely. No cookies or databases are sold to advertising pools.
+   800→            </div>
+   801→          </div>
+   802→        </div>
+   803→
+   804→        <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-[#C9A96E]/10 flex flex-col md:flex-row items-center justify-between text-[10px] font-mono text-[#F5F3F0]/30 tracking-widest uppercase">
+   805→          <span>© 2026 ASTROKALKI E). ALL RIGHTS SECURED.</span>
+   806→          <span className="mt-4 md:mt-0">DESIGNED BY COGNITIVE INTELLIGENCE GUILD</span>
+   807→        </div>
+   808→      </footer>
+   809→
+   810→      {/* PERSISTENT FLOATING CTA FOR MOBILE */}
+   811→      <div className="fixed bottom-6 right-6 z-30 md:hidden">
+   812→        <button
+   813→          onClick={() => launchAssessment()}
+   814→          className="h-14 px-6 bg-[#C9A96E] text-black font-mono text-xs font-bold uppercase tracking-widest rounded-full shadow-2xl flex items-center space-x-2 animate-bounce"
+   815→        >
+   816→          <Play className="w-3.5 h-3.5 fill-black" />
+   817→          <span>DECODE NOW</span>
+   818→        </button>
+   819→      </div>
+   820→
+   821→      {/* DANGEROUS KNOWLEDGE READER MODAL */}
+   822→      <AnimatePresence>
+   823→        {selectedArticleId && (
+   824→          <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
+   825→            {/* Backdrop */}
+   826→            <motion.div
+   827→              initial={{ opacity: 0 }}
+   828→              animate={{ opacity: 1 }}
+   829→              exit={{ opacity: 0 }}
+   830→              onClick={() => setSelectedArticleId(null)}
+   831→              className="fixed inset-0 bg-black/90 backdrop-blur-sm"
+   832→            />
+   833→
+   834→            {/* Modal Body */}
+   835→            <motion.div
+   836→              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+   837→              animate={{ opacity: 1, scale: 1, y: 0 }}
+   838→              exit={{ opacity: 0, scale: 0.95, y: 30 }}
+   839→              className="relative w-full max-w-3xl bg-[#050505] border border-[#C9A96E]/30 p-8 md:p-12 rounded-lg z-10 max-h-[85vh] overflow-y-auto"
+   840→            >
+   841→              <button
+   842→                onClick={() => setSelectedArticleId(null)}
+   843→                className="absolute top-6 right-6 text-[#F5F3F0]/60 hover:text-white transition"
+   844→              >
+   845→                <X className="w-6 h-6" />
+   846→              </button>
+   847→
+   848→              {(() => {
+   849→                const article = ARTICLES.find(a => a.id === selectedArticleId);
+   850→                if (!article) return null;
+   851→                const paragraphs = ARTICLE_CONTENTS[article.id] || [];
+   852→                return (
+   853→                  <div className="space-y-8">
+   854→                    <div className="space-y-4">
+   855→                      <div className="flex items-center space-x-3 font-mono text-xs text-[#C9A96E] uppercase">
+   856→                        <span>{article.category}</span>
+   857→                        <span>•</span>
+   858→                        <span>{article.readTime}</span>
+   859→                      </div>
+   860→                      <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+   861→                        {article.title}
+   862→                      </h2>
+   863→                      <div className="font-mono text-[10px] text-[#F5F3F0]/40">
+   864→                        PUBLISHED // {article.date} BY ASTROKALKI E) ADVISORY
+   865→                      </div>
+   866→                      <div className="w-full h-px bg-[#C9A96E]/20 pt-2" />
+   867→                    </div>
+   868→
+   869→                    <div className="font-serif text-base md:text-lg text-[#F5F3F0]/80 leading-relaxed space-y-6">
+   870→                      {paragraphs.map((p, i) => (
+   871→                        <p key={i}>{p}</p>
+   872→                      ))}
+   873→                    </div>
+   874→
+   875→                    <div className="border border-[#C9A96E]/20 bg-[#C9A96E]/5 p-6 rounded flex flex-col md:flex-row items-center justify-between gap-4">
+   876→                      <div>
+   877→                        <span className="font-mono text-xs text-[#C9A96E] tracking-widest uppercase block font-bold">
+   878→                          RESONATING WITH THIS INQUIRY?
+   879→                        </span>
+   880→                        <p className="text-xs text-[#F5F3F0]/60 font-light mt-1">
+   881→                          Our algorithms can locate and extract your primary loop pattern.
+   882→                        </p>
+   883→                      </div>
+   884→                      <button
+   885→                        onClick={() => {
+   886→                          setSelectedArticleId(null);
+   887→                          launchAssessment();
+   888→                        }}
+   889→                        className="px-6 h-12 bg-[#C9A96E] text-black font-mono text-xs uppercase font-bold shrink-0 hover:bg-[#C9A96E]/90 transition"
+   890→                      >
+   891→                        [BEGIN CORE RECOGNITION]
+   892→                      </button>
+   893→                    </div>
+   894→                  </div>
+   895→                );
+   896→              })()}
+   897→            </motion.div>
+   898→          </div>
+   899→        )}
+   900→      </AnimatePresence>
+   901→
+   902→      {/* INTERACTIVE ASSESSMENT DECODER MODAL */}
+   903→      <AnimatePresence>
+   904→        {assessmentOpen && (
+   905→          <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
+   906→            {/* Backdrop */}
+   907→            <motion.div
+   908→              initial={{ opacity: 0 }}
+   909→              animate={{ opacity: 1 }}
+   910→              exit={{ opacity: 0 }}
+   911→              onClick={() => {
+   912→                if (!isDecoding) setAssessmentOpen(false);
+   913→              }}
+   914→              className="fixed inset-0 bg-black/95 backdrop-blur-md"
+   915→            />
+   916→
+   917→            {/* Modal Body */}
+   918→            <motion.div
+   919→              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+   920→              animate={{ opacity: 1, scale: 1, y: 0 }}
+   921→              exit={{ opacity: 0, scale: 0.95, y: 30 }}
+   922→              className="relative w-full max-w-4xl bg-[#050505] border border-[#C9A96E]/40 rounded-lg z-10 overflow-hidden"
+   923→              style={{
+   924→                boxShadow: "0 0 50px rgba(201, 169, 110, 0.15)"
+   925→              }}
+   926→            >
+   927→              {/* Header inside modal */}
+   928→              <div className="bg-[#0a0a0a] border-b border-[#C9A96E]/15 px-8 py-5 flex items-center justify-between">
+   929→                <div className="flex items-center space-x-2">
+   930→                  <span className="w-2.5 h-2.5 bg-[#C9A96E] rounded-full animate-pulse" />
+   931→                  <span className="font-mono text-xs tracking-widest text-[#C9A96E] font-bold uppercase">
+   932→                    ASTROKALKI E) // LOOP RECOGNITION MATRIX
+   933→                  </span>
+   934→                </div>
+   935→                {!isDecoding && (
+   936→                  <button
+   937→                    onClick={() => setAssessmentOpen(false)}
+   938→                    className="text-[#F5F3F0]/60 hover:text-white transition"
+   939→                  >
+   940→                    <X className="w-5 h-5" />
+   941→                  </button>
+   942→                )}
+   943→              </div>
+   944→
+   945→              <div className="p-6 md:p-10 max-h-[75vh] overflow-y-auto">
+   946→                {isDecoding ? (
+   947→                  /* Loading Matrix State */
+   948→                  <div className="flex flex-col items-center justify-center py-16 space-y-8 text-center">
+   949→                    <div className="relative w-20 h-20">
+   950→                      <div className="absolute inset-0 rounded-full border-2 border-[#C9A96E]/10" />
+   951→                      <div className="absolute inset-0 rounded-full border-2 border-t-[#C9A96E] animate-spin" />
+   952→                    </div>
+   953→                    <div className="space-y-4">
+   954→                      <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#C9A96E] animate-pulse">
+   955→                        {decodeStepText}
+   956→                      </h3>
+   957→                      <p className="font-serif text-sm italic text-[#F5F3F0]/40 max-w-md">
+   958→                        Please hold your posture. AstroKalki AI is generating clinical, structural Vedic mapping parameters combined with psychological shadow vectors.
+   959→                      </p>
+   960→                    </div>
+   961→                  </div>
+   962→                ) : diagnosticReport ? (
+   963→                  /* Diagnostic Report Presentation State */
+   964→                  <div className="space-y-8">
+   965→                    <div className="bg-[#0a0a0a] border border-[#C9A96E]/20 p-8 rounded-lg relative overflow-hidden space-y-6">
+   966→                      <div className="absolute top-0 right-0 p-4 font-mono text-[9px] text-[#C9A96E]/40 uppercase tracking-widest border-l border-b border-[#C9A96E]/10 rounded-bl bg-black">
+   967→                        SECURE REPORT #AK-{Math.floor(Math.random() * 90000) + 10000}
+   968→                      </div>
+   969→
+   970→                      <div className="space-y-2">
+   971→                        <span className="font-mono text-xs text-[#C9A96E] tracking-widest uppercase block font-bold">
+   972→                          // DECODED LECTURE OUTCOME
+   973→                        </span>
+   974→                        <h3 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-white uppercase">
+   975→                          {diagnosticReport.diagnosis}
+   976→                        </h3>
+   977→                      </div>
+   978→
+   979→                      <div className="border-t border-b border-[#C9A96E]/10 py-5">
+   980→                        <span className="font-mono text-[10px] text-[#C9A96E]/80 tracking-widest uppercase block mb-2">
+   981→                          KARMIC COMPULSION COGNITIVE APHORISM:
+   982→                        </span>
+   983→                        <p className="font-serif text-lg md:text-xl italic text-[#F5F3F0] font-light">
+   984→                          "{diagnosticReport.karmicCore}"
+   985→                        </p>
+   986→                      </div>
+   987→
+   988→                      <div className="space-y-2">
+   989→                        <span className="font-mono text-[10px] text-[#C9A96E]/80 tracking-widest uppercase block">
+   990→                          CLINICAL PSYCHE MECHANISM ANALYSIS:
+   991→                        </span>
+   992→                        <p className="font-sans text-sm text-[#F5F3F0]/80 leading-relaxed font-light">
+   993→                          {diagnosticReport.mechanism}
+   994→                        </p>
+   995→                      </div>
+   996→
+   997→                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+   998→                        <div className="space-y-3">
+   999→                          <span className="font-mono text-[10px] text-[#C9A96E] tracking-widest uppercase block font-bold">
+  1000→                            // ENVIRONMENTAL MIRRORS (THE BEHAVIOR):
+  1001→                          </span>
+  1002→                          <ul className="space-y-2 text-xs text-[#F5F3F0]/70 font-light">
+  1003→                            {diagnosticReport.mirror.map((item, idx) => (
+  1004→                              <li key={idx} className="flex items-start">
+  1005→                                <ShieldAlert className="w-4 h-4 text-[#C9A96E] mr-2 shrink-0 mt-0.5" />
+  1006→                                <span>{item}</span>
+  1007→                              </li>
+  1008→                            ))}
+  1009→                          </ul>
+  1010→                        </div>
+  1011→
+  1012→                        <div className="space-y-3">
+  1013→                          <span className="font-mono text-[10px] text-[#C9A96E] tracking-widest uppercase block font-bold">
+  1014→                            // OVERRIDE METHODOLOGY (THE DHARMA STEPS):
+  1015→                          </span>
+  1016→                          <ul className="space-y-2 text-xs text-[#F5F3F0]/70 font-light">
+  1017→                            {diagnosticReport.dharmaPath.map((item, idx) => (
+  1018→                              <li key={idx} className="flex items-start">
+  1019→                                <Check className="w-4 h-4 text-[#C9A96E] mr-2 shrink-0 mt-0.5" />
+  1020→                                <span>{item}</span>
+  1021→                              </li>
+  1022→                            ))}
+  1023→                          </ul>
+  1024→                        </div>
+  1025→                      </div>
+  1026→                    </div>
+  1027→
+  1028→                    {/* Integrated Service Advisory pitch */}
+  1029→                    <div className="border border-[#C9A96E]/30 bg-black/80 p-8 rounded-lg grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+  1030→                      <div className="md:col-span-8 space-y-4">
+  1031→                        <div className="inline-block bg-[#C9A96E]/10 border border-[#C9A96E]/30 px-3 py-1 rounded text-xs font-mono text-[#C9A96E] uppercase">
+  1032→                          RECOMMENDED ACTION METHOD: {diagnosticReport.recommendedService.name}
+  1033→                        </div>
+  1034→                        <h4 className="font-serif text-2xl font-bold text-white">
+  1035→                          Sovereignty requires rigorous manual integration.
+  1036→                        </h4>
+  1037→                        <p className="font-sans text-xs text-[#F5F3F0]/60 leading-relaxed font-light">
+  1038→                          <span className="font-bold text-[#C9A96E]">Why this works:</span> {diagnosticReport.recommendedService.fitReason}
+  1039→                        </p>
+  1040→                      </div>
+  1041→                      <div className="md:col-span-4 w-full">
+  1042→                        <button
+  1043→                          onClick={() => {
+  1044→                            const matchedService = SERVICES.find(
+  1045→                              s => s.title.toUpperCase() === diagnosticReport.recommendedService.name.toUpperCase()
+  1046→                            ) || SERVICES[1]; // fallback to Deep Dive
+  1047→                            setBookingService(matchedService);
+  1048→                            setBookingSuccess(false);
+  1049→                          }}
+  1050→                          className="w-full h-14 bg-[#C9A96E] text-black font-mono text-xs uppercase tracking-widest font-bold hover:bg-[#C9A96E]/90 transition"
+  1051→                        >
+  1052→                          APPLY FOR {diagnosticReport.recommendedService.name}
+  1053→                        </button>
+  1054→                      </div>
+  1055→                    </div>
+  1056→
+  1057→                    <div className="flex justify-between items-center pt-4">
+  1058→                      <button
+  1059→                        onClick={() => setDiagnosticReport(null)}
+  1060→                        className="text-xs font-mono text-[#C9A96E] hover:underline"
+  1061→                      >
+  1062→                        ← DECODE ANOTHER TEMPLATE
+  1063→                      </button>
+  1064→                      <button
+  1065→                        onClick={() => setAssessmentOpen(false)}
+  1066→                        className="text-xs font-mono text-[#F5F3F0]/50 hover:text-white"
+  1067→                      >
+  1068→                        CLOSE AUDIT DIALOG
+  1069→                      </button>
+  1070→                    </div>
+  1071→                  </div>
+  1072→                ) : (
+  1073→                  /* Questionnaire Input State */
+  1074→                  <form onSubmit={submitAssessment} className="space-y-6">
+  1075→                    <div className="space-y-2">
+  1076→                      <span className="font-mono text-[10px] text-[#C9A96E] tracking-widest uppercase block font-bold">
+  1077→                        STEP 01 // CHOOSE YOUR CORNERSTONE CYCLE
+  1078→                      </span>
+  1079→                      <div className="grid grid-cols-2 gap-3">
+  1080→                        {PATTERNS.map((pattern) => (
+  1081→                          <button
+  1082→                            type="button"
+  1083→                            key={pattern.id}
+  1084→                            onClick={() => {
+  1085→                              setSelectedPattern(pattern.title);
+  1086→                              setSelectedShadow(pattern.shadowTriggerExamples[0]);
+  1087→                            }}
+  1088→                            className={`p-4 border text-left rounded transition-all duration-300 ${
+  1089→                              selectedPattern === pattern.title
+  1090→                                ? "bg-[#C9A96E]/10 border-[#C9A96E] text-white"
+  1091→                                : "bg-black border-[#C9A96E]/10 text-[#F5F3F0]/50 hover:border-[#C9A96E]/35"
+  1092→                            }`}
+  1093→                          >
+  1094→                            <h4 className="font-serif text-sm font-bold block">{pattern.title}</h4>
+  1095→                            <p className="text-[10px] italic font-light truncate mt-1">"{pattern.description}"</p>
+  1096→                          </button>
+  1097→                        ))}
+  1098→                      </div>
+  1099→                    </div>
+  1100→
+  1101→                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  1102→                      <div className="space-y-2">
+  1103→                        <span className="font-mono text-[10px] text-[#C9A96E] tracking-widest uppercase block font-bold">
+  1104→                          STEP 02 // CHOOSE VEDIC ELEMENTAL ARCHETYPE
+  1105→                        </span>
+  1106→                        <select
+  1107→                          value={selectedElement}
+  1108→                          onChange={(e) => setSelectedElement(e.target.value)}
+  1109→                          className="w-full h-12 bg-black border border-[#C9A96E]/20 text-white font-mono text-xs px-4 focus:border-[#C9A96E] focus:outline-none rounded"
+  1110→                        >
+  1111→                          <option value="Fire / Tejas">Fire / Tejas (Dynamic, high ambition, burning out under high pressure)</option>
+  1112→                          <option value="Water / Apas">Water / Apas (Deeply intuitive, absorbing others' projections, boundary leaks)</option>
+  1113→                          <option value="Air / Vayu">Air / Vayu (Intellectual, relentless overthinking, constantly shifting direction)</option>
+  1114→                          <option value="Earth / Prithvi">Earth / Prithvi (Stable, but prone to profound change resistance, stagnation loops)</option>
+  1115→                        </select>
+  1116→                      </div>
+  1117→
+  1118→                      <div className="space-y-2">
+  1119→                        <span className="font-mono text-[10px] text-[#C9A96E] tracking-widest uppercase block font-bold">
+  1120→                          STEP 03 // UNDER PRESSURE, WHAT TRIGGERS COGNITIVE SHADOW?
+  1121→                        </span>
+  1122→                        <select
+  1123→                          value={selectedShadow}
+  1124→                          onChange={(e) => setSelectedShadow(e.target.value)}
+  1125→                          className="w-full h-12 bg-black border border-[#C9A96E]/20 text-white font-mono text-xs px-4 focus:border-[#C9A96E] focus:outline-none rounded"
+  1126→                        >
+  1127→                          <option value="To be seen and rejected">"To be seen and rejected"</option>
+  1128→                          <option value="To be weak and dependent">"To be weak and dependent"</option>
+  1129→                          <option value="To fail in public view">"To fail in public view"</option>
+  1130→                          <option value="To lose control of my creation">"To lose control of my creation"</option>
+  1131→                        </select>
+  1132→                      </div>
+  1133→                    </div>
+  1134→
+  1135→                    <div className="space-y-2">
+  1136→                      <span className="font-mono text-[10px] text-[#C9A96E] tracking-widest uppercase block font-bold">
+  1137→                        STEP 04 // DEFINE THE MATERIAL COST (OPTIONAL)
+  1138→                      </span>
+  1139→                      <textarea
+  1140→                        value={narrativeText}
+  1141→                        onChange={(e) => setNarrativeText(e.target.value)}
+  1142→                        placeholder="Detail how this loop manifests in your high-stakes personal or professional life. What is it costing you right now?"
+  1143→                        className="w-full h-24 bg-black border border-[#C9A96E]/20 text-white p-4 focus:border-[#C9A96E] focus:outline-none rounded text-xs leading-relaxed font-sans"
+  1144→                      />
+  1145→                    </div>
+  1146→
+  1147→                    <div className="pt-4">
+  1148→                      <button
+  1149→                        type="submit"
+  1150→                        className="w-full h-16 bg-[#C9A96E] text-black font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#C9A96E]/90 transition"
+  1151→                      >
+  1152→                        [SUBMIT DECODER DISPATCH]
+  1153→                      </button>
+  1154→                    </div>
+  1155→                  </form>
+  1156→                )}
+  1157→              </div>
+  1158→            </motion.div>
+  1159→          </div>
+  1160→        )}
+  1161→      </AnimatePresence>
+  1162→
+  1163→      {/* LUXURY SERVICE BOOKING DRAWER / MODAL */}
+  1164→      <AnimatePresence>
+  1165→        {bookingService && (
+  1166→          <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
+  1167→            {/* Backdrop */}
+  1168→            <motion.div
+  1169→              initial={{ opacity: 0 }}
+  1170→              animate={{ opacity: 1 }}
+  1171→              exit={{ opacity: 0 }}
+  1172→              onClick={() => {
+  1173→                if (!bookingSuccess) setBookingService(null);
+  1174→              }}
+  1175→              className="fixed inset-0 bg-black/95 backdrop-blur-sm"
+  1176→            />
+  1177→
+  1178→            {/* Modal Body */}
+  1179→            <motion.div
+  1180→              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+  1181→              animate={{ opacity: 1, scale: 1, y: 0 }}
+  1182→              exit={{ opacity: 0, scale: 0.95, y: 30 }}
+  1183→              className="relative w-full max-w-md bg-[#050505] border border-[#C9A96E]/40 p-8 rounded-lg z-10"
+  1184→              style={{
+  1185→                boxShadow: "0 0 40px rgba(201, 169, 110, 0.12)"
+  1186→              }}
+  1187→            >
+  1188→              <button
+  1189→                onClick={() => setBookingService(null)}
+  1190→                className="absolute top-6 right-6 text-[#F5F3F0]/60 hover:text-white transition"
+  1191→              >
+  1192→                <X className="w-5 h-5" />
+  1193→              </button>
+  1194→
+  1195→              {bookingSuccess ? (
+  1196→                /* Success booking message */
+  1197→                <div className="flex flex-col items-center justify-center py-10 space-y-6 text-center">
+  1198→                  <div className="w-16 h-16 rounded-full bg-[#C9A96E]/10 border border-[#C9A96E] flex items-center justify-center text-[#C9A96E]">
+  1199→                    <CheckCircle2 className="w-8 h-8" />
+  1200→                  </div>
+  1201→                  <div className="space-y-3">
+  1202→                    <h3 className="font-serif text-2xl font-bold uppercase text-white">
+  1203→                      ENGAGEMENT SECURED
+  1204→                    </h3>
+  1205→                    <p className="font-mono text-xs text-[#C9A96E] tracking-widest uppercase">
+  1206→                      COGNITIVE FILE CREATED // APPROVED
+  1207→                    </p>
+  1208→                    <p className="font-sans text-xs text-[#F5F3F0]/60 leading-relaxed max-w-xs font-light">
+  1209→                      Your diagnostic application for <span className="font-bold text-[#F5F3F0]">{bookingService.title}</span> has been flagged. Our psychological intelligence officer will contact you within 4 hours.
+  1210→                    </p>
+  1211→                  </div>
+  1212→                </div>
+  1213→              ) : (
+  1214→                /* Booking Form State */
+  1215→                <form onSubmit={handleBookingSubmit} className="space-y-6">
+  1216→                  <div className="space-y-2 pb-2 border-b border-[#C9A96E]/10">
+  1217→                    <span className="font-mono text-[9px] text-[#C9A96E] tracking-widest uppercase block">
+  1218→                      // SECURE BOOKING REGISTRY
+  1219→                    </span>
+  1220→                    <h3 className="font-serif text-2xl font-bold uppercase text-white">
+  1221→                      APPLY FOR {bookingService.title}
+  1222→                    </h3>
+  1223→                    <p className="text-xs text-[#C9A96E]/80 font-mono tracking-wider">
+  1224→                      INVESTMENT FEE: {bookingService.price}
+  1225→                    </p>
+  1226→                  </div>
+  1227→
+  1228→                  <div className="space-y-4 text-xs font-mono">
+  1229→                    <div className="space-y-1">
+  1230→                      <label className="text-[#C9A96E]/70 block uppercase">YOUR FULL NAME</label>
+  1231→                      <input
+  1232→                        type="text"
+  1233→                        required
+  1234→                        value={bookingForm.name}
+  1235→                        onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
+  1236→                        placeholder="John Doe"
+  1237→                        className="w-full h-11 bg-black border border-[#C9A96E]/20 text-white px-3 focus:border-[#C9A96E] focus:outline-none rounded"
+  1238→                      />
+  1239→                    </div>
+  1240→
+  1241→                    <div className="space-y-1">
+  1242→                      <label className="text-[#C9A96E]/70 block uppercase">YOUR SECURE EMAIL</label>
+  1243→                      <input
+  1244→                        type="email"
+  1245→                        required
+  1246→                        value={bookingForm.email}
+  1247→                        onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
+  1248→                        placeholder="johndoe@example.com"
+  1249→                        className="w-full h-11 bg-black border border-[#C9A96E]/20 text-white px-3 focus:border-[#C9A96E] focus:outline-none rounded"
+  1250→                      />
+  1251→                    </div>
+  1252→
+  1253→                    <div className="space-y-1">
+  1254→                      <label className="text-[#C9A96E]/70 block uppercase">WHATSAPP / TELEGRAM PHONE</label>
+  1255→                      <input
+  1256→                        type="tel"
+  1257→                        required
+  1258→                        value={bookingForm.phone}
+  1259→                        onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
+  1260→                        placeholder="+91 XXXXX XXXXX"
+  1261→                        className="w-full h-11 bg-black border border-[#C9A96E]/20 text-white px-3 focus:border-[#C9A96E] focus:outline-none rounded"
+  1262→                      />
+  1263→                    </div>
+  1264→
+  1265→                    <div className="space-y-1">
+  1266→                      <label className="text-[#C9A96E]/70 block uppercase">PRIMARY BEHAVIORAL BOTTLENECK (OPTIONAL)</label>
+  1267→                      <textarea
+  1268→                        value={bookingForm.notes}
+  1269→                        onChange={(e) => setBookingForm({ ...bookingForm, notes: e.target.value })}
+  1270→                        placeholder="Specify any high-stakes context you want evaluated prior..."
+  1271→                        className="w-full h-16 bg-black border border-[#C9A96E]/20 text-white p-3 focus:border-[#C9A96E] focus:outline-none rounded text-[11px]"
+  1272→                      />
+  1273→                    </div>
+  1274→                  </div>
+  1275→
+  1276→                  <div className="pt-4">
+  1277→                    <button
+  1278→                      type="submit"
+  1279→                      className="w-full h-[60px] bg-[#C9A96E] text-black font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#C9A96E]/90 transition"
+  1280→                    >
+  1281→                      SECURE ENGAGEMENT DISPATCH
+  1282→                    </button>
+  1283→                    <div className="flex items-center justify-center space-x-1.5 mt-3 text-[9px] font-mono text-[#F5F3F0]/40 uppercase tracking-widest">
+  1284→                      <Lock className="w-3 h-3 text-[#C9A96E]" />
+  1285→                      <span>SECURE 256-BIT DISPATCH TRANSIT</span>
+  1286→                    </div>
+  1287→                  </div>
+  1288→                </form>
+  1289→              )}
+  1290→            </motion.div>
+  1291→          </div>
+  1292→        )}
+  1293→      </AnimatePresence>
+  1294→    </div>
+  1295→  );
+  1296→}
+  1297→

@@ -3,6 +3,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { EclipseIcon, MirrorIcon, PathIcon, WarriorIcon } from './Icons';
+import { useReducedMotion } from './hooks/useReducedMotion';
+import { EASE, SPRING } from './utils/animation';
 
 const steps = [
   {
@@ -37,6 +39,8 @@ const steps = [
 
 export default function Method() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const prefersReduced = useReducedMotion();
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start end', 'end start'],
@@ -44,6 +48,8 @@ export default function Method() {
 
   // Golden thread height tracks scroll progress
   const threadHeight = useTransform(scrollYProgress, [0.1, 0.85], ['0%', '100%']);
+
+  const noMotion = prefersReduced ? { duration: 0 } : undefined;
 
   return (
     <section id="method" ref={containerRef} className="relative bg-[#080808] py-14 md:py-20 border-t border-white/[0.04]">
@@ -54,7 +60,7 @@ export default function Method() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={noMotion || { duration: 0.6 }}
             className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] mb-3"
           >
             The Diagnostic System
@@ -63,7 +69,7 @@ export default function Method() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={noMotion || { duration: 0.7, ease: EASE.outExpoLegacy }}
             className="font-[var(--font-cormorant)] text-2xl md:text-4xl font-bold tracking-[-0.02em] text-[#f5f3f0] leading-[1.1]"
           >
             Not Prediction. <span className="italic font-light">Pattern Recognition.</span>
@@ -72,7 +78,7 @@ export default function Method() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={noMotion || { duration: 0.6, delay: 0.1 }}
             className="mt-3 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light"
           >
             A proprietary four-part diagnostic system. Karmic architecture. Jungian depth. Pattern intelligence. Precision strategy.
@@ -83,10 +89,12 @@ export default function Method() {
         <div className="relative">
           {/* Golden Thread — vertical line that fills on scroll */}
           <div className="absolute left-[23px] md:left-[31px] top-0 bottom-0 w-px bg-white/[0.04] z-0">
-            <motion.div
-              style={{ height: threadHeight }}
-              className="w-full bg-gradient-to-b from-[#c9a96e]/80 via-[#c9a96e]/50 to-[#c9a96e]/20 origin-top"
-            />
+            {!prefersReduced && (
+              <motion.div
+                style={{ height: threadHeight }}
+                className="w-full bg-gradient-to-b from-[#c9a96e]/80 via-[#c9a96e]/50 to-[#c9a96e]/20 origin-top"
+              />
+            )}
           </div>
 
           {/* Steps */}
@@ -99,7 +107,10 @@ export default function Method() {
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.6, delay: index * 0.08 }}
+                  transition={noMotion || {
+                    ...SPRING.gentle,
+                    delay: index * 0.08,
+                  }}
                   className="flex items-start gap-4 md:gap-6 py-6 md:py-8 group"
                 >
                   {/* Icon node on the thread */}
@@ -110,10 +121,10 @@ export default function Method() {
                   {/* Content */}
                   <div className="flex-1 pt-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[9px] tracking-[0.15em] text-[#c9a96e]/40 font-[var(--font-inter)]">
+                      <span className="text-[9px] tracking-[0.15em] text-[#c9a96e]/50 font-[var(--font-inter)]">
                         {step.number}
                       </span>
-                      <span className="text-[9px] tracking-[0.15em] text-[#8a8078]/40 font-[var(--font-inter)]">
+                      <span className="text-[9px] tracking-[0.15em] text-[#8a8078]/50 font-[var(--font-inter)]">
                         — {step.subtitle}
                       </span>
                     </div>

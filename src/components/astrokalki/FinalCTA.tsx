@@ -3,8 +3,14 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { EclipseIcon } from './Icons';
+import FilmGrain from './FilmGrain';
+import { useReducedMotion } from './hooks/useReducedMotion';
+import { SPRING, ctaHover } from './utils/animation';
 
 export default function FinalCTA() {
+  const prefersReduced = useReducedMotion();
+  const noMotion = prefersReduced ? { duration: 0 } : undefined;
+
   return (
     <section className="relative py-16 md:py-24 overflow-hidden border-t border-white/[0.04]">
       {/* Eclipse + shadow background */}
@@ -26,8 +32,7 @@ export default function FinalCTA() {
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-[#050505]/85" />
-        {/* Film grain */}
-        <div className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
+        <FilmGrain opacity={0.05} />
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto px-5 md:px-12 text-center">
@@ -35,7 +40,7 @@ export default function FinalCTA() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={noMotion || { ...SPRING.gentle }}
           className="flex justify-center mb-5"
         >
           <EclipseIcon className="w-8 h-8 text-[#c9a96e]/40" />
@@ -45,7 +50,7 @@ export default function FinalCTA() {
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={noMotion || { ...SPRING.gentle }}
           className="font-[var(--font-cormorant)] text-2xl md:text-5xl font-bold tracking-[-0.02em] text-[#f5f3f0] leading-[1.05]"
         >
           READY TO DISCOVER
@@ -57,7 +62,7 @@ export default function FinalCTA() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={noMotion || { duration: 0.6, delay: 0.1 }}
           className="mt-4 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light max-w-md mx-auto"
         >
           Patterns don&apos;t break without awareness. Ready to discover the pattern beneath?
@@ -68,15 +73,18 @@ export default function FinalCTA() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={noMotion || { ...SPRING.gentle, delay: 0.2 }}
           className="mt-7"
         >
-          <a
+          <motion.a
             href="#assessment"
-            className="inline-block px-10 py-5 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e] text-[#050505] font-[var(--font-inter)] font-semibold hover:bg-[#d4b87a] transition-all duration-300"
+            variants={ctaHover}
+            initial="rest"
+            whileHover="hover"
+            className="inline-block px-10 py-5 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e] text-[#050505] font-[var(--font-inter)] font-semibold hover:bg-[#d4b87a] transition-colors duration-300"
           >
             Take the Pattern Index
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </section>
