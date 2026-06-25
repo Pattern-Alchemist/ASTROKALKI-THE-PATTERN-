@@ -66,7 +66,7 @@ export default function Navbar() {
           href="#assessment"
           className="hidden md:inline-block px-5 py-2.5 text-[10px] tracking-[0.25em] uppercase border border-[#c9a96e]/40 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-500"
         >
-          Begin Analysis
+          Begin Pattern Index
         </a>
 
         {/* Mobile hamburger */}
@@ -125,7 +125,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="inline-block px-5 py-3 text-[10px] tracking-[0.25em] uppercase border border-[#c9a96e]/40 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-500 text-center"
           >
-            Begin Analysis
+            Begin Pattern Index
           </a>
         </div>
       </motion.div>

@@ -48,9 +48,9 @@ export default function FinalCTA() {
           transition={{ duration: 0.7 }}
           className="font-[var(--font-cormorant)] text-2xl md:text-5xl font-bold tracking-[-0.02em] text-[#f5f3f0] leading-[1.05]"
         >
-          READY TO SEE
+          READY TO DISCOVER
           <br />
-          WHAT&apos;S BEEN <span className="italic font-light">RUNNING YOU</span>?
+          THE <span className="italic font-light">PATTERN BENEATH</span>?
         </motion.h2>
 
         <motion.p
@@ -60,8 +60,8 @@ export default function FinalCTA() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mt-4 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light max-w-md mx-auto"
         >
-          Patterns don&apos;t break without awareness. The question is not whether you are ready.
-          It is whether you are willing to see.
+          Patterns don&apos;t break without awareness. Ready to discover the pattern beneath?
+          Begin your transformation with the Pattern Index.
         </motion.p>
 
         <motion.div
@@ -75,7 +75,7 @@ export default function FinalCTA() {
             href="#assessment"
             className="inline-block px-10 py-5 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e] text-[#050505] font-[var(--font-inter)] font-semibold hover:bg-[#d4b87a] transition-all duration-300"
           >
-            Begin Analysis
+            Take the Pattern Index
           </a>
         </motion.div>
       </div>

@@ -78,7 +78,7 @@ export default function DangerousKnowledge() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xs text-[#8a8078] font-[var(--font-inter)] font-light max-w-xs pt-8"
           >
-            Kaliyug psychology. Shadow work. Parental conditioning. Emotional warfare. No spiritual bypass.
+            Breakthrough insights rooted in psychology and karma. Where trauma, shadow, and attachment are not just concepts — they are decoded and transformed.
           </motion.p>
         </div>
 

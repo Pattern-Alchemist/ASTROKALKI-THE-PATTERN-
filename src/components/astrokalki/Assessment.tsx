@@ -5,37 +5,48 @@ import { PathIcon } from './Icons';
 
 export default function Assessment() {
   return (
-    <section id="assessment" className="bg-[#0a0a0a] py-12 md:py-16 border-t border-white/[0.04]">
+    <section id="assessment" className="bg-[#0a0a0a] py-14 md:py-20 border-t border-white/[0.04]">
       <div className="max-w-4xl mx-auto px-5 md:px-12 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-3 text-[#c9a96e]/50"
+          className="flex justify-center mb-4 text-[#c9a96e]/50"
         >
-          <PathIcon className="w-7 h-7" />
+          <PathIcon className="w-8 h-8" />
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/60 font-[var(--font-inter)] font-medium mb-3"
+        >
+          The Pattern Index
+        </motion.p>
 
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-[var(--font-cormorant)] text-xl md:text-3xl font-bold tracking-[-0.02em] text-[#f5f3f0]"
+          className="font-[var(--font-cormorant)] text-2xl md:text-4xl font-bold tracking-[-0.02em] text-[#f5f3f0]"
         >
-          Your pattern has a <span className="italic font-light">name</span>.
+          Unlock clarity in <span className="italic font-light text-[#c9a96e]">60 seconds</span>
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-2 text-xs text-[#8a8078] font-[var(--font-inter)] font-light max-w-md mx-auto"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-3 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light max-w-lg mx-auto leading-relaxed"
         >
+          Identify repeating patterns that hold you back or propel you forward.
+          This is not prediction — this is deep pattern recognition.
           Three questions. One truth you&apos;ve been avoiding.
-          60 seconds. No chart required. Just honesty.
         </motion.p>
 
         <motion.div
@@ -43,15 +54,25 @@ export default function Assessment() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="mt-5"
+          className="mt-6"
         >
           <a
             href="#"
             className="inline-block px-8 py-4 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e] text-[#050505] font-[var(--font-inter)] font-semibold hover:bg-[#d4b87a] transition-all duration-300"
           >
-            Begin Intake
+            Take the Pattern Index
           </a>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="mt-3 text-[9px] tracking-[0.1em] text-[#8a8078]/40 font-[var(--font-inter)] uppercase"
+        >
+          60-second diagnostic &middot; No chart required &middot; Just honesty
+        </motion.p>
       </div>
     </section>
   );

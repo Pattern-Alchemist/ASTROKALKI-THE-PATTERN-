@@ -118,3 +118,29 @@ Stage Summary:
 - Services updated to 4-tier pricing: ₹999 / ₹4,999 / ₹9,999 / Custom
 - Shadow trigger examples added to Pattern Mosaic
 - All astrology-specific language replaced with diagnostic/institute language
+
+---
+Task ID: 5
+Agent: Super Z (Main)
+Task: Apply uploaded prompt — Kalki Framework staging + Pattern Index branding
+
+Work Log:
+- Read uploaded file (Pasted Content_1782416399441.txt) — contains SEO prompts, automation scripts, and most critically the "Category-Leading Pattern Recognition Platform" prompt with Kalki Framework staging concept
+- Applied key strategic improvement: Services restructured from discrete sessions → 4-Stage Progression:
+  - Stage 1 — Recognition: Pattern Snapshot ₹999
+  - Stage 2 — Diagnosis: Deep Dive ₹4,999 (MOST REQUESTED)
+  - Stage 3 — Realignment: Dharma Navigation ₹9,999
+  - Stage 4 — Integration: Warrior's Journey Custom (BESPOKE S-TIER)
+- Each stage has: stage label, service name, price, outcome description, bullet points, and stage-specific CTA (Begin Recognition / Begin Diagnosis / Begin Realignment / Apply)
+- Added golden thread vertical connector with stage marker dots in Services layout
+- Rebranded Assessment as "THE PATTERN INDEX™" — "Unlock clarity in 60 seconds", "Take the Pattern Index" CTA
+- Updated all CTAs site-wide: Hero → "Begin the Pattern Index", Navbar → "Begin Pattern Index", Final CTA → "Take the Pattern Index"
+- Updated Final CTA: "READY TO DISCOVER THE PATTERN BENEATH?" with refined subtext
+- Updated Dangerous Knowledge intro: "Breakthrough insights rooted in psychology and karma. Where trauma, shadow, and attachment are not just concepts — they are decoded and transformed."
+- Verified with Agent Browser: all 6 checks pass, no stale copy remaining
+
+Stage Summary:
+- Services now sell PROGRESSION, not sessions — "You are not buying sessions; you are progressing through a diagnostic framework"
+- Pattern Index™ becomes the proprietary mechanism — the centerpiece of the site
+- All CTAs consistently drive to the Pattern Index assessment
+- Site feels like a structured institute with a proprietary methodology, not a menu of services

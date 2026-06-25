@@ -75,7 +75,7 @@ export default function Hero() {
               href="#assessment"
               className="inline-block px-8 py-4 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e] text-[#050505] font-[var(--font-inter)] font-semibold hover:bg-[#d4b87a] transition-all duration-300"
             >
-              Begin Analysis
+              Begin the Pattern Index
             </a>
             <a
               href="#method"
