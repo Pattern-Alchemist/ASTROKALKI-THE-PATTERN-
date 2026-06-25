@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ThreadIcon } from './Icons';
+import AnnotationLayer from './AnnotationLayer';
 import { useReducedMotion } from './hooks/useReducedMotion';
 import { EASE, SPRING } from './utils/animation';
 
@@ -76,23 +77,38 @@ export default function DangerousKnowledge() {
               Read only if you&apos;re ready to stop <span className="italic font-light">pretending</span>
             </motion.h2>
           </div>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={noMotion || { duration: 0.6, delay: 0.1 }}
             className="text-xs text-[#8a8078] font-[var(--font-inter)] font-light max-w-xs pt-8"
           >
-            Breakthrough insights rooted in psychology and karma. Where trauma, shadow, and attachment are not just concepts — they are decoded and transformed.
-          </motion.p>
+            <AnnotationLayer>
+              Breakthrough insights rooted in psychology and karma. Where trauma, shadow work, and attachment theory are not just concepts — they are decoded and transformed. Click highlighted terms for clinical annotations.
+            </AnnotationLayer>
+          </motion.div>
         </div>
+
+        {/* Annotation hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={noMotion || { duration: 0.6, delay: 0.2 }}
+          className="flex items-center gap-2 mb-6"
+        >
+          <span className="text-[#c9a96e]/40 text-[8px] font-[var(--font-inter)]">✦</span>
+          <span className="text-[8px] tracking-[0.15em] uppercase text-[#8a8078]/40 font-[var(--font-inter)]">
+            Click gold-highlighted terms for clinical annotations
+          </span>
+        </motion.div>
 
         {/* Magazine grid — featured first, then 2x2 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {articles.map((article, index) => (
-            <motion.a
+            <motion.div
               key={article.title}
-              href="#"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-20px' }}
@@ -100,7 +116,7 @@ export default function DangerousKnowledge() {
                 ...SPRING.gentle,
                 delay: index * 0.04,
               }}
-              className={`group border border-white/[0.04] p-5 hover:border-[#c9a96e]/15 transition-colors duration-500 block ${
+              className={`group border border-white/[0.04] p-5 hover:border-[#c9a96e]/15 transition-colors duration-500 ${
                 index === 0 ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
             >
@@ -115,13 +131,15 @@ export default function DangerousKnowledge() {
               <h4 className="font-[var(--font-cormorant)] text-base md:text-lg text-[#f5f3f0] font-bold tracking-[-0.01em] group-hover:text-[#c9a96e] transition-colors duration-500 leading-snug">
                 {article.title}
               </h4>
-              <p className="mt-2 text-[11px] text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed line-clamp-2">
-                {article.excerpt}
-              </p>
+              <div className="mt-2 text-[11px] text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed line-clamp-3">
+                <AnnotationLayer>
+                  {article.excerpt}
+                </AnnotationLayer>
+              </div>
               <span className="mt-3 inline-block text-[9px] tracking-[0.15em] uppercase text-[#c9a96e]/50 group-hover:text-[#c9a96e] transition-colors duration-500 font-[var(--font-inter)] font-medium">
                 Read &rarr;
               </span>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>
