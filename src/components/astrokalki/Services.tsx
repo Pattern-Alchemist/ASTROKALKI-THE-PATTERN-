@@ -5,37 +5,46 @@ import Image from 'next/image';
 
 const services = [
   {
+    id: 'snapshot',
     name: 'Pattern Snapshot',
     price: '₹999',
-    duration: '20-Minute Diagnostic',
-    description: 'A precise diagnostic. Name the pattern running beneath every relationship, every crisis, every self-betrayal.',
+    duration: '45-Minute Diagnostic',
+    description: 'A tactical decode of your primary loop. Isolation of your nervous-system trigger, Vedic elemental profiling, and one actionable override step.',
     image: '/images/service-pattern.png',
     cta: 'Book Decode',
+    bullets: ['Isolation of primary nervous-system trigger', 'Vedic elemental profiling summary', '1 tactical step to override immediate stagnation'],
   },
   {
-    name: 'Relationship Decode',
-    price: '₹1,999',
-    duration: '60-Minute Diagnostic',
-    description: 'Why you keep attracting the same dynamic. Why you stay when you should leave. The architecture of your relational loop.',
-    image: '/images/service-relationship.png',
-    cta: 'Book Decode',
-  },
-  {
-    name: 'Emotional Pattern Decode',
-    price: '₹2,999',
-    duration: '90-Minute Deep Work',
-    description: 'Why the wrong feeling arrives at the wrong time — and where it learned to do that. The deepest diagnostic available.',
+    id: 'deepdive',
+    name: 'The Deep Dive',
+    price: '₹4,999',
+    duration: '2-Hour Diagnostic + Document',
+    description: 'Complete psychological architecture and 12-month roadmap. The most requested session for those ready to stop repeating.',
     image: '/images/service-emotional.png',
     cta: 'Book Decode',
-    featured: true,
+    badge: 'MOST REQUESTED',
+    bullets: ['Rigorous shadow confrontation session', 'Complete Vedic blueprint mapping document', '12-month personal behavioral override roadmap', 'Bi-weekly alignment tracking framework'],
   },
   {
-    name: 'Shadow Session',
-    price: '₹2,999',
-    duration: '90-Minute Deep Work',
-    description: 'The parts you disown choose your partners, start your conflicts, engineer your breakdowns. We map them.',
-    image: '/images/service-shadow.png',
+    id: 'dharma',
+    name: 'Dharma Navigation',
+    price: '₹9,999',
+    duration: '2 Complete Sessions',
+    description: 'Strategic pivot for career and purpose alignment. Professional bottleneck diagnosis and career re-architecting.',
+    image: '/images/service-relationship.png',
     cta: 'Book Decode',
+    bullets: ['Professional bottleneck diagnosis', 'Vedic-Jungian sovereignty blueprint', 'Authority expansion and career re-architecting', 'Private audio brief with executive directives'],
+  },
+  {
+    id: 'warrior',
+    name: 'The Warrior\'s Journey',
+    price: 'Custom',
+    duration: '3-Month Advisory',
+    description: 'Bespoke shadow work integration. Weekly private clinical advisory with unlimited secure access and real-time strategic intervention.',
+    image: '/images/service-shadow.png',
+    cta: 'Apply',
+    badge: 'BESPOKE S-TIER',
+    bullets: ['Weekly private clinical advisory', 'Unlimited secure asynchronous access', 'Real-time strategic intervention in crises', 'Bespoke physical/somatic ritual design'],
   },
 ];
 
@@ -70,20 +79,20 @@ export default function Services() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-2 text-xs text-[#8a8078] font-[var(--font-inter)] font-light"
           >
-            Each session is a pattern diagnostic. Clear pricing. No hidden tiers.
+            Each session is a pattern diagnostic. Clear pricing. No hidden tiers. Select your entry point.
           </motion.p>
         </div>
 
-        {/* 2x2 Grid — Luxury Consultant Menu */}
+        {/* 2x2 Grid — Institute Diagnostic Menu */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
           {services.map((service, index) => (
             <motion.div
-              key={service.name}
+              key={service.id}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.5, delay: index * 0.06 }}
-              className={`group border ${service.featured ? 'border-[#c9a96e]/20' : 'border-white/[0.04]'} hover:border-[#c9a96e]/25 transition-colors duration-500 overflow-hidden`}
+              className={`group border ${service.badge === 'MOST REQUESTED' ? 'border-[#c9a96e]/20' : service.badge === 'BESPOKE S-TIER' ? 'border-[#c9a96e]/15' : 'border-white/[0.04]'} hover:border-[#c9a96e]/25 transition-colors duration-500 overflow-hidden`}
             >
               <div className="flex flex-row">
                 {/* Small square cinematic image */}
@@ -97,10 +106,10 @@ export default function Services() {
                   />
                   {/* Film grain */}
                   <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
-                  {service.featured && (
+                  {service.badge && (
                     <div className="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#c9a96e]/15 border border-[#c9a96e]/30">
-                      <span className="text-[7px] tracking-[0.2em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
-                        Deepest
+                      <span className="text-[7px] tracking-[0.15em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                        {service.badge}
                       </span>
                     </div>
                   )}
@@ -108,7 +117,7 @@ export default function Services() {
 
                 {/* Content — price front and center */}
                 <div className="flex-1 p-4 md:p-5 flex flex-col justify-center min-w-0">
-                  {/* Name + Price on same line — like a restaurant menu */}
+                  {/* Name + Price on same line */}
                   <div className="flex items-baseline gap-3 flex-wrap">
                     <h3 className="font-[var(--font-cormorant)] text-lg md:text-xl text-[#f5f3f0] font-bold tracking-[-0.01em] group-hover:text-[#c9a96e] transition-colors duration-500">
                       {service.name}
@@ -123,10 +132,20 @@ export default function Services() {
                     {service.duration}
                   </span>
 
-                  {/* Description — 2 lines sharp */}
+                  {/* Description */}
                   <p className="mt-2 text-[11px] md:text-xs text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed line-clamp-2">
                     {service.description}
                   </p>
+
+                  {/* Bullets — compact */}
+                  <ul className="mt-2 space-y-0.5 hidden md:block">
+                    {service.bullets.slice(0, 2).map((bullet, i) => (
+                      <li key={i} className="text-[9px] text-[#8a8078]/60 font-[var(--font-inter)] font-light flex items-start gap-1.5">
+                        <span className="w-1 h-1 bg-[#c9a96e]/30 rounded-full mt-1 shrink-0" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
 
                   {/* CTA */}
                   <a
@@ -140,33 +159,6 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
-
-        {/* Membership — compact bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-4 border border-white/[0.04] p-4 md:p-5 flex flex-col md:flex-row md:items-center justify-between gap-3 hover:border-[#c9a96e]/15 transition-colors duration-500"
-        >
-          <div className="flex items-baseline gap-3">
-            <h4 className="font-[var(--font-cormorant)] text-lg text-[#f5f3f0] font-bold">
-              Pattern Decoder <span className="italic font-light">Monthly</span>
-            </h4>
-            <span className="font-[var(--font-cormorant)] text-lg text-[#c9a96e] font-bold">₹999<span className="text-xs text-[#8a8078] font-[var(--font-inter)] font-light">/mo</span></span>
-          </div>
-          <div className="flex items-center gap-4">
-            <p className="text-[10px] text-[#8a8078] font-[var(--font-inter)] font-light hidden md:block">
-              Weekly insights + priority booking + member reports
-            </p>
-            <a
-              href="#assessment"
-              className="px-4 py-3 min-h-[44px] flex items-center text-[9px] tracking-[0.2em] uppercase border border-[#c9a96e]/30 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-300 font-[var(--font-inter)] font-medium whitespace-nowrap"
-            >
-              Start Monthly
-            </a>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

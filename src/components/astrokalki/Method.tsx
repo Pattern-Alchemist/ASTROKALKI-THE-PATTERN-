@@ -17,7 +17,7 @@ const steps = [
     number: '02',
     title: 'Depth Psychology',
     subtitle: 'The Shadow',
-    description: 'Jungian shadow work meets attachment theory. The diagnostic stops being symbolic and becomes personal. Every repeated heartbreak has a root. We don\'t read stars. We read the psyche beneath them.',
+    description: 'Jungian shadow work meets attachment theory. The diagnostic stops being symbolic and becomes personal. Every repeated heartbreak has a root. We don\'t interpret symbols. We decode the psyche beneath them.',
   },
   {
     icon: PathIcon,

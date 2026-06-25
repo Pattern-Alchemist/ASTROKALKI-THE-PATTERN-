@@ -6,11 +6,11 @@ import Image from 'next/image';
 export default function WarriorsJourney() {
   return (
     <section className="relative py-14 md:py-20 overflow-hidden border-t border-white/[0.04]">
-      {/* Full-width warrior image — single A24 moment */}
+      {/* Real warrior desert image from ZIP */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/warrior-journey.png"
-          alt="The Warrior's Descent"
+          src="/images/warrior-desert.jpg"
+          alt="The Warrior's Descent into Shadow"
           fill
           className="object-cover object-center opacity-40"
           sizes="100vw"
@@ -30,7 +30,7 @@ export default function WarriorsJourney() {
             transition={{ duration: 0.6 }}
             className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] mb-3"
           >
-            The Feature
+            The Warrior&apos;s Journey
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -39,7 +39,9 @@ export default function WarriorsJourney() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="font-[var(--font-cormorant)] text-2xl md:text-4xl font-bold tracking-[-0.02em] text-[#f5f3f0] leading-[1.1]"
           >
-            The Warrior&apos;s <span className="italic font-light">Descent</span>
+            Not a spiritual journey.
+            <br />
+            A <span className="italic font-light text-[#c9a96e]">warrior&apos;s descent</span>.
           </motion.h2>
 
           <motion.p
@@ -49,34 +51,24 @@ export default function WarriorsJourney() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mt-4 text-xs md:text-sm text-[#f5f3f0]/70 font-[var(--font-inter)] font-light leading-relaxed"
           >
-            Descending into the shadow to find the light. This is not spiritual coaching.
-            This is a rigorous confrontation with truth. The warrior does not bypass the
-            darkness — the warrior walks through it with eyes open.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-3 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed"
-          >
-            What was once an invisible prison becomes a map you can finally read — and exit.
-            The karmic architecture becomes visible. The dharma emerges from the chaos.
+            This is not spiritual coaching. This is a rigorous confrontation with truth.
+            The warrior does not bypass the darkness — the warrior walks through it with eyes open,
+            deploying behavioral strategies to override the loop. Not spiritual bypassing, but actionable
+            dharma alignment that transforms resistance into raw, absolute leverage.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.35 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
             className="mt-6"
           >
             <a
               href="#services"
               className="group inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium border-b border-[#c9a96e]/30 pb-1 hover:border-[#c9a96e] transition-colors duration-500"
             >
-              Explore the Work
+              Explore the Journey
               <span className="transition-transform group-hover:translate-x-1 duration-300">&rarr;</span>
             </a>
           </motion.div>

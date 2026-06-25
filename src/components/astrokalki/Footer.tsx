@@ -14,7 +14,7 @@ export default function Footer() {
               Astro<span className="italic">Kalki</span>
             </p>
             <p className="text-[10px] text-[#8a8078] mt-2 tracking-[0.2em] uppercase font-[var(--font-inter)]">
-              Not fortune telling. Pattern recognition.
+              The Pattern Recognition Institute
             </p>
           </div>
 

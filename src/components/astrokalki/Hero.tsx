@@ -7,14 +7,14 @@ import { EclipseIcon } from './Icons';
 export default function Hero() {
   return (
     <section id="top" className="relative w-full min-h-[85vh] md:min-h-[90vh] flex items-end overflow-hidden">
-      {/* Eclipse Image — full width, contained height */}
+      {/* Real eclipse image from ZIP */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-cinematic.png"
-          alt="AstroKalki — The Pattern Recognition Institute"
+          src="/images/eclipse-shadow.jpg"
+          alt="The Pattern Recognition Institute — Decoding invisible loops"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center opacity-40 brightness-75"
           sizes="100vw"
         />
         {/* Film grain overlay */}
@@ -24,10 +24,10 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/50 to-transparent" />
       </div>
 
-      {/* Content — bottom-anchored for authority, not floating center */}
+      {/* Content — bottom-anchored for authority */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-12 pb-12 md:pb-20 pt-32">
         <div className="max-w-2xl">
-          {/* Tag */}
+          {/* Institute badge */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -49,21 +49,22 @@ export default function Hero() {
           >
             SAME PATTERN.
             <br />
-            DIFFERENT FACE.
+            <span className="text-[#c9a96e] italic font-normal">DIFFERENT FACE.</span>
           </motion.h1>
 
-          {/* Subheadline — specific, not generic */}
+          {/* Subheadline — institute positioning */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.6 }}
             className="mt-5 text-sm md:text-[15px] text-[#f5f3f0]/75 font-[var(--font-inter)] font-light leading-relaxed max-w-lg"
           >
-Psychology. Karma. Shadow work. Pattern intelligence.
-            We don&apos;t predict futures — we decode the invisible architecture creating your present.
+            Psychology. Karma. Shadow work. Pattern intelligence.
+            We don&apos;t predict futures — we decode the invisible architecture
+            creating your present. Built for those who demand absolute truth.
           </motion.p>
 
-          {/* CTAs — Assessment is primary, gold fill */}
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,17 +81,18 @@ Psychology. Karma. Shadow work. Pattern intelligence.
               href="#method"
               className="inline-block px-8 py-4 text-[10px] tracking-[0.25em] uppercase border border-[#f5f3f0]/20 text-[#f5f3f0]/70 hover:text-[#f5f3f0] hover:border-[#f5f3f0]/40 transition-all duration-300 font-[var(--font-inter)]"
             >
-              How It Works
+              The Method
             </a>
           </motion.div>
 
-          {/* Social proof badge — elegant, not screaming */}
+          {/* Social proof badge */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 3.1 }}
             className="mt-6 inline-flex items-center gap-3 px-4 py-2 border border-white/[0.06] bg-[#050505]/40 backdrop-blur-sm"
           >
+            <span className="w-1.5 h-1.5 bg-[#c9a96e] rounded-full animate-pulse" />
             <span className="text-[10px] tracking-[0.1em] text-[#8a8078] font-[var(--font-inter)]">
               <strong className="text-[#f5f3f0]/90 font-medium">2,400+</strong> Patterns Decoded
             </span>

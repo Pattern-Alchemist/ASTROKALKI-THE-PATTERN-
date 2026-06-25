@@ -146,10 +146,10 @@ export default function PatternRecognition() {
               Karmic Psychology
             </h3>
             <p className="text-[#8a8078] text-sm md:text-base leading-relaxed font-[var(--font-inter)] font-light">
-              This is not horoscope reading. This is the rigorous application of Vedic
+              This is not horoscope interpretation. This is the rigorous application of Vedic
               intelligence and Jungian depth work. We do not predict your future; we decode
               the psychological DNA of your past so the future can finally change. Every
-              repeated heartbreak has a root. We don&apos;t read stars. We read the psyche
+              repeated heartbreak has a root. We don&apos;t interpret symbols. We decode the psyche
               they describe.
             </p>
             <div className="mt-8 h-px w-12 bg-[#c9a96e]/40" />

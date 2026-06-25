@@ -86,3 +86,35 @@ Stage Summary:
 - Golden Thread creates proprietary system feel for the Method
 - Film grain adds subtle cinematic texture without being gimmicky
 - All pricing visible, all CTAs functional, mobile tap targets fixed
+
+---
+Task ID: 4
+Agent: Super Z (Main)
+Task: AstroKalki V5 — Category Positioning Override + ZIP Integration
+
+Work Log:
+- Analyzed uploaded ZIP file "the-pattern-recognition-institute.zip" — contains full Vite/React app with:
+  - 2 real cinematic images: eclipse_shadow_figure.jpg and warrior_desert_sun.jpg
+  - Updated 4-tier service pricing: Pattern Snapshot ₹999, Deep Dive ₹4,999 (MOST REQUESTED), Dharma Navigation ₹9,999, Warrior's Journey Custom (BESPOKE S-TIER)
+  - Enhanced pattern data with shadow trigger examples
+  - Full article content for Dangerous Knowledge section
+  - Interactive assessment with Gemini API integration
+- Copied real ZIP images to public/images/ (eclipse-shadow.jpg, warrior-desert.jpg)
+- Applied Category Positioning Override across ALL components:
+  - Hero: "The Pattern Recognition Institute" tag, subheadline "Psychology. Karma. Shadow work. Pattern intelligence. We don't predict futures — we decode the invisible architecture creating your present."
+  - Pattern Mosaic: Replaced generic Heartbreak/Sabotage/Stagnation/Masking with ZIP's enhanced versions (Repeating Heartbreak, Self-Sabotage, The Glass Ceiling, The Mask) with specific shadow triggers
+  - Method: Renamed "The Engine Room" to "The Diagnostic System", replaced "birth chart" with "karmic architecture", "read stars" → "interpret symbols"
+  - Services: Updated to 4-tier pricing from ZIP reference with bullet points per service
+  - Warrior's Journey: Now uses real warrior-desert.jpg from ZIP
+  - FAQ: "Is this astrology?" (denying), replaced "birth chart reveals" with "karmic blueprint reveals", "reading" → "diagnostic"
+  - Footer: "The Pattern Recognition Institute" (not "Not fortune telling. Pattern recognition.")
+  - Layout.tsx: Updated title/description to institute positioning
+- Removed ALL "read stars", "birth chart reveals", "horoscope reading" references from active components
+- Verified with Agent Browser: all checks pass, no forbidden phrases, institute feel confirmed
+
+Stage Summary:
+- Category repositioned from "astrology business" to "Pattern Recognition Institute"
+- Real ZIP images integrated (eclipse-shadow.jpg, warrior-desert.jpg)
+- Services updated to 4-tier pricing: ₹999 / ₹4,999 / ₹9,999 / Custom
+- Shadow trigger examples added to Pattern Mosaic
+- All astrology-specific language replaced with diagnostic/institute language

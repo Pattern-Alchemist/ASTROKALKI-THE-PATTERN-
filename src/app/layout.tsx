@@ -18,9 +18,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://astrokalki.com"),
-  title: "AstroKalki — The Same Pain. Different Face. Same Pattern.",
+  title: "AstroKalki — The Pattern Recognition Institute",
   description:
-    "The same pain. Different face. Same pattern. AstroKalki decodes the karmic loops, emotional self-sabotage, and repeating relationship patterns running your life — through Vedic astrology and depth psychology. Not prediction. Pattern recognition.",
+    "Psychology. Karma. Shadow work. Pattern intelligence. AstroKalki decodes the invisible loops creating your present — not prediction, pattern recognition. A high-authority diagnostic platform bridging Jungian depth psychology and Vedic cognitive maps.",
   keywords: [
     "trauma bond help",
     "karmic relationship reading",

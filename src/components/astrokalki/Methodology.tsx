@@ -14,7 +14,7 @@ const steps = [
   {
     icon: MirrorIcon,
     title: 'Depth Psychology',
-    desc: 'Jungian shadow work meets attachment theory. The chart stops being symbolic and becomes personal. Every repeated heartbreak has a root. We don\'t read stars. We read the psyche they describe.',
+    desc: 'Jungian shadow work meets attachment theory. The diagnostic stops being symbolic and becomes personal. Every repeated heartbreak has a root. We don\'t interpret symbols. We decode the psyche beneath them.',
     image: '/images/depth-psychology.png',
   },
   {

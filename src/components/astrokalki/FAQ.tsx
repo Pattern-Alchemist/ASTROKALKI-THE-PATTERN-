@@ -5,20 +5,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    q: 'Is this like a regular astrology reading?',
-    a: 'No. Most astrology readings tell you what will happen. AstroKalki shows you why the same things keep happening. This is pattern recognition, not prediction. We decode the karmic architecture beneath your repeating experiences — the loops you cannot see because you are inside them.',
+    q: 'Is this astrology?',
+    a: 'No. Most astrology tells you what will happen. AstroKalki shows you why the same things keep happening. This is pattern recognition, not prediction. We decode the invisible architecture beneath your repeating experiences — the loops you cannot see because you are inside them. Think of it as diagnostic intelligence, not fortune telling.',
   },
   {
     q: 'How is this different from therapy?',
-    a: 'Therapy works with the conscious mind over time. AstroKalki works with the unconscious architecture immediately. Your birth chart reveals patterns that took therapy years to uncover — if they ever did. This is not instead of therapy. It is what makes therapy finally work.',
+    a: 'Therapy works with the conscious mind over time. AstroKalki works with the unconscious architecture immediately. Your karmic blueprint reveals patterns that took therapy years to uncover — if they ever did. This is not instead of therapy. It is what makes therapy finally work.',
   },
   {
     q: 'What do I need to provide for a session?',
-    a: 'Your date of birth, time of birth, and place of birth. The more accurate the time, the deeper the reading. If you do not know your exact birth time, we can still work with a window — but some patterns may be less precise.',
+    a: 'Your date of birth, time of birth, and place of birth. The more accurate the time, the deeper the diagnostic. If you do not know your exact birth time, we can still work with a window — but some patterns may be less precise.',
   },
   {
-    q: 'Do I need to believe in astrology for this to work?',
-    a: 'No. You do not need to believe in gravity for it to affect you. The patterns in your chart exist whether you acknowledge them or not. Skeptics often have the most powerful breakthroughs because their resistance dissolves when confronted with specificity.',
+    q: 'Do I need to believe in anything for this to work?',
+    a: 'No. You do not need to believe in gravity for it to affect you. The patterns in your psychological architecture exist whether you acknowledge them or not. Skeptics often have the most powerful breakthroughs because their resistance dissolves when confronted with specificity.',
   },
   {
     q: 'How long until I see results?',
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: 'Are sessions confidential?',
-    a: 'Absolutely. Everything shared in a session remains completely confidential. Your birth chart, your patterns, your revelations — they stay between us. Privacy is not just policy. It is sacred.',
+    a: 'Absolutely. Everything shared in a session remains completely confidential. Your patterns, your revelations, your diagnostic data — they stay between us. Privacy is not just policy. It is sacred.',
   },
   {
     q: 'What if I want to go deeper after the first session?',
@@ -50,7 +50,7 @@ export default function FAQ() {
           <p className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/60 mb-4">
             Before You Step Through the Threshold
           </p>
-          <h2 className="font-[var(--font-cormorant)] text-3xl md:text-5xl font-light text-[#e8e0d4]">
+          <h2 className="font-[var(--font-cormorant)] text-3xl md:text-5xl font-bold tracking-[-0.02em] text-[#f5f3f0]">
             Questions
           </h2>
         </motion.div>
