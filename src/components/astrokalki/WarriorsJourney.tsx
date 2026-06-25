@@ -3,95 +3,83 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const phases = [
-  {
-    title: 'The Call',
-    description: 'Something is wrong and you know it. The pattern has become impossible to ignore. Every exit leads back to the same room.',
-  },
-  {
-    title: 'The Fall',
-    description: 'The collapse. The relationship ends. The career implodes. The self-betrayal becomes undeniable. The pattern breaks you before you can break it.',
-  },
-  {
-    title: 'The Shadow',
-    description: 'You meet what you\'ve been running from. The disowned parts. The inherited wounds. The architecture of your own suffering, finally visible.',
-  },
-  {
-    title: 'The Trial',
-    description: 'The old pattern fights back. Self-sabotage intensifies. The nervous system resists change. This is where most people retreat. The warrior continues.',
-  },
-  {
-    title: 'The Dharma',
-    description: 'The pattern is named. The loop is seen. What was once an invisible prison becomes a map you can read — and finally exit.',
-  },
-  {
-    title: 'The Return',
-    description: 'Not the same person who entered. The pattern no longer runs you. You navigate by dharma, not by karma. The warrior returns transformed.',
-  },
-];
-
 export default function WarriorsJourney() {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden border-t border-white/[0.04]">
-      {/* Warrior image as background anchor */}
+    <section className="relative py-14 md:py-20 overflow-hidden border-t border-white/[0.04]">
+      {/* Full-width warrior image — single A24 moment */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/warrior-journey.png"
-          alt="The Warrior's Journey"
+          alt="The Warrior's Descent"
           fill
-          className="object-cover object-center opacity-30"
+          className="object-cover object-center opacity-40"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#050505]/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/90 via-[#050505]/60 to-[#050505]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]" />
+        {/* Film grain */}
+        <div className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-12">
-        {/* Header */}
-        <div className="max-w-xl mb-10 md:mb-14">
+        <div className="max-w-lg">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] mb-3"
           >
-            Warrior&apos;s Journey
+            The Feature
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="font-[var(--font-cormorant)] text-3xl md:text-5xl font-light text-[#f5f3f0] leading-[1.1]"
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="font-[var(--font-cormorant)] text-2xl md:text-4xl font-bold tracking-[-0.02em] text-[#f5f3f0] leading-[1.1]"
           >
-            Not a spiritual journey.
-            <br />
-            A <span className="italic">warrior&apos;s</span> descent.
+            The Warrior&apos;s <span className="italic font-light">Descent</span>
           </motion.h2>
-        </div>
 
-        {/* Documentary timeline — compact, horizontal on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-          {phases.map((phase, index) => (
-            <motion.div
-              key={phase.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-30px' }}
-              transition={{ duration: 0.6, delay: index * 0.06 }}
-              className="group border border-white/[0.06] p-5 bg-[#050505]/60 backdrop-blur-sm hover:border-[#c9a96e]/20 transition-colors duration-500"
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-4 text-xs md:text-sm text-[#f5f3f0]/70 font-[var(--font-inter)] font-light leading-relaxed"
+          >
+            Descending into the shadow to find the light. This is not spiritual coaching.
+            This is a rigorous confrontation with truth. The warrior does not bypass the
+            darkness — the warrior walks through it with eyes open.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-3 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed"
+          >
+            What was once an invisible prison becomes a map you can finally read — and exit.
+            The karmic architecture becomes visible. The dharma emerges from the chaos.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-6"
+          >
+            <a
+              href="#services"
+              className="group inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium border-b border-[#c9a96e]/30 pb-1 hover:border-[#c9a96e] transition-colors duration-500"
             >
-              <span className="text-[10px] tracking-[0.15em] text-[#c9a96e]/40 font-[var(--font-inter)] block mb-2">
-                0{index + 1}
-              </span>
-              <h4 className="font-[var(--font-cormorant)] text-lg md:text-xl text-[#f5f3f0] font-light group-hover:text-[#c9a96e] transition-colors duration-500">
-                {phase.title}
-              </h4>
-              <p className="mt-2 text-xs text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed">
-                {phase.description}
-              </p>
-            </motion.div>
-          ))}
+              Explore the Work
+              <span className="transition-transform group-hover:translate-x-1 duration-300">&rarr;</span>
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

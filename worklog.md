@@ -61,3 +61,28 @@ Stage Summary:
 - Empty space reduced significantly — content-dense but still premium
 - Dangerous Knowledge section adds intellectual authority
 - Assessment funnel at hero + mid-page + final CTA positions
+
+---
+Task ID: 3
+Agent: Super Z (Main)
+Task: AstroKalki V5 — The Intelligence Platform Upgrade
+
+Work Log:
+- Rebuilt Hero: contained height (85-90vh), bottom-anchored content, bold oversized headline "SAME PATTERN. DIFFERENT FACE.", specific subheadline "Vedic Intelligence meets Jungian Depth", social proof badge (2,400+ / 97%), gold "Begin Analysis" + ghost "How It Works" CTAs
+- Built Pattern Mosaic: 4 high-density cinematic cards (Heartbreak, Sabotage, Stagnation, Masking) in 2x4 grid, images blur by default and sharpen on hover, root-cause text appears on hover
+- Rebuilt Method as "Engine Room": 4 steps connected by vertical Golden Thread SVG that fills progressively on scroll using framer-motion useScroll/useTransform, step icons in gold-bordered nodes
+- Rebuilt Services as "Luxury Marketplace": 2x2 grid, each card shows small square image + name + price on same line (like restaurant menu) + duration + 2-line description + CTA, pricing visible without hover, Pattern Decoder Monthly bar below
+- Rebuilt Warrior's Journey as compact A24 moment: single full-width cinematic image, text overlay, not endless scroll (desktop ~442px height)
+- Added film grain overlay system: SVG feTurbulence noise at 6-8% opacity on hero, mosaic, service, and warrior images
+- Updated Dangerous Knowledge: Magazine-style grid with articles including "The Mother Wound in the Chart", "The Trap of Spiritual Bypassing"
+- Fixed mobile tap targets: service CTA buttons and monthly bar CTA now min-h-[44px] for iOS/Android compliance
+- Typography: Cormorant Garamond bold with tracking -0.02em for headlines, creating heavier authoritative feel vs previous light weights
+- Lint clean, all sections verified with Agent Browser
+
+Stage Summary:
+- V5 shifts from "cinematic portfolio" to "Intelligence Platform"
+- Services look like a high-end consultant's menu, not Netflix chapters
+- Pattern Mosaic creates interactive self-recognition moment
+- Golden Thread creates proprietary system feel for the Method
+- Film grain adds subtle cinematic texture without being gimmicky
+- All pricing visible, all CTAs functional, mobile tap targets fixed

@@ -5,178 +5,166 @@ import Image from 'next/image';
 
 const services = [
   {
-    number: 'I',
     name: 'Pattern Snapshot',
-    description: 'A quick 20-minute reading to identify your core repeating pattern. Perfect for those wanting a clear diagnosis before committing to deeper work. We name the pattern that has been running beneath every relationship, every crisis, every self-betrayal.',
     price: '₹999',
-    duration: '20 min',
+    duration: '20-Minute Intensive',
+    description: 'A precise diagnostic. Name the pattern running beneath every relationship, every crisis, every self-betrayal.',
     image: '/images/service-pattern.png',
-    cta: 'Book Snapshot',
-    tag: 'Quick Start',
+    cta: 'Book Decode',
   },
   {
-    number: 'II',
     name: 'Relationship Decode',
-    description: 'Why you keep attracting the same dynamic. Why you stay when you should leave. The same wound, the same face, the same exit you never take. This session maps the relational architecture that keeps choosing your partners for you.',
     price: '₹1,999',
-    duration: '60 min',
+    duration: '60-Minute Intensive',
+    description: 'Why you keep attracting the same dynamic. Why you stay when you should leave. The architecture of your relational loop.',
     image: '/images/service-relationship.png',
-    cta: 'Book Session',
-    tag: null,
+    cta: 'Book Decode',
   },
   {
-    number: 'III',
     name: 'Emotional Pattern Decode',
-    description: 'Why you feel too much. Why you feel nothing. Why the wrong feeling arrives at the wrong time — and where it learned to do that. Deepest work: decoding the emotional operating system that runs beneath your awareness.',
     price: '₹2,999',
-    duration: '90 min',
+    duration: '90-Minute Deep Work',
+    description: 'Why the wrong feeling arrives at the wrong time — and where it learned to do that. The deepest diagnostic available.',
     image: '/images/service-emotional.png',
-    cta: 'Begin Deep Work',
-    tag: 'Deepest Work',
+    cta: 'Book Decode',
+    featured: true,
   },
   {
-    number: 'IV',
     name: 'Shadow Session',
-    description: 'The parts you disown don\'t disappear. They choose your partners. They start your conflicts. They engineer your breakdowns. We meet them. Jungian shadow work meets Vedic chart architecture for the most confrontational session available.',
     price: '₹2,999',
-    duration: '90 min',
+    duration: '90-Minute Deep Work',
+    description: 'The parts you disown choose your partners, start your conflicts, engineer your breakdowns. We meet them.',
     image: '/images/service-shadow.png',
-    cta: 'Book Session',
-    tag: null,
+    cta: 'Book Decode',
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#050505] py-16 md:py-24 border-t border-white/[0.04]">
+    <section id="services" className="bg-[#050505] py-14 md:py-20 border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-5 md:px-12">
-        {/* Header — services are REVENUE, make them prominent */}
-        <div className="mb-12 md:mb-16">
+        {/* Header */}
+        <div className="mb-10 md:mb-14">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] mb-3"
           >
-            The Work
+            The Marketplace
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="font-[var(--font-cormorant)] text-3xl md:text-5xl font-light text-[#f5f3f0]"
-          >
-            Choose your depth of <span className="italic">knowing</span>
-          </motion.h2>
-          <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-3 text-sm text-[#8a8078] font-[var(--font-inter)] font-light"
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="font-[var(--font-cormorant)] text-2xl md:text-4xl font-bold tracking-[-0.02em] text-[#f5f3f0]"
           >
-            Each session is a precision diagnostic. Clear pricing. Uncompromising depth.
+            Choose your depth of <span className="italic font-light">knowing</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-2 text-xs text-[#8a8078] font-[var(--font-inter)] font-light"
+          >
+            Each session is a precision diagnostic. Clear pricing. No hidden tiers.
           </motion.p>
         </div>
 
-        {/* Services as luxury editorial spreads — compact but premium */}
-        <div className="space-y-6 md:space-y-8">
+        {/* 2x2 Grid — Luxury Consultant Menu */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
           {services.map((service, index) => (
             <motion.div
               key={service.name}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className={`group border border-white/[0.04] hover:border-[#c9a96e]/20 transition-colors duration-500 overflow-hidden ${
-                service.tag === 'Deepest Work' ? 'border-[#c9a96e]/15' : ''
-              }`}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
+              className={`group border ${service.featured ? 'border-[#c9a96e]/20' : 'border-white/[0.04]'} hover:border-[#c9a96e]/25 transition-colors duration-500 overflow-hidden`}
             >
-              <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Image — compact aspect */}
-                <div className="relative w-full md:w-2/5 aspect-[16/10] md:aspect-auto md:min-h-[280px] overflow-hidden">
+              <div className="flex flex-row">
+                {/* Small square cinematic image */}
+                <div className="relative w-24 h-24 md:w-32 md:h-32 shrink-0 overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.name}
                     fill
-                    className="object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="128px"
                   />
-                  <div className="absolute inset-0 bg-[#050505]/15 group-hover:bg-transparent transition-colors duration-700" />
-                  {service.tag && (
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-[#c9a96e]/15 border border-[#c9a96e]/30">
-                      <span className="text-[9px] tracking-[0.2em] uppercase text-[#c9a96e] font-[var(--font-inter)]">
-                        {service.tag}
+                  {/* Film grain */}
+                  <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
+                  {service.featured && (
+                    <div className="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#c9a96e]/15 border border-[#c9a96e]/30">
+                      <span className="text-[7px] tracking-[0.2em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                        Deepest
                       </span>
                     </div>
                   )}
                 </div>
 
-                {/* Content — pricing FRONT AND CENTER */}
-                <div className="flex-1 p-5 md:p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-[10px] tracking-[0.15em] text-[#c9a96e]/40 font-[var(--font-inter)]">
-                      {service.number}
+                {/* Content — price front and center */}
+                <div className="flex-1 p-4 md:p-5 flex flex-col justify-center min-w-0">
+                  {/* Name + Price on same line — like a restaurant menu */}
+                  <div className="flex items-baseline gap-3 flex-wrap">
+                    <h3 className="font-[var(--font-cormorant)] text-lg md:text-xl text-[#f5f3f0] font-bold tracking-[-0.01em] group-hover:text-[#c9a96e] transition-colors duration-500">
+                      {service.name}
+                    </h3>
+                    <span className="font-[var(--font-cormorant)] text-lg md:text-xl text-[#c9a96e] font-bold">
+                      {service.price}
                     </span>
                   </div>
-                  <h3 className="font-[var(--font-cormorant)] text-xl md:text-3xl font-light text-[#f5f3f0] group-hover:text-[#c9a96e] transition-colors duration-500">
-                    {service.name}
-                  </h3>
-                  <p className="mt-3 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed">
+
+                  {/* Duration */}
+                  <span className="text-[9px] tracking-[0.15em] uppercase text-[#8a8078] font-[var(--font-inter)] mt-0.5">
+                    {service.duration}
+                  </span>
+
+                  {/* Description — 2 lines sharp */}
+                  <p className="mt-2 text-[11px] md:text-xs text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed line-clamp-2">
                     {service.description}
                   </p>
 
-                  {/* Price + CTA — always visible */}
-                  <div className="mt-5 flex items-center gap-5 flex-wrap">
-                    <span className="font-[var(--font-cormorant)] text-2xl md:text-3xl text-[#c9a96e]">
-                      {service.price}
-                    </span>
-                    <span className="text-[10px] tracking-[0.1em] text-[#8a8078] font-[var(--font-inter)] uppercase">
-                      {service.duration}
-                    </span>
-                    <a
-                      href="#assessment"
-                      className="ml-auto px-5 py-2.5 text-[10px] tracking-[0.2em] uppercase border border-[#c9a96e]/40 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-300 font-[var(--font-inter)]"
-                    >
-                      {service.cta}
-                    </a>
-                  </div>
+                  {/* CTA */}
+                  <a
+                    href="#assessment"
+                    className="mt-3 inline-block self-start px-4 py-3 min-h-[44px] flex items-center text-[9px] tracking-[0.2em] uppercase border border-[#c9a96e]/30 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-300 font-[var(--font-inter)] font-medium"
+                  >
+                    {service.cta}
+                  </a>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Membership — compact */}
+        {/* Membership — compact bar */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-8 border border-white/[0.04] p-5 md:p-8"
+          transition={{ duration: 0.5 }}
+          className="mt-4 border border-white/[0.04] p-4 md:p-5 flex flex-col md:flex-row md:items-center justify-between gap-3 hover:border-[#c9a96e]/15 transition-colors duration-500"
         >
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-              <h3 className="font-[var(--font-cormorant)] text-xl md:text-2xl text-[#f5f3f0] font-light">
-                Pattern Decoder <span className="italic">Monthly</span>
-              </h3>
-              <p className="mt-1 text-xs text-[#8a8078] font-[var(--font-inter)] font-light">
-                Weekly pattern insights, priority booking, monthly reports, member-only reflections.
-              </p>
-            </div>
-            <div className="flex items-center gap-5">
-              <span className="font-[var(--font-cormorant)] text-2xl text-[#c9a96e]">
-                ₹999<span className="text-sm text-[#8a8078]">/mo</span>
-              </span>
-              <a
-                href="#assessment"
-                className="px-5 py-2.5 text-[10px] tracking-[0.2em] uppercase border border-[#c9a96e]/40 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-300 font-[var(--font-inter)]"
-              >
-                Start Monthly
-              </a>
-            </div>
+          <div className="flex items-baseline gap-3">
+            <h4 className="font-[var(--font-cormorant)] text-lg text-[#f5f3f0] font-bold">
+              Pattern Decoder <span className="italic font-light">Monthly</span>
+            </h4>
+            <span className="font-[var(--font-cormorant)] text-lg text-[#c9a96e] font-bold">₹999<span className="text-xs text-[#8a8078] font-[var(--font-inter)] font-light">/mo</span></span>
+          </div>
+          <div className="flex items-center gap-4">
+            <p className="text-[10px] text-[#8a8078] font-[var(--font-inter)] font-light hidden md:block">
+              Weekly insights + priority booking + member reports
+            </p>
+            <a
+              href="#assessment"
+              className="px-4 py-3 min-h-[44px] flex items-center text-[9px] tracking-[0.2em] uppercase border border-[#c9a96e]/30 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-300 font-[var(--font-inter)] font-medium whitespace-nowrap"
+            >
+              Start Monthly
+            </a>
           </div>
         </motion.div>
       </div>

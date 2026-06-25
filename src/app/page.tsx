@@ -3,7 +3,7 @@
 import Loader from '@/components/astrokalki/Loader';
 import Navbar from '@/components/astrokalki/Navbar';
 import Hero from '@/components/astrokalki/Hero';
-import Recognition from '@/components/astrokalki/Recognition';
+import PatternMosaic from '@/components/astrokalki/PatternMosaic';
 import Method from '@/components/astrokalki/Method';
 import Services from '@/components/astrokalki/Services';
 import WarriorsJourney from '@/components/astrokalki/WarriorsJourney';
@@ -21,34 +21,34 @@ export default function Home() {
       <Navbar />
 
       <main id="top" className="bg-[#050505] overflow-x-hidden">
-        {/* 1. Hero — Immediate identity + assessment CTA */}
+        {/* 1. Hero — 3 seconds to authority */}
         <Hero />
 
-        {/* 2. Recognition — Self-recognition energy */}
-        <Recognition />
+        {/* 2. Pattern Mosaic — High-density recognition cards */}
+        <PatternMosaic />
 
-        {/* 3. Method — 4-step framework */}
+        {/* 3. Method — Engine Room with Golden Thread */}
         <Method />
 
-        {/* 4. Services — PRIMARY conversion section */}
+        {/* 4. Services — Luxury Marketplace (PRIMARY) */}
         <Services />
 
-        {/* 5. Warrior's Journey — Documentary timeline */}
+        {/* 5. Warrior's Journey — A24 moment */}
         <WarriorsJourney />
 
-        {/* 6. Testimonials — Recognitions + stats */}
+        {/* 6. Testimonials — Recognitions + Stats */}
         <Testimonials />
 
-        {/* 7. Dangerous Knowledge — Premium intellectual publication */}
+        {/* 7. Dangerous Knowledge — Magazine / Intellectual Moat */}
         <DangerousKnowledge />
 
-        {/* 8. Assessment CTA — mid-page funnel */}
+        {/* 8. Assessment CTA — Funnel touchpoint */}
         <Assessment />
 
         {/* 9. FAQ — Conversion support */}
         <FAQ />
 
-        {/* 10. Final CTA — Eclipse imagery */}
+        {/* 10. Final CTA — Eclipse + Shadow */}
         <FinalCTA />
 
         <Footer />
