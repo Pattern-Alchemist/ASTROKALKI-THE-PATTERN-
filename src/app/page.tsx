@@ -3,15 +3,15 @@
 import Loader from '@/components/astrokalki/Loader';
 import Navbar from '@/components/astrokalki/Navbar';
 import Hero from '@/components/astrokalki/Hero';
-import PatternRecognition from '@/components/astrokalki/PatternRecognition';
-import Methodology from '@/components/astrokalki/Methodology';
-import WarriorsJourney from '@/components/astrokalki/WarriorsJourney';
-import ShadowWork from '@/components/astrokalki/ShadowWork';
-import DharmaNavigation from '@/components/astrokalki/DharmaNavigation';
-import Testimonials from '@/components/astrokalki/Testimonials';
+import Recognition from '@/components/astrokalki/Recognition';
+import Method from '@/components/astrokalki/Method';
 import Services from '@/components/astrokalki/Services';
+import WarriorsJourney from '@/components/astrokalki/WarriorsJourney';
+import Testimonials from '@/components/astrokalki/Testimonials';
+import DangerousKnowledge from '@/components/astrokalki/DangerousKnowledge';
 import Assessment from '@/components/astrokalki/Assessment';
 import FAQ from '@/components/astrokalki/FAQ';
+import FinalCTA from '@/components/astrokalki/FinalCTA';
 import Footer from '@/components/astrokalki/Footer';
 
 export default function Home() {
@@ -21,30 +21,35 @@ export default function Home() {
       <Navbar />
 
       <main id="top" className="bg-[#050505] overflow-x-hidden">
+        {/* 1. Hero — Immediate identity + assessment CTA */}
         <Hero />
 
-        {/* Pattern Recognition & Editorial Depth */}
-        <PatternRecognition />
+        {/* 2. Recognition — Self-recognition energy */}
+        <Recognition />
 
-        {/* Methodology Visual Sequence */}
-        <Methodology />
+        {/* 3. Method — 4-step framework */}
+        <Method />
 
-        {/* Warrior's Journey - Full Width Cinematic */}
+        {/* 4. Services — PRIMARY conversion section */}
+        <Services />
+
+        {/* 5. Warrior's Journey — Documentary timeline */}
         <WarriorsJourney />
 
-        {/* Shadow Work - Psychological Confrontation */}
-        <ShadowWork />
-
-        {/* Dharma Navigation - Purpose & Direction */}
-        <DharmaNavigation />
-
-        {/* Testimonials - Recognitions & Stats */}
+        {/* 6. Testimonials — Recognitions + stats */}
         <Testimonials />
 
-        {/* Conversion & Assessment Layers */}
-        <Services />
+        {/* 7. Dangerous Knowledge — Premium intellectual publication */}
+        <DangerousKnowledge />
+
+        {/* 8. Assessment CTA — mid-page funnel */}
         <Assessment />
+
+        {/* 9. FAQ — Conversion support */}
         <FAQ />
+
+        {/* 10. Final CTA — Eclipse imagery */}
+        <FinalCTA />
 
         <Footer />
       </main>

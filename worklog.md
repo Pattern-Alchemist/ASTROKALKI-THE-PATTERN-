@@ -35,3 +35,29 @@ Stage Summary:
 - All custom icons replace generic Lucide usage
 - Framer Motion animations: fade, parallax, reveal, cinematic scaling only
 - SEO preserved: metadata, schema, FAQ markup, structured data
+
+---
+Task ID: 2
+Agent: Super Z (Main)
+Task: AstroKalki V4 — Rebuild as Psychological Intelligence Platform
+
+Work Log:
+- Rebuilt Hero: left-aligned authority layout, specific AstroKalki identity (Karmic Psychology, Shadow Integration, Dharma Navigation tags), immediate social proof stats, "Begin Analysis" primary CTA with gold fill
+- Rebuilt Recognition: shadow reflection image + "You are not stuck. You are repeating." statement, 5 pattern cards in compact grid, mid-page assessment CTA
+- Rebuilt Method as editorial list (not cards): Vedic Pattern Mapping, Depth Psychology, Shadow Integration, Dharma Navigation — alternating icon + text layout
+- Rebuilt Services as PRIMARY section: every service shows image, title, description, duration, pricing (₹999/₹1,999/₹2,999), and CTA in a single card — pricing is always visible, no hiding
+- Rebuilt Warrior's Journey as compact 3-column documentary timeline (6 phases), not endless scroll
+- Added Dangerous Knowledge section: 6 articles (Trauma Bonding, Shadow Psychology, Repeating Loops, Relationships, Self-Deception, Spiritual Bypassing) — premium intellectual publication feel
+- Rebuilt Testimonials as 3-column editorial grid with stats row
+- Added Final CTA section with eclipse + shadow imagery overlay
+- Reduced all section padding from py-24/py-32 to py-16/py-24 — eliminated excessive empty space
+- Removed standalone DharmaNavigation (now integrated into Method as step 04)
+- All lint clean, all images loading, zero console errors, mobile verified at 375px
+
+Stage Summary:
+- V4 shifts from "cinematic portfolio" to "Psychological Intelligence Platform for Kaliyug"
+- Services are front and center with clear pricing
+- Hero has immediate AstroKalki identity, not generic coach lines
+- Empty space reduced significantly — content-dense but still premium
+- Dangerous Knowledge section adds intellectual authority
+- Assessment funnel at hero + mid-page + final CTA positions

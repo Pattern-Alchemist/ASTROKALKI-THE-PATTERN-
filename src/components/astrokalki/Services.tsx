@@ -2,216 +2,180 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ThreadIcon } from './Icons';
 
 const services = [
   {
     number: 'I',
     name: 'Pattern Snapshot',
-    description:
-      'A quick 20-minute reading to identify your core repeating pattern. Perfect for those wanting a clear diagnosis before committing to deeper work. We name the pattern that has been running beneath every relationship, every crisis, every self-betrayal.',
+    description: 'A quick 20-minute reading to identify your core repeating pattern. Perfect for those wanting a clear diagnosis before committing to deeper work. We name the pattern that has been running beneath every relationship, every crisis, every self-betrayal.',
     price: '₹999',
     duration: '20 min',
     image: '/images/service-pattern.png',
     cta: 'Book Snapshot',
-    highlight: false,
+    tag: 'Quick Start',
   },
   {
     number: 'II',
     name: 'Relationship Decode',
-    description:
-      'Why you keep attracting the same dynamic. Why you stay when you should leave. The same wound, the same face, the same exit you never take. This session maps the relational architecture that keeps choosing your partners for you.',
+    description: 'Why you keep attracting the same dynamic. Why you stay when you should leave. The same wound, the same face, the same exit you never take. This session maps the relational architecture that keeps choosing your partners for you.',
     price: '₹1,999',
     duration: '60 min',
     image: '/images/service-relationship.png',
     cta: 'Book Session',
-    highlight: false,
+    tag: null,
   },
   {
     number: 'III',
     name: 'Emotional Pattern Decode',
-    description:
-      'Why you feel too much. Why you feel nothing. Why the wrong feeling arrives at the wrong time — and where it learned to do that. This is the deepest work — decoding the emotional operating system that runs beneath your awareness.',
+    description: 'Why you feel too much. Why you feel nothing. Why the wrong feeling arrives at the wrong time — and where it learned to do that. Deepest work: decoding the emotional operating system that runs beneath your awareness.',
     price: '₹2,999',
     duration: '90 min',
     image: '/images/service-emotional.png',
     cta: 'Begin Deep Work',
-    highlight: true,
+    tag: 'Deepest Work',
   },
   {
     number: 'IV',
     name: 'Shadow Session',
-    description:
-      'The parts you disown don\'t disappear. They choose your partners. They start your conflicts. They engineer your breakdowns. We meet them. Jungian shadow work meets Vedic chart architecture for the most confrontational session available.',
+    description: 'The parts you disown don\'t disappear. They choose your partners. They start your conflicts. They engineer your breakdowns. We meet them. Jungian shadow work meets Vedic chart architecture for the most confrontational session available.',
     price: '₹2,999',
     duration: '90 min',
     image: '/images/service-shadow.png',
     cta: 'Book Session',
-    highlight: false,
+    tag: null,
   },
 ];
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="bg-[#050505] py-20 md:py-32 border-t border-white/[0.04]"
-    >
+    <section id="services" className="bg-[#050505] py-16 md:py-24 border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-5 md:px-12">
-        {/* Section Header */}
-        <div className="mb-16 md:mb-24 max-w-2xl">
-          <motion.span
+        {/* Header — services are REVENUE, make them prominent */}
+        <div className="mb-12 md:mb-16">
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/60 mb-4 block"
+            transition={{ duration: 0.8 }}
+            className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] mb-3"
           >
             The Work
-          </motion.span>
+          </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-[var(--font-cormorant)] text-3xl md:text-6xl font-light text-[#e8e0d4]"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="font-[var(--font-cormorant)] text-3xl md:text-5xl font-light text-[#f5f3f0]"
           >
-            Why does the same pain{' '}
-            <span className="italic">keep</span> changing faces?
+            Choose your depth of <span className="italic">knowing</span>
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="mt-5 text-[#8a8078] text-sm md:text-base font-[var(--font-inter)] font-light"
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mt-3 text-sm text-[#8a8078] font-[var(--font-inter)] font-light"
           >
-            Clear pricing. Uncompromising depth. Select your entry point.
+            Each session is a precision diagnostic. Clear pricing. Uncompromising depth.
           </motion.p>
         </div>
 
-        {/* Quick Start Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 inline-flex items-center gap-2 px-4 py-2 border border-white/[0.06] text-[10px] tracking-[0.2em] uppercase text-[#8a8078]"
-        >
-          <ThreadIcon className="w-3 h-3 text-[#c9a96e]/60" />
-          Quick Start
-        </motion.div>
-
-        {/* Services as Luxury Editorial Spreads */}
-        <div className="space-y-20 md:space-y-32">
+        {/* Services as luxury editorial spreads — compact but premium */}
+        <div className="space-y-6 md:space-y-8">
           {services.map((service, index) => (
             <motion.div
               key={service.name}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 1, ease: 'easeOut' }}
-              className={`flex flex-col ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              } gap-8 md:gap-16 items-center`}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className={`group border border-white/[0.04] hover:border-[#c9a96e]/20 transition-colors duration-500 overflow-hidden ${
+                service.tag === 'Deepest Work' ? 'border-[#c9a96e]/15' : ''
+              }`}
             >
-              {/* Image Spread */}
-              <div className="relative w-full md:w-1/2 aspect-[4/5] overflow-hidden group">
-                <Image
-                  src={service.image}
-                  alt={service.name}
-                  fill
-                  className="object-cover group-hover:scale-[1.03] transition-transform duration-1000 ease-out"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-[#050505]/20 group-hover:bg-transparent transition-colors duration-1000" />
-                {service.highlight && (
-                  <div className="absolute top-4 left-4 px-3 py-1.5 bg-[#c9a96e]/10 border border-[#c9a96e]/30">
-                    <span className="text-[9px] tracking-[0.2em] uppercase text-[#c9a96e] font-[var(--font-inter)]">
-                      Deepest Work
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              {/* Narrative & Price */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <span className="text-[10px] tracking-[0.2em] text-[#c9a96e]/40 font-[var(--font-inter)] mb-3">
-                  {service.number}
-                </span>
-                <h3 className="font-[var(--font-cormorant)] text-2xl md:text-5xl font-light text-[#e8e0d4] tracking-tight">
-                  {service.name}
-                </h3>
-                <p className="mt-5 text-[#8a8078] text-sm md:text-base leading-relaxed font-[var(--font-inter)] font-light">
-                  {service.description}
-                </p>
-
-                <div className="mt-8 flex items-center gap-6 md:gap-8 flex-wrap">
-                  <span className="font-[var(--font-cormorant)] text-2xl md:text-3xl text-[#c9a96e]/90">
-                    {service.price}
-                  </span>
-                  <span className="text-[10px] tracking-[0.15em] text-[#8a8078] font-[var(--font-inter)] uppercase">
-                    {service.duration}
-                  </span>
+              <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                {/* Image — compact aspect */}
+                <div className="relative w-full md:w-2/5 aspect-[16/10] md:aspect-auto md:min-h-[280px] overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
+                  <div className="absolute inset-0 bg-[#050505]/15 group-hover:bg-transparent transition-colors duration-700" />
+                  {service.tag && (
+                    <div className="absolute top-3 left-3 px-3 py-1 bg-[#c9a96e]/15 border border-[#c9a96e]/30">
+                      <span className="text-[9px] tracking-[0.2em] uppercase text-[#c9a96e] font-[var(--font-inter)]">
+                        {service.tag}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
-                <div className="mt-6">
-                  <a
-                    href="#assessment"
-                    className="inline-block px-6 py-3 text-[10px] tracking-[0.25em] uppercase border border-white/[0.12] text-[#e8e0d4] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all duration-500 font-[var(--font-inter)]"
-                  >
-                    {service.cta}
-                  </a>
+                {/* Content — pricing FRONT AND CENTER */}
+                <div className="flex-1 p-5 md:p-8 flex flex-col justify-center">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-[10px] tracking-[0.15em] text-[#c9a96e]/40 font-[var(--font-inter)]">
+                      {service.number}
+                    </span>
+                  </div>
+                  <h3 className="font-[var(--font-cormorant)] text-xl md:text-3xl font-light text-[#f5f3f0] group-hover:text-[#c9a96e] transition-colors duration-500">
+                    {service.name}
+                  </h3>
+                  <p className="mt-3 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  {/* Price + CTA — always visible */}
+                  <div className="mt-5 flex items-center gap-5 flex-wrap">
+                    <span className="font-[var(--font-cormorant)] text-2xl md:text-3xl text-[#c9a96e]">
+                      {service.price}
+                    </span>
+                    <span className="text-[10px] tracking-[0.1em] text-[#8a8078] font-[var(--font-inter)] uppercase">
+                      {service.duration}
+                    </span>
+                    <a
+                      href="#assessment"
+                      className="ml-auto px-5 py-2.5 text-[10px] tracking-[0.2em] uppercase border border-[#c9a96e]/40 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-300 font-[var(--font-inter)]"
+                    >
+                      {service.cta}
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Membership Tier */}
+        {/* Membership — compact */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          className="mt-24 md:mt-32 border-t border-white/[0.04] pt-16 md:pt-24"
+          transition={{ duration: 0.8 }}
+          className="mt-8 border border-white/[0.04] p-5 md:p-8"
         >
-          <div className="max-w-3xl">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/60 mb-3 block">
-              Commitment
-            </span>
-            <h3 className="font-[var(--font-cormorant)] text-2xl md:text-4xl text-[#e8e0d4] font-light mb-2">
-              Pattern Decoder Monthly
-            </h3>
-            <p className="text-[#8a8078] text-sm font-[var(--font-inter)] font-light leading-relaxed max-w-xl mb-6">
-              Weekly pattern insights delivered to your inbox, plus priority booking when
-              you need deeper work. Choose your depth of knowing.
-            </p>
-
-            <div className="flex items-center gap-6 flex-wrap">
-              <span className="font-[var(--font-cormorant)] text-2xl md:text-3xl text-[#c9a96e]/90">
-                ₹999<span className="text-base text-[#8a8078]">/month</span>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h3 className="font-[var(--font-cormorant)] text-xl md:text-2xl text-[#f5f3f0] font-light">
+                Pattern Decoder <span className="italic">Monthly</span>
+              </h3>
+              <p className="mt-1 text-xs text-[#8a8078] font-[var(--font-inter)] font-light">
+                Weekly pattern insights, priority booking, monthly reports, member-only reflections.
+              </p>
+            </div>
+            <div className="flex items-center gap-5">
+              <span className="font-[var(--font-cormorant)] text-2xl text-[#c9a96e]">
+                ₹999<span className="text-sm text-[#8a8078]">/mo</span>
               </span>
               <a
                 href="#assessment"
-                className="inline-block px-6 py-3 text-[10px] tracking-[0.25em] uppercase border border-white/[0.12] text-[#e8e0d4] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all duration-500 font-[var(--font-inter)]"
+                className="px-5 py-2.5 text-[10px] tracking-[0.2em] uppercase border border-[#c9a96e]/40 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-300 font-[var(--font-inter)]"
               >
                 Start Monthly
               </a>
-            </div>
-
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl">
-              {[
-                'Weekly pattern insights',
-                'Priority booking access',
-                'Monthly pattern reports',
-                'Member-only reflections',
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-[11px] text-[#8a8078] font-[var(--font-inter)] font-light">
-                  <span className="w-1 h-1 bg-[#c9a96e]/50 rounded-full" />
-                  {item}
-                </div>
-              ))}
             </div>
           </div>
         </motion.div>

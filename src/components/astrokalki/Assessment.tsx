@@ -5,78 +5,53 @@ import { PathIcon } from './Icons';
 
 export default function Assessment() {
   return (
-    <section
-      id="assessment"
-      className="relative bg-[#0a0a0a] py-20 md:py-32 border-t border-white/[0.04] overflow-hidden"
-    >
-      {/* Subtle background image */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'linear-gradient(to bottom, rgba(10,10,10,0), rgba(201,169,110,0.03), rgba(10,10,10,0))',
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 max-w-4xl mx-auto px-5 md:px-12 text-center">
+    <section id="assessment" className="bg-[#0a0a0a] py-16 md:py-20 border-t border-white/[0.04]">
+      <div className="max-w-4xl mx-auto px-5 md:px-12 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="flex justify-center mb-6 text-[#c9a96e]/50"
+          transition={{ duration: 0.8 }}
+          className="flex justify-center mb-4 text-[#c9a96e]/50"
         >
-          <PathIcon className="w-10 h-10" />
+          <PathIcon className="w-8 h-8" />
         </motion.div>
 
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.1 }}
-          className="font-[var(--font-cormorant)] text-3xl md:text-6xl font-light text-[#e8e0d4]"
+          transition={{ duration: 0.8 }}
+          className="font-[var(--font-cormorant)] text-2xl md:text-4xl font-light text-[#f5f3f0]"
         >
           Your pattern has a <span className="italic">name</span>.
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mt-6 text-[#8a8078] text-sm md:text-base max-w-xl mx-auto font-[var(--font-inter)] font-light leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mt-3 text-sm text-[#8a8078] font-[var(--font-inter)] font-light max-w-lg mx-auto"
         >
-          Three questions. One truth you&apos;ve been avoiding. A 60-second reading. No chart
-          required. Just honesty. Before you can break the cycle, you must see it. The
-          assessment is the first step in your Dharma Navigation.
+          Three questions. One truth you&apos;ve been avoiding.
+          A 60-second reading. No chart required. Just honesty.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="mt-10"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-6"
         >
           <a
             href="#"
-            className="inline-block px-10 py-5 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e]/90 text-[#050505] hover:bg-[#c9a96e] transition-all duration-500 font-[var(--font-inter)] font-medium"
+            className="inline-block px-8 py-4 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e] text-[#050505] font-[var(--font-inter)] font-medium hover:bg-[#d4b87a] transition-all duration-300"
           >
             Begin Intake
           </a>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-4 text-[10px] text-[#8a8078]/60 tracking-[0.15em] uppercase font-[var(--font-inter)]"
-        >
-          The question is not whether you are ready. It is whether you are willing to see.
-        </motion.p>
       </div>
     </section>
   );
