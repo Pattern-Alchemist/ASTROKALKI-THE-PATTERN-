@@ -7,6 +7,7 @@ import FilmGrain from './FilmGrain';
 import TiltCard from './TiltCard';
 import { useReducedMotion } from './hooks/useReducedMotion';
 import { EASE, SPRING, ctaHover } from './utils/animation';
+import { openWhatsAppModal } from '@/lib/whatsapp-modal';
 
 const stages = [
   {
@@ -200,16 +201,16 @@ export default function Services() {
                       ))}
                     </ul>
 
-                    {/* CTA — with spring hover */}
-                    <motion.a
-                      href="#assessment"
+                    {/* CTA — opens WhatsApp modal */}
+                    <motion.button
+                      onClick={() => openWhatsAppModal(stage.cta)}
                       variants={ctaHover}
                       initial="rest"
                       whileHover="hover"
                       className="mt-3 inline-block self-start px-4 py-3 min-h-[44px] flex items-center text-[9px] tracking-[0.2em] uppercase border border-[#c9a96e]/30 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050505] transition-all duration-300 font-[var(--font-inter)] font-medium"
                     >
                       {stage.cta}
-                    </motion.a>
+                    </motion.button>
                   </div>
                 </div>
               </motion.div>

@@ -5,6 +5,7 @@ import { ThreadIcon } from './Icons';
 import AnnotationLayer from './AnnotationLayer';
 import { useReducedMotion } from './hooks/useReducedMotion';
 import { EASE, SPRING } from './utils/animation';
+import { openWhatsAppModal } from '@/lib/whatsapp-modal';
 
 const articles = [
   {
@@ -32,7 +33,7 @@ export default function DangerousKnowledge() {
   const noMotion = prefersReduced ? { duration: 0 } : undefined;
 
   return (
-    <section className="bg-[#080808] py-14 md:py-20 border-t border-white/[0.04]">
+    <section id="dangerous-knowledge" className="bg-[#080808] py-14 md:py-20 border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-5 md:px-12">
         {/* Header — Magazine style */}
         <div className="flex items-start justify-between gap-6 mb-10 md:mb-14 flex-wrap">
@@ -91,6 +92,8 @@ export default function DangerousKnowledge() {
           {articles.map((article, index) => (
             <motion.div
               key={article.title}
+              onClick={() => openWhatsAppModal(`Article enquiry: "${article.title}"`)}
+              style={{ cursor: 'pointer' }}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-20px' }}

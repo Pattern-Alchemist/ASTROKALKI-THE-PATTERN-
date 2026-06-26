@@ -60,7 +60,7 @@ export default function Testimonials() {
   const noMotion = prefersReduced ? { duration: 0 } : undefined;
 
   return (
-    <section className="bg-[#050505] py-14 md:py-20 border-t border-white/[0.04]">
+    <section id="testimonials" className="bg-[#050505] py-14 md:py-20 border-t border-white/[0.04]">
       <div className="max-w-6xl mx-auto px-5 md:px-12">
         {/* Header */}
         <div className="flex items-start justify-between gap-6 mb-10 md:mb-14 flex-wrap">

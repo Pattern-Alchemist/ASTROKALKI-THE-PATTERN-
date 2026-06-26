@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import SiteModalListener from "@/components/astrokalki/SiteModalListener";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -284,6 +285,7 @@ export default function RootLayout({
         className={`${cormorant.variable} ${inter.variable} antialiased bg-[#050505] text-[#e8e0d4]`}
       >
         {children}
+        <SiteModalListener />
       </body>
     </html>
   );

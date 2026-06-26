@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Global helper: signed in
+    function isSignedIn() { return request.auth != null; }
+
+    // Pattern Log validation
+    function isValidPatternLog(data) {
+      return data.emotion is string 
+          && data.patternType is string 
+          && data.createdAt is timestamp;
+    }
+
+    // Corporate inquiries
+    match /corporate_inquiries/{inquiryId} {
+      allow create: if request.resource.data.keys().hasOnly(['orgName', 'email', 'createdAt'])
+                    && request.resource.data.orgName is string
+                    && request.resource.data.email is string
+                    && request.resource.data.createdAt is timestamp;
+      allow read: if request.auth != null;
+      allow update, delete: if false; // Inquiries are immutable
+    }
+
+    // Pattern logs
+    match /pattern_logs/{logId} {
+      allow create: if isSignedIn(); // Simplified for now
+      allow list: if isSignedIn(); 
+      allow read, update, delete: if false; // Immutable logs
+    }
+  }
+}

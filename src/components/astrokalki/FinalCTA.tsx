@@ -6,6 +6,7 @@ import { EclipseIcon } from './Icons';
 import FilmGrain from './FilmGrain';
 import { useReducedMotion } from './hooks/useReducedMotion';
 import { SPRING, ctaHover } from './utils/animation';
+import { openWhatsAppModal } from '@/lib/whatsapp-modal';
 
 export default function FinalCTA() {
   const prefersReduced = useReducedMotion();
@@ -78,15 +79,15 @@ export default function FinalCTA() {
           transition={noMotion || { ...SPRING.gentle, delay: 0.2 }}
           className="mt-7"
         >
-          <motion.a
-            href="#assessment"
+          <motion.button
+            onClick={() => openWhatsAppModal()}
             variants={ctaHover}
             initial="rest"
             whileHover="hover"
             className="inline-block px-10 py-5 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e] text-[#050505] font-[var(--font-inter)] font-semibold hover:bg-[#d4b87a] transition-colors duration-300"
           >
             Take the Pattern Index
-          </motion.a>
+          </motion.button>
         </motion.div>
       </div>
     </section>

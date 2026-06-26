@@ -7,6 +7,7 @@ import { EclipseIcon } from './Icons';
 import FilmGrain from './FilmGrain';
 import { heroContainer, heroChild, heroHeadline, SPRING, ctaHover } from './utils/animation';
 import { useReducedMotion } from './hooks/useReducedMotion';
+import { openWhatsAppModal } from '@/lib/whatsapp-modal';
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -91,15 +92,15 @@ export default function Hero() {
             transition={noMotion}
             className="mt-7 flex flex-col sm:flex-row items-start gap-3"
           >
-            <motion.a
-              href="#assessment"
+            <motion.button
+              onClick={() => openWhatsAppModal()}
               variants={ctaHover}
               initial="rest"
               whileHover="hover"
               className="inline-block px-8 py-4 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e] text-[#050505] font-[var(--font-inter)] font-semibold hover:bg-[#d4b87a] transition-colors duration-300"
             >
               Discover Your Hidden Pattern
-            </motion.a>
+            </motion.button>
             <motion.a
               href="#method"
               variants={ctaHover}

@@ -11,7 +11,7 @@ export default function WarriorsJourney() {
   const noMotion = prefersReduced ? { duration: 0 } : undefined;
 
   return (
-    <section className="relative py-14 md:py-20 overflow-hidden border-t border-white/[0.04]">
+    <section id="warriors-journey" className="relative py-14 md:py-20 overflow-hidden border-t border-white/[0.04]">
       {/* Real warrior desert image from ZIP */}
       <div className="absolute inset-0 z-0">
         <Image
