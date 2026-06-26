@@ -42,6 +42,7 @@ import MandalaComposer from '@/components/astrokalki/MandalaComposer';
 import NadiVisualizer from '@/components/astrokalki/NadiVisualizer';
 import SankalpaForge from '@/components/astrokalki/SankalpaForge';
 import ShadowJournal from '@/components/astrokalki/ShadowJournal';
+import PatternIntelligenceReceptionist from '@/components/astrokalki/PatternIntelligenceReceptionist';
 
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '@/components/astrokalki/hooks/useReducedMotion';
@@ -245,6 +246,9 @@ export default function Home() {
 
         {/* 14. FAQ */}
         <FAQ />
+
+        {/* 14b. Pattern Intelligence Receptionist — Live Demo */}
+        <PatternIntelligenceReceptionist />
 
         {/* 15. Final CTA */}
         <FinalCTA />
