@@ -147,3 +147,31 @@ Stage Summary:
 - Every tool feeds PatternStory (the signature) — creates the "I'm building evidence" stickiness
 - All data persists client-side via localStorage, no backend required
 - Pure scripted/algorithmic — no LLM API calls, all routing deterministic
+
+---
+Task ID: 16
+Agent: Super Z (Main)
+Task: Build Phase 3 — Personal Intelligence (Pattern DNA, Pattern Biography, Consultation Preparation) + homepage reorganization around "one engine" narrative
+
+Work Log:
+- Strategic reframe: shifted from "11 tools stitched together" to "one intelligence engine, multiple inputs, premium outputs"
+- Built PatternDNA.tsx — 6-dimension evolving psychological fingerprint (Avoidance/Control/Performer/Rescuer/Shadow/Witness), reads from all 7 other Pattern Intelligence features via shared localStorage schema, 30-day comparison via stored snapshots, dominant-pattern interpretation, "aspiration" framing for Witness dimension
+- Built PatternBiography.tsx — chapter-based upgrade from Pattern Story. 30-day chapters with literary titles ("Every yes was a smaller no to yourself", "The rescuer was running the week", "You disappeared before being left"). Each chapter auto-generates from logged data: dominant pattern, dominant voice, witness appearances, mirror sessions, resets, reflections. Closing line varies by chapter number (beginning/middle/late).
+- Built ConsultationPreparation.tsx — generates downloadable brief from 30+ days of data. Includes: Pattern DNA snapshot, dominant patterns/voices, top triggers from Loop Detector, recent Mirror insights, recent reflections, auto-generated questions for operator. Copy-to-clipboard + download-as-.txt functionality.
+- Restructured Pattern Intelligence System section in page.tsx:
+  1. New intro copy: "One intelligence engine. Multiple inputs. Premium outputs..."
+  2. Pattern DNA placed at TOP as "The Engine Output" — live, updating
+  3. "Engine Inputs" sub-header introducing the 4 pillars
+  4. 4 pillars (Observe/Decode/Interrupt/Transform) with 11 tools — unchanged
+  5. New "The Premium Outputs" subsection with Pattern Biography + Consultation Preparation side by side
+  6. Updated closing line: "Every input feeds Pattern DNA and Your Pattern Biography — the engine's two signature outputs."
+- TypeScript: fixed comparison type error in ConsultationPreparation (comparing dominantVoice object to string 'Witness' → comparing dominantVoice.label to 'The Witness')
+- Verification: HTTP 200, 275KB rendered (5KB larger than previous baseline confirms new components live), all Phase 3 features confirmed in HTML, all existing features still present, zero errors in dev.log
+
+Stage Summary:
+- 3 new components added: PatternDNA, PatternBiography, ConsultationPreparation
+- Total project component count: 49+
+- Site now structured around "one engine" narrative: Engine Output (DNA) → Engine Inputs (4 pillars) → Premium Outputs (Biography + Consultation Prep)
+- Pattern Biography replaces Pattern Story as the signature output (Pattern Story still present in Pillar 4 as the simpler version; Biography is the Phase 3 upgrade)
+- Consultation Preparation creates the bridge to monetization: consultations now start with months of behavioral evidence instead of an intake form
+- All data persists client-side via localStorage; Pattern DNA history (90-day snapshots) stored for 30-day comparison feature

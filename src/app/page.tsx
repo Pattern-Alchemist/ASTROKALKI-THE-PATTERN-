@@ -58,6 +58,11 @@ import DailyReflection from '@/components/astrokalki/DailyReflection';
 import PatternStory from '@/components/astrokalki/PatternStory';
 import WeeklyIntelligenceReport from '@/components/astrokalki/WeeklyIntelligenceReport';
 
+// Phase 3 — Personal Intelligence (the engine's premium outputs)
+import PatternDNA from '@/components/astrokalki/PatternDNA';
+import PatternBiography from '@/components/astrokalki/PatternBiography';
+import ConsultationPreparation from '@/components/astrokalki/ConsultationPreparation';
+
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '@/components/astrokalki/hooks/useReducedMotion';
 import { EASE } from '@/components/astrokalki/utils/animation';
@@ -90,9 +95,34 @@ export default function Home() {
                 AstroKalki reveals <span className="italic font-light text-[#c9a96e]">why</span> you keep doing it.
               </h2>
               <p className="mt-4 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed">
-                Eleven tools organized into four pillars. Observe your patterns daily. Decode what&apos;s underneath. Interrupt the loops in real time. Transform over months. This isn&apos;t a feature list — it&apos;s an operating system for self-awareness. All data stays on your device.
+                One intelligence engine. Multiple inputs. Premium outputs. Every pattern you log, every mirror you face, every reset you complete — it all feeds a single engine that reveals the invisible architecture underneath. This isn&apos;t eleven tools stitched together. It&apos;s one system, working in the background, getting smarter the more you use it.
               </p>
             </motion.div>
+
+            {/* The engine's live output — Pattern DNA at the top */}
+            <div className="mb-10">
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                  The Engine Output
+                </span>
+                <h3 className="font-[var(--font-cormorant)] text-lg md:text-xl font-bold text-[#f5f3f0]">
+                  Your evolving fingerprint <span className="italic font-light text-[#8a8078]">— live, updating, yours</span>
+                </h3>
+              </div>
+              <PatternDNA />
+            </div>
+
+            {/* Engine inputs — 4 pillars */}
+            <div className="mb-8">
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                  Engine Inputs
+                </span>
+                <h3 className="font-[var(--font-cormorant)] text-lg md:text-xl font-bold text-[#f5f3f0]">
+                  Four pillars <span className="italic font-light text-[#8a8078]">— daily, decode, interrupt, transform</span>
+                </h3>
+              </div>
+            </div>
 
             {/* Pillar 1 — Observe */}
             <div className="mb-8">
@@ -145,7 +175,7 @@ export default function Home() {
             </div>
 
             {/* Pillar 4 — Transform */}
-            <div>
+            <div className="mb-12">
               <div className="flex items-baseline gap-3 mb-4">
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
                   Pillar 4
@@ -161,8 +191,27 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Phase 3 — Personal Intelligence: the premium outputs */}
+            <div className="pt-10 border-t border-[#c9a96e]/20">
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                  The Premium Outputs
+                </span>
+                <h3 className="font-[var(--font-cormorant)] text-lg md:text-xl font-bold text-[#f5f3f0]">
+                  Personal Intelligence <span className="italic font-light text-[#8a8078]">— what the engine writes about you</span>
+                </h3>
+              </div>
+              <p className="text-[10px] text-[#8a8078]/60 font-[var(--font-inter)] font-light italic mb-5 max-w-2xl">
+                Months of evidence, woven into a biography. Your consultation starts here — not with an intake form.
+              </p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <PatternBiography />
+                <ConsultationPreparation />
+              </div>
+            </div>
+
             <p className="mt-8 text-[10px] text-[#8a8078]/40 font-[var(--font-inter)] italic text-center max-w-xl mx-auto">
-              Every tool feeds <span className="text-[#c9a96e]/70">Your Pattern Story</span> — the 90-day narrative that ties it all together. The more you log, the more it reveals.
+              Every input feeds <span className="text-[#c9a96e]/70">Pattern DNA</span> and <span className="text-[#c9a96e]/70">Your Pattern Biography</span> — the engine&apos;s two signature outputs. The more you log, the more it reveals.
             </p>
           </div>
         </section>
