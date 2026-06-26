@@ -9,6 +9,7 @@ import Method from '@/components/astrokalki/Method';
 import WarriorsJourney from '@/components/astrokalki/WarriorsJourney';
 import Testimonials from '@/components/astrokalki/Testimonials';
 import DangerousKnowledge from '@/components/astrokalki/DangerousKnowledge';
+import PatternLibrary from '@/components/astrokalki/PatternLibrary';
 import MemberPreview from '@/components/astrokalki/MemberPreview';
 import EmailSignup from '@/components/astrokalki/EmailSignup';
 import Assessment from '@/components/astrokalki/Assessment';
@@ -43,6 +44,9 @@ export default function Home() {
 
         {/* 7. Dangerous Knowledge — 3 articles only */}
         <DangerousKnowledge />
+
+        {/* 7b. Pattern Library — 15 SEO cornerstone articles */}
+        <PatternLibrary />
 
         {/* 8. Member Preview — compact Pattern Intelligence System teaser */}
         <MemberPreview />

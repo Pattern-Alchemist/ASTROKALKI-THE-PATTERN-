@@ -136,8 +136,9 @@ export default function Navbar() {
           {/* Social links in mobile menu */}
           <div className="flex gap-4 pt-3 border-t border-white/[0.04]">
             <a href="https://wa.me/918920862931" target="_blank" rel="noopener noreferrer" className="text-[10px] text-[#8a8078] hover:text-[#c9a96e]">WhatsApp</a>
-            <a href="https://youtube.com/@kalki_7" target="_blank" rel="noopener noreferrer" className="text-[10px] text-[#8a8078] hover:text-[#c9a96e]">YouTube</a>
+            <a href="https://www.youtube.com/@AstroKalki" target="_blank" rel="noopener noreferrer" className="text-[10px] text-[#8a8078] hover:text-[#c9a96e]">YouTube</a>
             <a href="https://www.instagram.com/unfilteredbuddy_" target="_blank" rel="noopener noreferrer" className="text-[10px] text-[#8a8078] hover:text-[#c9a96e]">Instagram</a>
+            <a href="mailto:sos.astrokalki@gmail.com" className="text-[10px] text-[#8a8078] hover:text-[#c9a96e]">Email</a>
           </div>
         </div>
       </motion.div>
