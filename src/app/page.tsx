@@ -31,6 +31,18 @@ import EncryptionSimulator from '@/components/astrokalki/EncryptionSimulator';
 import PatternLedger from '@/components/astrokalki/PatternLedger';
 import GravityMap from '@/components/astrokalki/GravityMap';
 
+// Next 10 Enhancements (Features 11–20)
+import ChakraTuner from '@/components/astrokalki/ChakraTuner';
+import GunaProfiler from '@/components/astrokalki/GunaProfiler';
+import PrakritiDecoder from '@/components/astrokalki/PrakritiDecoder';
+import PanchangaScheduler from '@/components/astrokalki/PanchangaScheduler';
+import MantraOscilloscope from '@/components/astrokalki/MantraOscilloscope';
+import BodyScanMapper from '@/components/astrokalki/BodyScanMapper';
+import MandalaComposer from '@/components/astrokalki/MandalaComposer';
+import NadiVisualizer from '@/components/astrokalki/NadiVisualizer';
+import SankalpaForge from '@/components/astrokalki/SankalpaForge';
+import ShadowJournal from '@/components/astrokalki/ShadowJournal';
+
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '@/components/astrokalki/hooks/useReducedMotion';
 import { EASE } from '@/components/astrokalki/utils/animation';
@@ -170,6 +182,60 @@ export default function Home() {
             {/* Purge Terminal */}
             <div className="mt-4">
               <PurgeTerminal />
+            </div>
+          </div>
+        </section>
+
+        {/* 12b. Vedic Constitution Lab — Next 10 Enhancements */}
+        <section className="bg-[#080808] py-14 md:py-20 border-t border-white/[0.04]">
+          <div className="max-w-7xl mx-auto px-5 md:px-12">
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={noMotion || { duration: 0.7, ease: EASE.outExpoLegacy }} className="mb-10">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] mb-3">Vedic Constitution Lab</p>
+              <h2 className="font-[var(--font-cormorant)] text-2xl md:text-4xl font-bold tracking-[-0.02em] text-[#f5f3f0]">
+                Constitutional <span className="italic font-light">instruments</span>
+              </h2>
+              <p className="mt-3 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light max-w-2xl">
+                Decode your prakriti, harmonize your nadis, compose your mandala, forge your sankalpa. Ten instruments at the intersection of Ayurveda, Jyotisha, and depth psychology — all client-side, all yours.
+              </p>
+            </motion.div>
+
+            {/* Row 1: Prakriti + Guna (constitutional diagnostics) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <PrakritiDecoder />
+              <GunaProfiler />
+            </div>
+
+            {/* Row 2: Chakra Tuner (full width, with detail panel) */}
+            <div className="mt-4">
+              <ChakraTuner />
+            </div>
+
+            {/* Row 3: Nadi + Mantra (pranic instruments) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+              <NadiVisualizer />
+              <MantraOscilloscope />
+            </div>
+
+            {/* Row 4: Panchanga Scheduler (full width) */}
+            <div className="mt-4">
+              <PanchangaScheduler />
+            </div>
+
+            {/* Row 5: Body Scan Mapper (full width) */}
+            <div className="mt-4">
+              <BodyScanMapper />
+            </div>
+
+            {/* Row 6: Mandala Composer + Sankalpa Forge (creative instruments) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+              <MandalaComposer />
+              <SankalpaForge />
+            </div>
+
+            {/* Row 7: Shadow Journal (full width, deep work) */}
+            <div className="mt-4">
+              <ShadowJournal />
             </div>
           </div>
         </section>
