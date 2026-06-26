@@ -1,0 +1,73 @@
+{
+  "workflows": [
+    {
+      "name": "seo-keyword-intake",
+      "description": "Reads keyword_bank rows from Google Sheets, classifies them, and posts normalized keyword payloads to the backend.",
+      "nodes": [
+        {"name": "Schedule Trigger", "type": "n8n-nodes-base.scheduleTrigger"},
+        {"name": "Read Keyword Bank", "type": "n8n-nodes-base.googleSheets", "config": {"operation": "read", "sheet": "keyword_bank"}},
+        {"name": "Normalize Keywords", "type": "n8n-nodes-base.code"},
+        {"name": "Classify Intent and Cluster", "type": "@n8n/n8n-nodes-langchain.openAi"},
+        {"name": "Map Payload", "type": "n8n-nodes-base.code"},
+        {"name": "POST Ingest Keywords", "type": "n8n-nodes-base.httpRequest", "config": {"method": "POST", "url": "/api/seo/ingest-keywords"}},
+        {"name": "Update Keyword Row", "type": "n8n-nodes-base.googleSheets", "config": {"operation": "update", "sheet": "keyword_bank"}}
+      ]
+    },
+    {
+      "name": "seo-brief-builder",
+      "description": "Reads queued content rows, enriches with SERP context, and stores a structured brief.",
+      "nodes": [
+        {"name": "Schedule Trigger", "type": "n8n-nodes-base.scheduleTrigger"},
+        {"name": "Read Content Queue", "type": "n8n-nodes-base.googleSheets", "config": {"operation": "read", "sheet": "content_queue"}},
+        {"name": "Fetch Cluster Details", "type": "n8n-nodes-base.httpRequest"},
+        {"name": "Fetch SERP Context", "type": "n8n-nodes-base.httpRequest"},
+        {"name": "Generate Brief JSON", "type": "@n8n/n8n-nodes-langchain.openAi"},
+        {"name": "Map Brief Payload", "type": "n8n-nodes-base.code"},
+        {"name": "POST Build Brief", "type": "n8n-nodes-base.httpRequest", "config": {"method": "POST", "url": "/api/seo/build-brief/:clusterId"}},
+        {"name": "Update Queue Row", "type": "n8n-nodes-base.googleSheets", "config": {"operation": "update", "sheet": "content_queue"}}
+      ]
+    },
+    {
+      "name": "seo-draft-generator",
+      "description": "Generates structured drafts from briefs and templates.",
+      "nodes": [
+        {"name": "Schedule Trigger", "type": "n8n-nodes-base.scheduleTrigger"},
+        {"name": "Read Briefed Queue Rows", "type": "n8n-nodes-base.googleSheets", "config": {"operation": "read", "sheet": "content_queue"}},
+        {"name": "Fetch Brief and Template", "type": "n8n-nodes-base.httpRequest"},
+        {"name": "Generate Title Variants", "type": "@n8n/n8n-nodes-langchain.openAi"},
+        {"name": "Switch by Page Type", "type": "n8n-nodes-base.switch"},
+        {"name": "Generate Section Blocks", "type": "@n8n/n8n-nodes-langchain.openAi"},
+        {"name": "Assemble Draft Payload", "type": "n8n-nodes-base.code"},
+        {"name": "POST Generate Draft", "type": "n8n-nodes-base.httpRequest", "config": {"method": "POST", "url": "/api/seo/generate-draft/:clusterId"}},
+        {"name": "Update Queue Row", "type": "n8n-nodes-base.googleSheets", "config": {"operation": "update", "sheet": "content_queue"}}
+      ]
+    },
+    {
+      "name": "seo-qa-and-links",
+      "description": "Scores content quality and suggests internal links.",
+      "nodes": [
+        {"name": "Schedule Trigger", "type": "n8n-nodes-base.scheduleTrigger"},
+        {"name": "Fetch Draft Content", "type": "n8n-nodes-base.httpRequest"},
+        {"name": "Score Draft Quality", "type": "@n8n/n8n-nodes-langchain.openAi"},
+        {"name": "Fetch Published Content", "type": "n8n-nodes-base.httpRequest"},
+        {"name": "Suggest Internal Links", "type": "@n8n/n8n-nodes-langchain.openAi"},
+        {"name": "Map QA Payload", "type": "n8n-nodes-base.code"},
+        {"name": "POST QA Results", "type": "n8n-nodes-base.httpRequest"},
+        {"name": "Update Queue Row", "type": "n8n-nodes-base.googleSheets", "config": {"operation": "update", "sheet": "content_queue"}}
+      ]
+    },
+    {
+      "name": "seo-publish",
+      "description": "Publishes approved drafts and triggers revalidation.",
+      "nodes": [
+        {"name": "Schedule Trigger", "type": "n8n-nodes-base.scheduleTrigger"},
+        {"name": "Read Approved Queue Rows", "type": "n8n-nodes-base.googleSheets", "config": {"operation": "read", "sheet": "content_queue"}},
+        {"name": "Fetch Final Content", "type": "n8n-nodes-base.httpRequest"},
+        {"name": "Transform Publish Payload", "type": "n8n-nodes-base.code"},
+        {"name": "POST Publish", "type": "n8n-nodes-base.httpRequest", "config": {"method": "POST", "url": "/api/seo/publish/:contentItemId"}},
+        {"name": "POST Revalidate", "type": "n8n-nodes-base.httpRequest", "config": {"method": "POST", "url": "/api/seo/revalidate"}},
+        {"name": "Update Queue Row", "type": "n8n-nodes-base.googleSheets", "config": {"operation": "update", "sheet": "content_queue"}}
+      ]
+    }
+  ]
+}

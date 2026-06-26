@@ -1,0 +1,331 @@
+{
+  "name": "seo-publish-revalidate",
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "seo-publish-trigger",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [240, 300],
+      "webhookId": "seo-publish-trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract content_item_id from webhook payload\nconst body = $input.all()[0].json;\nconst contentItemId = body.content_item_id || body.id;\n\nif (!contentItemId) {\n  throw new Error('content_item_id is required');\n}\n\nreturn [{ json: { content_item_id: contentItemId, action: body.action || 'publish' } }];"
+      },
+      "id": "parse-webhook",
+      "name": "Parse Webhook",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/content/{{ $json.content_item_id }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "fetch-content-item",
+      "name": "Fetch Content Item",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "status-check",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "approved",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "qa-check",
+              "leftValue": "={{ $json.qa_score || 0 }}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ]
+        }
+      },
+      "id": "verify-approved",
+      "name": "Approved + QA >= 75?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/publish/{{ $json.id }}",
+        "bodyParameters": {
+          "status": "published",
+          "published_at": "={{ new Date().toISOString() }}"
+        },
+        "options": {}
+      },
+      "id": "mark-published",
+      "name": "Mark as Published",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/revalidate",
+        "bodyParameters": {
+          "path": "={{ $json.slug }}",
+          "collection": "={{ $json.page_type || 'blog' }}"
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "trigger-revalidation",
+      "name": "Trigger Next.js Revalidation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/notify-search-engines",
+        "bodyParameters": {
+          "url": "={{ 'https://astrokalki.com/' + $json.slug }}",
+          "type": "URL_UPDATED"
+        },
+        "options": {}
+      },
+      "id": "ping-search-engines",
+      "name": "Ping Google Indexing API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1560, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log successful publish to automation_runs\nconst item = $input.all()[0].json;\n\nreturn [{\n  json: {\n    run_type: 'publish',\n    trigger_source: 'webhook',\n    input_payload: { content_item_id: item.id },\n    output_payload: { status: 'published', slug: item.slug },\n    status: 'completed'\n  }\n}];"
+      },
+      "id": "log-success",
+      "name": "Log Success",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/automation-run",
+        "bodyParameters": "={{ $json }}",
+        "options": {}
+      },
+      "id": "record-automation-run",
+      "name": "Record Automation Run",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2000, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { status: 'published', slug: $json.slug, revalidated: true } }}"
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2220, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Content not approved — log and respond\nconst item = $input.all()[0].json;\n\nreturn [{\n  json: {\n    run_type: 'publish_blocked',\n    trigger_source: 'webhook',\n    input_payload: { content_item_id: item.id },\n    output_payload: { status: 'blocked', reason: 'Not approved or QA score below 75' },\n    status: 'failed'\n  }\n}];"
+      },
+      "id": "log-blocked",
+      "name": "Log Blocked",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/automation-run",
+        "bodyParameters": "={{ $json }}",
+        "options": {}
+      },
+      "id": "record-blocked-run",
+      "name": "Record Blocked Run",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1340, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { status: 'blocked', reason: 'Content not approved or QA score below 75' } }}"
+      },
+      "id": "respond-blocked",
+      "name": "Respond Blocked",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1560, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Parse Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Webhook": {
+      "main": [
+        [
+          {
+            "node": "Fetch Content Item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Content Item": {
+      "main": [
+        [
+          {
+            "node": "Approved + QA >= 75?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approved + QA >= 75?": {
+      "main": [
+        [
+          {
+            "node": "Mark as Published",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Blocked",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark as Published": {
+      "main": [
+        [
+          {
+            "node": "Trigger Next.js Revalidation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trigger Next.js Revalidation": {
+      "main": [
+        [
+          {
+            "node": "Ping Google Indexing API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ping Google Indexing API": {
+      "main": [
+        [
+          {
+            "node": "Log Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Success": {
+      "main": [
+        [
+          {
+            "node": "Record Automation Run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Automation Run": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Blocked": {
+      "main": [
+        [
+          {
+            "node": "Record Blocked Run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Blocked Run": {
+      "main": [
+        [
+          {
+            "node": "Respond Blocked",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

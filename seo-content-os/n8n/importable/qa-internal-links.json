@@ -1,0 +1,302 @@
+{
+  "name": "seo-qa-internal-links",
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/content-context?status=drafted&limit=10",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "fetch-drafted-content",
+      "name": "Fetch Drafted Content",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data.items",
+        "options": {}
+      },
+      "id": "split-items",
+      "name": "Split Into Items",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare QA prompt from content item\nconst item = $input.all()[0].json;\n\nconst prompt = `You are an SEO quality auditor. Score this content on a 0-100 scale.\n\nTitle: ${item.title}\nSlug: ${item.slug}\nWord Count: ${item.word_count || 'unknown'}\nMeta Description: ${item.meta_description || 'missing'}\n\nContent (first 2000 chars):\n${(item.content_md || '').substring(0, 2000)}\n\nEvaluate:\n1. Title quality (50-60 chars, includes target keyword)\n2. Meta description (150-160 chars, compelling)\n3. Heading structure (H1, H2, H3 hierarchy)\n4. Content depth (answers the search intent)\n5. Readability (short paragraphs, clear sentences)\n6. Keyword usage (natural, not stuffed)\n7. FAQ presence (at least 3 Q&As for featured snippets)\n\nReturn JSON: { \"qa_score\": number, \"issues\": [string], \"suggestions\": [string] }`;\n\nreturn [{ json: { ...item, qa_prompt: prompt } }];"
+      },
+      "id": "prepare-qa-prompt",
+      "name": "Prepare QA Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "model": "={{ $env.LLM_MODEL || 'gpt-4o-mini' }}",
+        "messages": {
+          "messageValues": [
+            {
+              "role": "user",
+              "content": "={{ $json.qa_prompt }}"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.3,
+          "responseFormat": "json_object"
+        }
+      },
+      "id": "run-qa-scoring",
+      "name": "Run QA Scoring",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse QA result + prepare internal link prompt\nconst item = $input.all()[0].json;\nlet qaResult = {};\ntry {\n  qaResult = typeof item.content === 'string' ? JSON.parse(item.content) : item.content;\n} catch {\n  qaResult = { qa_score: 50, issues: ['Failed to parse QA response'], suggestions: [] };\n}\n\nconst linkPrompt = `You are an internal linking strategist. Given this content item, suggest 3-5 internal links.\n\nContent Title: ${item.title}\nContent Slug: ${item.slug}\nCluster: ${item.cluster_id || 'unknown'}\n\nAvailable content items to link to (JSON array):\n{{ $env.API_BASE_URL }}/api/seo/content-context?status=published&limit=50\n\nFor each link suggestion, provide:\n- target_slug (the page to link to)\n- anchor_text (the clickable text)\n- link_reason (why this link is relevant)\n\nReturn JSON: { \"links\": [{ \"target_slug\": string, \"anchor_text\": string, \"link_reason\": string }] }`;\n\nreturn [{ json: { ...item, qa_result: qaResult, link_prompt: linkPrompt } }];"
+      },
+      "id": "parse-qa-prepare-links",
+      "name": "Parse QA + Prepare Links",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "model": "={{ $env.LLM_MODEL || 'gpt-4o-mini' }}",
+        "messages": {
+          "messageValues": [
+            {
+              "role": "user",
+              "content": "={{ $json.link_prompt }}"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.4,
+          "responseFormat": "json_object"
+        }
+      },
+      "id": "generate-internal-links",
+      "name": "Generate Internal Links",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/qa-score/{{ $json.id }}",
+        "bodyParameters": {
+          "qa_score": "={{ JSON.parse($json.content || '{}').qa_score || 50 }}",
+          "qa_issues": "={{ JSON.stringify(JSON.parse($json.content || '{}').issues || []) }}",
+          "qa_suggestions": "={{ JSON.stringify(JSON.parse($json.content || '{}').suggestions || []) }}",
+          "internal_links": "={{ $json.content }}"
+        },
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "post-qa-results",
+      "name": "POST QA + Links to Backend",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1780, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "score-threshold",
+              "leftValue": "={{ JSON.parse($json.content || '{}').qa_score || 0 }}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ]
+        }
+      },
+      "id": "check-score-threshold",
+      "name": "Score >= 75?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [2000, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/publish/{{ $json.id }}",
+        "bodyParameters": {
+          "status": "approved"
+        },
+        "options": {}
+      },
+      "id": "auto-approve-high-score",
+      "name": "Auto-Approve (Score >= 75)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2220, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.API_BASE_URL }}/api/seo/flag-review/{{ $json.id }}",
+        "bodyParameters": {
+          "status": "review",
+          "reason": "QA score below 75"
+        },
+        "options": {}
+      },
+      "id": "flag-for-review",
+      "name": "Flag for Manual Review",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2220, 400]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch Drafted Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Drafted Content": {
+      "main": [
+        [
+          {
+            "node": "Split Into Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Into Items": {
+      "main": [
+        [
+          {
+            "node": "Prepare QA Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare QA Prompt": {
+      "main": [
+        [
+          {
+            "node": "Run QA Scoring",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run QA Scoring": {
+      "main": [
+        [
+          {
+            "node": "Parse QA + Prepare Links",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse QA + Prepare Links": {
+      "main": [
+        [
+          {
+            "node": "Generate Internal Links",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Internal Links": {
+      "main": [
+        [
+          {
+            "node": "POST QA + Links to Backend",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST QA + Links to Backend": {
+      "main": [
+        [
+          {
+            "node": "Check Score Threshold?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Score >= 75?": {
+      "main": [
+        [
+          {
+            "node": "Auto-Approve (Score >= 75)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Flag for Manual Review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
