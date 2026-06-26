@@ -120,3 +120,30 @@ Stage Summary:
 - All three persona scenarios functional (Priya books, Arjun nurtured, Meera escalates to human)
 - Pure scripted demo — no LLM API calls, all routing deterministic
 - Analyst dashboard provides real-time visibility into scoring + CRM capture for demo purposes
+
+---
+Task ID: 15
+Agent: Super Z (Main)
+Task: Build The Pattern Intelligence System™ — 11 tools across 4 pillars + homepage reframe
+
+Work Log:
+- Strategic reframe: moved from "10 disconnected features" to "one operating system organized in 4 pillars"
+- Pillar 1 (Observe): DailyPattern (8 patterns + intensity + 30-day heatmap + 14-day auto-insight), PatternClimate (one-tap pattern-of-the-day + climate baseline), InnerVoices (6 inner characters + weekly distribution)
+- Pillar 2 (Decode): Mirror (type complaint → projection mirror, 3/day cap, copy-to-share), RelationshipLens (situation → pattern → trigger → strategy → response with 8 keyword decoders), LoopDetector (track one behavior, 14-day pattern reveal with trigger+time analysis)
+- Pillar 3 (Interrupt): Reset (90-sec 5-phase recovery: notice→name→locate→breathe→allow + trigger log + stats), NervousSystemReset (8 state-based 30-sec micro-resets + daily streak)
+- Pillar 4 (Transform): DailyReflection (one question/day, 30 questions, streak counter, theme surfacing after 7+), WeeklyIntelligenceReport (Sunday narrative summary across all features), PatternStory (THE SIGNATURE — 90-day timeline weaving all logged data into narrative)
+- All 11 components share localStorage schema so PatternStory and WeeklyIntelligenceReport can read from all other features
+- PatternStory generates multi-paragraph narrative: Beginning / Middle / Recent / The Thread — based on dominant pattern, voice, witness count, reflections per third of timeline
+- Homepage reframe: Hero subheadline changed to "Most apps track what you do. AstroKalki reveals why you keep doing it. The world's first Pattern Intelligence System™..." + new primary CTA "Discover Your Hidden Pattern" linking to #pattern-intelligence-system anchor
+- New section in page.tsx placed immediately after Hero (front-and-center, before Pattern Mosaic) with section id="pattern-intelligence-system" for anchor link
+- Section organized as 4 pillars with clear pillar labels and 2-3 component cards per pillar
+- TypeScript: fixed PatternStory apostrophe-in-template-literal errors (converted contractions to full forms) + null-guard on firstThirdDominantPattern indexing
+- Verification: HTTP 200, 269KB rendered (35KB larger than previous baseline), all 11 features confirmed in HTML, all 4 pillar labels present, homepage reframe confirmed, zero errors in dev.log
+
+Stage Summary:
+- 11 new components added under /home/z/my-project/src/components/astrokalki/
+- Total project component count: 46+ (was 35+)
+- Site now leads with The Pattern Intelligence System™ — daily operating system rather than consultation business
+- Every tool feeds PatternStory (the signature) — creates the "I'm building evidence" stickiness
+- All data persists client-side via localStorage, no backend required
+- Pure scripted/algorithmic — no LLM API calls, all routing deterministic

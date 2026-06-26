@@ -79,9 +79,8 @@ export default function Hero() {
             transition={noMotion}
             className="mt-5 text-sm md:text-[15px] text-[#f5f3f0]/75 font-[var(--font-inter)] font-light leading-relaxed max-w-lg"
           >
-            Psychology. Karma. Shadow work. Pattern intelligence.
-            We don&apos;t predict futures — we decode the invisible architecture
-            creating your present. Built for those who demand absolute truth.
+            <span className="text-[#c9a96e]">Most apps track what you do. AstroKalki reveals why you keep doing it.</span>
+            {' '}The world&apos;s first Pattern Intelligence System™ — psychology, shadow work, and somatic practice in one daily operating system.
           </motion.p>
 
           {/* CTAs — with spring hover micro-interaction */}
@@ -91,13 +90,22 @@ export default function Hero() {
             className="mt-7 flex flex-col sm:flex-row items-start gap-3"
           >
             <motion.a
-              href="#assessment"
+              href="#pattern-intelligence-system"
               variants={ctaHover}
               initial="rest"
               whileHover="hover"
               className="inline-block px-8 py-4 text-[10px] tracking-[0.25em] uppercase bg-[#c9a96e] text-[#050505] font-[var(--font-inter)] font-semibold hover:bg-[#d4b87a] transition-colors duration-300"
             >
-              Begin the Pattern Index
+              Discover Your Hidden Pattern
+            </motion.a>
+            <motion.a
+              href="#assessment"
+              variants={ctaHover}
+              initial="rest"
+              whileHover="hover"
+              className="inline-block px-8 py-4 text-[10px] tracking-[0.25em] uppercase border border-[#f5f3f0]/20 text-[#f5f3f0]/70 hover:text-[#f5f3f0] hover:border-[#f5f3f0]/40 transition-all duration-300 font-[var(--font-inter)]"
+            >
+              Take the Pattern Index
             </motion.a>
             <motion.a
               href="#method"

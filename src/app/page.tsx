@@ -45,6 +45,19 @@ import SankalpaForge from '@/components/astrokalki/SankalpaForge';
 import ShadowJournal from '@/components/astrokalki/ShadowJournal';
 import PatternIntelligenceReceptionist from '@/components/astrokalki/PatternIntelligenceReceptionist';
 
+// Pattern Intelligence System™ — 4 pillars, 11 tools
+import DailyPattern from '@/components/astrokalki/DailyPattern';
+import PatternClimate from '@/components/astrokalki/PatternClimate';
+import InnerVoices from '@/components/astrokalki/InnerVoices';
+import Mirror from '@/components/astrokalki/Mirror';
+import RelationshipLens from '@/components/astrokalki/RelationshipLens';
+import LoopDetector from '@/components/astrokalki/LoopDetector';
+import Reset from '@/components/astrokalki/Reset';
+import NervousSystemReset from '@/components/astrokalki/NervousSystemReset';
+import DailyReflection from '@/components/astrokalki/DailyReflection';
+import PatternStory from '@/components/astrokalki/PatternStory';
+import WeeklyIntelligenceReport from '@/components/astrokalki/WeeklyIntelligenceReport';
+
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '@/components/astrokalki/hooks/useReducedMotion';
 import { EASE } from '@/components/astrokalki/utils/animation';
@@ -62,6 +75,97 @@ export default function Home() {
       <main id="main-content" className="bg-[#050505] overflow-x-hidden">
         {/* 1. Hero */}
         <Hero />
+
+        {/* 1b. The Pattern Intelligence System™ — flagship section */}
+        <section id="pattern-intelligence-system" className="bg-[#050505] py-14 md:py-20 border-t border-white/[0.04]">
+          <div className="max-w-7xl mx-auto px-5 md:px-12">
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={noMotion || { duration: 0.7, ease: EASE.outExpoLegacy }} className="mb-10 max-w-3xl">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] mb-3">
+                The Pattern Intelligence System™
+              </p>
+              <h2 className="font-[var(--font-cormorant)] text-2xl md:text-4xl font-bold tracking-[-0.02em] text-[#f5f3f0] leading-[1.1]">
+                Most apps track <span className="italic font-light">what</span> you do.
+                <br />
+                AstroKalki reveals <span className="italic font-light text-[#c9a96e]">why</span> you keep doing it.
+              </h2>
+              <p className="mt-4 text-xs md:text-sm text-[#8a8078] font-[var(--font-inter)] font-light leading-relaxed">
+                Eleven tools organized into four pillars. Observe your patterns daily. Decode what&apos;s underneath. Interrupt the loops in real time. Transform over months. This isn&apos;t a feature list — it&apos;s an operating system for self-awareness. All data stays on your device.
+              </p>
+            </motion.div>
+
+            {/* Pillar 1 — Observe */}
+            <div className="mb-8">
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                  Pillar 1
+                </span>
+                <h3 className="font-[var(--font-cormorant)] text-lg md:text-xl font-bold text-[#f5f3f0]">
+                  Observe <span className="italic font-light text-[#8a8078]">— daily awareness</span>
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <DailyPattern />
+                <PatternClimate />
+                <InnerVoices />
+              </div>
+            </div>
+
+            {/* Pillar 2 — Decode */}
+            <div className="mb-8">
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                  Pillar 2
+                </span>
+                <h3 className="font-[var(--font-cormorant)] text-lg md:text-xl font-bold text-[#f5f3f0]">
+                  Decode <span className="italic font-light text-[#8a8078]">— explain why</span>
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <Mirror />
+                <RelationshipLens />
+                <LoopDetector />
+              </div>
+            </div>
+
+            {/* Pillar 3 — Interrupt */}
+            <div className="mb-8">
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                  Pillar 3
+                </span>
+                <h3 className="font-[var(--font-cormorant)] text-lg md:text-xl font-bold text-[#f5f3f0]">
+                  Interrupt <span className="italic font-light text-[#8a8078]">— real-time intervention</span>
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <Reset />
+                <NervousSystemReset />
+              </div>
+            </div>
+
+            {/* Pillar 4 — Transform */}
+            <div>
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                  Pillar 4
+                </span>
+                <h3 className="font-[var(--font-cormorant)] text-lg md:text-xl font-bold text-[#f5f3f0]">
+                  Transform <span className="italic font-light text-[#8a8078]">— long-term growth</span>
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <DailyReflection />
+                <WeeklyIntelligenceReport />
+                <PatternStory />
+              </div>
+            </div>
+
+            <p className="mt-8 text-[10px] text-[#8a8078]/40 font-[var(--font-inter)] italic text-center max-w-xl mx-auto">
+              Every tool feeds <span className="text-[#c9a96e]/70">Your Pattern Story</span> — the 90-day narrative that ties it all together. The more you log, the more it reveals.
+            </p>
+          </div>
+        </section>
 
         {/* 2. Pattern Mosaic — with 3D tilt */}
         <PatternMosaic />
