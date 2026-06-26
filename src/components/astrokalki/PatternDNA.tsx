@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 /**
@@ -179,6 +179,8 @@ export default function PatternDNA() {
   const [dna, setDna] = useState<DnaState>(DEFAULT_DNA);
   const [dna30Ago, setDna30Ago] = useState<DnaState | null>(null);
   const [hasData, setHasData] = useState(false);
+  const [shareState, setShareState] = useState<'idle' | 'copied' | 'image-ready'>('idle');
+  const shareCanvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const current = computeDna();
@@ -336,6 +338,76 @@ export default function PatternDNA() {
           <p className="mt-4 text-[8px] text-[#8a8078]/30 font-[var(--font-inter)] italic">
             Unlike personality tests, your DNA changes. Every interaction updates it. Come back tomorrow.
           </p>
+
+          {/* Shareable snippet — the growth-loop signature feature */}
+          <div className="mt-5 pt-4 border-t border-[#c9a96e]/20">
+            <div className="flex items-baseline justify-between mb-2">
+              <span className="text-[8px] tracking-[0.2em] uppercase text-[#c9a96e]/70 font-[var(--font-inter)] font-medium">
+                Shareable Snippet
+              </span>
+              <span className="text-[7px] text-[#8a8078]/40 font-[var(--font-inter)] italic">
+                Privacy-safe · no personal data leaves your device
+              </span>
+            </div>
+
+            {/* Visual snippet preview */}
+            <div className="p-4 border border-[#c9a96e]/30 bg-gradient-to-br from-[#0a0a0a] to-[#050505] mb-3">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[8px] tracking-[0.25em] uppercase text-[#c9a96e] font-[var(--font-inter)] font-medium">
+                  My Pattern DNA
+                </span>
+                <span className="text-[7px] text-[#8a8078]/50 font-[var(--font-inter)]">astrokalki.com</span>
+              </div>
+              <div className="space-y-1.5 mb-3">
+                {sortedDims.slice(0, 5).map(d => (
+                  <div key={d.id} className="flex items-center gap-2">
+                    <span className="text-[8px] font-[var(--font-inter)] w-16 shrink-0" style={{ color: d.color }}>
+                      {d.name}
+                    </span>
+                    <div className="flex-1 h-1.5 bg-white/[0.04] relative overflow-hidden">
+                      <div className="h-full" style={{ width: `${d.value}%`, background: d.color, opacity: 0.85 }} />
+                    </div>
+                    <span className="text-[8px] font-[var(--font-inter)] tabular-nums w-6 text-right" style={{ color: d.color }}>
+                      {d.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[8px] text-[#f5f3f0]/60 font-[var(--font-cormorant)] italic leading-snug border-t border-white/[0.04] pt-2">
+                {dominantPattern && !dominantPattern.isAspiration ? (
+                  <>Dominant: <span style={{ color: dominantPattern.color }}>{dominantPattern.name}</span>. Witness at {witnessValue}/100.</>
+                ) : (
+                  <>Witness state dominant. Rare.</>
+                )}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => {
+                  const text = `My Pattern DNA (astrokalki.com)\n\n${sortedDims.slice(0, 5).map(d => `${d.name}: ${d.value}/100`).join('\n')}\n\n${dominantPattern && !dominantPattern.isAspiration ? `Dominant: ${dominantPattern.name}. Witness at ${witnessValue}/100.` : 'Witness state dominant. Rare.'}\n\n— Decoded via AstroKalki · The Pattern Intelligence System™`;
+                  try {
+                    navigator.clipboard.writeText(text);
+                    setShareState('copied');
+                    setTimeout(() => setShareState('idle'), 2000);
+                  } catch {}
+                }}
+                className="px-3 py-2 text-[9px] tracking-[0.15em] uppercase font-[var(--font-inter)] font-semibold bg-[#c9a96e] text-[#050505] hover:bg-[#d4b87a] transition-all"
+              >
+                {shareState === 'copied' ? '✓ Copied' : 'Copy Snippet'}
+              </button>
+              <button
+                onClick={() => {
+                  const text = encodeURIComponent(`My Pattern DNA from astrokalki.com — ${dominantPattern && !dominantPattern.isAspiration ? `dominant pattern: ${dominantPattern.name}` : 'Witness state dominant'}. Decode yours:`);
+                  const url = encodeURIComponent('https://astrokalki.com#pattern-intelligence-system');
+                  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+                }}
+                className="px-3 py-2 text-[9px] tracking-[0.15em] uppercase font-[var(--font-inter)] font-semibold border border-[#c9a96e]/40 text-[#c9a96e] hover:bg-[#c9a96e]/10 transition-all"
+              >
+                Share on X
+              </button>
+            </div>
+          </div>
         </>
       )}
     </div>

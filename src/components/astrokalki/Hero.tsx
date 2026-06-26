@@ -73,24 +73,26 @@ export default function Hero() {
             <span className="text-[#c9a96e] italic font-normal">DIFFERENT FACE.</span>
           </motion.h1>
 
-          {/* Subheadline — institute positioning */}
+          {/* Subheadline — the pattern follows you */}
           <motion.p
             variants={heroChild}
             transition={noMotion}
             className="mt-5 text-sm md:text-[15px] text-[#f5f3f0]/75 font-[var(--font-inter)] font-light leading-relaxed max-w-lg"
           >
-            <span className="text-[#c9a96e]">Most apps track what you do. AstroKalki reveals why you keep doing it.</span>
-            {' '}The world&apos;s first Pattern Intelligence System™ — psychology, shadow work, and somatic practice in one daily operating system.
+            Most people change jobs. Relationships. Cities. Habits.
+            <br />
+            <span className="text-[#c9a96e]">But the pattern follows them.</span>
+            {' '}AstroKalki reveals why.
           </motion.p>
 
-          {/* CTAs — with spring hover micro-interaction */}
+          {/* CTAs — two only, per creative brief */}
           <motion.div
             variants={heroChild}
             transition={noMotion}
             className="mt-7 flex flex-col sm:flex-row items-start gap-3"
           >
             <motion.a
-              href="#pattern-intelligence-system"
+              href="#assessment"
               variants={ctaHover}
               initial="rest"
               whileHover="hover"
@@ -99,26 +101,17 @@ export default function Hero() {
               Discover Your Hidden Pattern
             </motion.a>
             <motion.a
-              href="#assessment"
-              variants={ctaHover}
-              initial="rest"
-              whileHover="hover"
-              className="inline-block px-8 py-4 text-[10px] tracking-[0.25em] uppercase border border-[#f5f3f0]/20 text-[#f5f3f0]/70 hover:text-[#f5f3f0] hover:border-[#f5f3f0]/40 transition-all duration-300 font-[var(--font-inter)]"
-            >
-              Take the Pattern Index
-            </motion.a>
-            <motion.a
               href="#method"
               variants={ctaHover}
               initial="rest"
               whileHover="hover"
               className="inline-block px-8 py-4 text-[10px] tracking-[0.25em] uppercase border border-[#f5f3f0]/20 text-[#f5f3f0]/70 hover:text-[#f5f3f0] hover:border-[#f5f3f0]/40 transition-all duration-300 font-[var(--font-inter)]"
             >
-              The Method
+              Watch 3 Minute Explanation
             </motion.a>
           </motion.div>
 
-          {/* Social proof badge */}
+          {/* Social proof — three stats per creative brief */}
           <motion.div
             variants={heroChild}
             transition={noMotion}
@@ -130,7 +123,11 @@ export default function Hero() {
             </span>
             <span className="w-px h-3 bg-[#8a8078]/30" />
             <span className="text-[10px] tracking-[0.1em] text-[#8a8078] font-[var(--font-inter)]">
-              <strong className="text-[#f5f3f0]/90 font-medium">97%</strong> Accuracy Rate
+              <strong className="text-[#f5f3f0]/90 font-medium">97%</strong> Client Satisfaction
+            </span>
+            <span className="w-px h-3 bg-[#8a8078]/30" />
+            <span className="text-[10px] tracking-[0.1em] text-[#8a8078] font-[var(--font-inter)]">
+              <strong className="text-[#f5f3f0]/90 font-medium">35+</strong> Countries
             </span>
           </motion.div>
         </motion.div>

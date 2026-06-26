@@ -175,3 +175,47 @@ Stage Summary:
 - Pattern Biography replaces Pattern Story as the signature output (Pattern Story still present in Pillar 4 as the simpler version; Biography is the Phase 3 upgrade)
 - Consultation Preparation creates the bridge to monetization: consultations now start with months of behavioral evidence instead of an intake form
 - All data persists client-side via localStorage; Pattern DNA history (90-day snapshots) stored for 30-day comparison feature
+
+---
+Task ID: 17
+Agent: Super Z (Main)
+Task: Creative Director restructure — simplify homepage from 30+ sections to 11, move Pattern Intelligence System to compact member preview
+
+Work Log:
+- Strategic reframe: stopped adding features, started removing. "Every section must either increase trust, increase understanding, or increase conversion. If a section does none of those three, remove it."
+- Creative brief: "A24 meets Harvard Business Review — visually unforgettable, intellectually rigorous, commercially clear"
+- Built PatternRecognition.tsx — the signature homepage moment. Four sentences that fade in sequence on scroll: "You don't attract toxic people." → "You recreate familiar nervous systems." → "The pattern isn't outside you." → "It's running inside you." Uses framer-motion useScroll + useTransform for scroll-linked opacity. More memorable than twenty feature cards.
+- Built MemberPreview.tsx — compact teaser replacing the sprawling 4-pillar × 11-tool layout. One card, 8 tool icons (Daily Pattern / Mirror / Reset / Loop Detector / Inner Voices / Pattern DNA / Pattern Biography / Weekly Intelligence), one promise, one CTA. Tools still exist in code but live in the forthcoming member dashboard, not on the homepage.
+- Updated Hero.tsx: new subhead ("Most people change jobs. Relationships. Cities. Habits. But the pattern follows them. AstroKalki reveals why."), two CTAs only (Discover Your Hidden Pattern / Watch 3 Minute Explanation), three social proof stats (2,400+ Patterns Decoded / 97% Client Satisfaction / 35+ Countries)
+- Cut DangerousKnowledge from 6 articles to 3 (kept the strongest: Mother Wound / Same Heartbreak / You Didn't Choose This Pain)
+- Rewrote page.tsx from 425 lines / 30+ sections to 65 lines / 11 sections:
+  1. Hero (simplified)
+  2. PatternRecognition (new fade sequence)
+  3. Services
+  4. Method
+  5. WarriorsJourney
+  6. Testimonials
+  7. DangerousKnowledge (3 articles)
+  8. MemberPreview (new compact card)
+  9. EmailSignup
+  10. Assessment
+  11. FinalCTA + Footer
+- REMOVED from homepage (components preserved in code for future dashboard):
+  - PatternMosaic, ShadowTimeline, BreathPacer
+  - LineageTree, AlchemicalForge, SankeyFlow, HoraClock, TensionMonitor
+  - ManifestoCodex, GravityMap
+  - CaseSimulator, DreamLog, EncryptionSimulator, PatternLedger, PurgeTerminal
+  - Vedic Constitution Lab (10 components: PrakritiDecoder, GunaProfiler, ChakraTuner, PanchangaScheduler, MantraOscilloscope, BodyScanMapper, MandalaComposer, NadiVisualizer, SankalpaForge, ShadowJournal)
+  - PatternIntelligenceReceptionist (live demo)
+  - Pattern Intelligence System section (14 components: DailyPattern, PatternClimate, InnerVoices, Mirror, RelationshipLens, LoopDetector, Reset, NervousSystemReset, DailyReflection, WeeklyIntelligenceReport, PatternStory, PatternDNA, PatternBiography, ConsultationPreparation)
+  - FAQ section
+  - AmbientSoundscape (floating music player)
+- Verification: HTTP 200, 104KB rendered (down from 275KB — 62% reduction), all new sections confirmed present, all removed sections confirmed absent, zero TypeScript errors, zero runtime errors in dev.log
+
+Stage Summary:
+- Homepage simplified from 30+ sections to 11 — "A24 meets Harvard Business Review"
+- Page size reduced 62% (275KB → 104KB)
+- Pattern Recognition fade sequence is the new signature moment — more memorable than feature cards
+- Pattern Intelligence System collapsed into compact MemberPreview card — tools preserved in code for future dashboard
+- All 40+ component files preserved in /src/components/astrokalki/ — ready to deploy in a member dashboard when that route becomes available
+- Homepage now does ONE job: makes someone think "Finally, someone understands me."

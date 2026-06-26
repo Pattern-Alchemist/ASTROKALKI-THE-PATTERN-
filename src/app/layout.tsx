@@ -18,28 +18,28 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://astrokalki.com"),
-  title: "AstroKalki — The Pattern Recognition Institute",
+  title: "AstroKalki — The Pattern Intelligence System™",
   description:
-    "Psychology. Karma. Shadow work. Pattern intelligence. AstroKalki decodes the invisible loops creating your present — not prediction, pattern recognition. A high-authority diagnostic platform bridging Jungian depth psychology and Vedic cognitive maps.",
+    "Most apps track what you do. AstroKalki reveals why you keep doing it. The world's first Pattern Intelligence System™ — decode the invisible psychological patterns repeating in your relationships, work, and inner life. Daily tools, weekly intelligence, your Pattern Biography.",
   keywords: [
-    "trauma bond help",
-    "karmic relationship reading",
-    "astrology for emotional healing",
-    "shadow work astrology",
+    "pattern intelligence",
+    "pattern recognition psychology",
+    "behavioral pattern intelligence",
+    "repeating relationship patterns",
+    "why do i keep repeating the same relationship pattern",
+    "self-sabotage pattern",
+    "shadow work",
+    "inner voices psychology",
+    "pattern biography",
+    "pattern dna",
+    "behavioral loops",
     "emotional pattern decoding",
-    "relationship clarity",
-    "spiritual psychology",
-    "karmic pattern analysis",
-    "shadow self decoding",
-    "emotional blueprint reading",
-    "Vedic astrology consultation",
-    "depth psychology astrology",
     "relationship pattern reading",
-    "trauma loop decoding",
-    "destiny clarity session",
-    "karmic loop breaker",
-    "emotional self-sabotage help",
-    "pattern recognition astrology",
+    "karmic pattern analysis",
+    "depth psychology",
+    "self-awareness platform",
+    "psychological self-awareness",
+    "breaking behavioral loops",
   ],
   authors: [{ name: "AstroKalki" }],
   creator: "Kaustubh",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     icon: "/logo.svg",
   },
   openGraph: {
-    title: "AstroKalki — The Same Pain. Different Face. Same Pattern.",
+    title: "AstroKalki — Most apps track what you do. We reveal why you keep doing it.",
     description:
-      "Relationships. Self-sabotage. Emotional confusion. Sometimes the problem isn't your choices — it's the pattern beneath them. Not prediction. Pattern recognition.",
+      "The Pattern Intelligence System™. Decode the invisible patterns repeating in your life. Daily tools, weekly intelligence, your Pattern Biography.",
     url: "https://astrokalki.com",
     siteName: "AstroKalki",
     locale: "en_IN",
@@ -61,16 +61,16 @@ export const metadata: Metadata = {
         url: "/images/hero-cinematic.png",
         width: 1344,
         height: 768,
-        alt: "AstroKalki — The Same Pain. Different Face. Same Pattern.",
+        alt: "AstroKalki — The Pattern Intelligence System",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     creator: "@astrokalki",
-    title: "AstroKalki — The Same Pain. Different Face. Same Pattern.",
+    title: "AstroKalki — The Pattern Intelligence System™",
     description:
-      "Not prediction. Pattern recognition. Decode the emotional patterns running your relationships and choices.",
+      "Most apps track what you do. AstroKalki reveals why you keep doing it. Decode the invisible patterns repeating your life.",
     images: ["/images/hero-cinematic.png"],
   },
 };
@@ -92,12 +92,12 @@ export default function RootLayout({
               name: "AstroKalki",
               alternateName: "Astro Kalki",
               description:
-                "Vedic astrology and depth psychology pattern recognition. Decode karmic loops, emotional self-sabotage, trauma bonds, and shadow patterns.",
+                "The Pattern Intelligence System™ — a behavioral self-awareness platform that decodes the invisible psychological patterns repeating in a user's life. Owns three proprietary entities: Pattern Intelligence System™, Pattern Biography, Pattern DNA.",
               url: "https://astrokalki.com",
               logo: "https://astrokalki.com/logo.svg",
               telephone: "+91-89208-62931",
               email: "hello@astrokalki.com",
-              priceRange: "₹999 - ₹2,999",
+              priceRange: "₹999 - ₹9,999",
               foundingDate: "2023",
               founder: {
                 "@type": "Person",
@@ -105,14 +105,118 @@ export default function RootLayout({
                 url: "https://astrokalki.com",
                 jobTitle: "Pattern Recognition Practitioner",
                 knowsAbout: [
+                  "Pattern Intelligence",
+                  "Behavioral Pattern Recognition",
                   "Relationship Patterns",
-                  "Trauma Bonds",
                   "Self-Sabotage",
                   "Shadow Work",
-                  "Vedic Astrology",
                   "Depth Psychology",
+                  "Pattern Biography",
+                  "Pattern DNA",
                 ],
               },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "AstroKalki",
+              alternateName: "The Pattern Intelligence System",
+              url: "https://astrokalki.com",
+              description: "The Pattern Intelligence System™ — decode the invisible psychological patterns repeating in your life.",
+              inLanguage: "en",
+              publisher: {
+                "@type": "Organization",
+                name: "AstroKalki",
+                url: "https://astrokalki.com",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                serviceType: "Pattern Snapshot Consultation",
+                name: "Pattern Snapshot",
+                description: "A 45-minute tactical decoding of one recurring pattern. Best for relationship confusion, recurring problems, and emotional loops.",
+                provider: { "@type": "Organization", name: "AstroKalki", url: "https://astrokalki.com" },
+                areaServed: "Worldwide",
+                offers: {
+                  "@type": "Offer",
+                  price: "999",
+                  priceCurrency: "INR",
+                  availability: "https://schema.org/InStock",
+                },
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                serviceType: "Deep Dive Karmic Architecture Consultation",
+                name: "Deep Dive",
+                description: "Complete karmic architecture mapping including psychological mapping, shadow patterns, behavioural cycles, and 12-month strategy.",
+                provider: { "@type": "Organization", name: "AstroKalki", url: "https://astrokalki.com" },
+                areaServed: "Worldwide",
+                offers: {
+                  "@type": "Offer",
+                  price: "4999",
+                  priceCurrency: "INR",
+                  availability: "https://schema.org/InStock",
+                },
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                serviceType: "Dharma Navigation Consultation",
+                name: "Dharma Navigation",
+                description: "Career, purpose, and major life direction consultation with constitutional analysis and decision framework.",
+                provider: { "@type": "Organization", name: "AstroKalki", url: "https://astrokalki.com" },
+                areaServed: "Worldwide",
+                offers: {
+                  "@type": "Offer",
+                  price: "9999",
+                  priceCurrency: "INR",
+                  availability: "https://schema.org/InStock",
+                },
+              },
+            ]),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "DefinedTermSet",
+              name: "AstroKalki Proprietary Frameworks",
+              description: "The three proprietary entities that define the Pattern Intelligence category.",
+              hasDefinedTerm: [
+                {
+                  "@type": "DefinedTerm",
+                  name: "Pattern Intelligence System™",
+                  description: "A behavioral self-awareness platform that decodes the invisible psychological patterns repeating in a user's life. Composed of four pillars: Observe, Decode, Interrupt, Transform.",
+                  url: "https://astrokalki.com#pattern-intelligence-system",
+                },
+                {
+                  "@type": "DefinedTerm",
+                  name: "Pattern Biography",
+                  description: "A user's psychological life operating manual, structured as chapters that auto-generate from 30+ days of logged behavioral data. Each chapter covers ~30 days with a literary title pulled from the dominant pattern.",
+                  url: "https://astrokalki.com#pattern-intelligence-system",
+                },
+                {
+                  "@type": "DefinedTerm",
+                  name: "Pattern DNA",
+                  description: "An evolving psychological fingerprint across six dimensions: Avoidance, Control, Performer, Rescuer, Shadow, and Witness. Updates in real time from every interaction across the Pattern Intelligence System.",
+                  url: "https://astrokalki.com#pattern-intelligence-system",
+                },
+              ],
             }),
           }}
         />

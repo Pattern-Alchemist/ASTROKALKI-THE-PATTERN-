@@ -20,24 +20,6 @@ const articles = [
     readTime: '7 min',
   },
   {
-    category: 'Kaliyug Psychology',
-    title: 'The Trap of Spiritual Bypassing',
-    excerpt: 'Telling a traumatized person they attracted their abuse is not spirituality. It is spiritual bypassing weaponized against the vulnerable.',
-    readTime: '9 min',
-  },
-  {
-    category: 'Self-Deception',
-    title: 'The Lie You Tell Yourself Every Morning',
-    excerpt: "The most dangerous lie is the one you tell yourself to survive. The one that sounds like 'this time it is different.'",
-    readTime: '6 min',
-  },
-  {
-    category: 'Emotional Warfare',
-    title: 'The Fear of Being Seen',
-    excerpt: 'You attract unavailable people because available people require you to be real. And being real was never safe.',
-    readTime: '5 min',
-  },
-  {
     category: 'Pattern Recognition',
     title: "You Didn't Choose This Pain. But You Keep Choosing It.",
     excerpt: 'The first time was karma. The second time was a pattern. The third time is a choice your unconscious is making on your behalf.',

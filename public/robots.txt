@@ -10,5 +10,20 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
 User-agent: *
 Allow: /
+
+# Block internal API and admin paths
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://astrokalki.com/sitemap.xml
