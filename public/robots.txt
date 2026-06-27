@@ -1,8 +1,13 @@
+# AstroKalki Robots Configuration
+# Updated for SEO optimization
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0.5
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -21,9 +26,19 @@ Allow: /
 
 User-agent: *
 Allow: /
+Crawl-delay: 1
+Request-rate: 1/10s
 
 # Block internal API and admin paths
 Disallow: /api/
 Disallow: /admin/
+Disallow: /.well-known/
+
+# Block bad actors
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
 
 Sitemap: https://astrokalki.com/sitemap.xml

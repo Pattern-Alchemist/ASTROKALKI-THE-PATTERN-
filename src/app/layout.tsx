@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import SiteModalListener from "@/components/astrokalki/SiteModalListener";
+import { Analytics } from "@vercel/analytics/react";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -286,6 +287,7 @@ export default function RootLayout({
       >
         {children}
         <SiteModalListener />
+        <Analytics />
       </body>
     </html>
   );
