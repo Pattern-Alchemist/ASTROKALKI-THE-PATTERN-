@@ -1,31 +1,20 @@
 'use client';
 
-import { lazy, Suspense } from 'react';
 import Loader from '@/components/astrokalki/Loader';
 import Navbar from '@/components/astrokalki/Navbar';
 import Hero from '@/components/astrokalki/Hero';
 import PatternRecognition from '@/components/astrokalki/PatternRecognition';
 import Services from '@/components/astrokalki/Services';
-
-// Lazy load below-the-fold components
-const Method = lazy(() => import('@/components/astrokalki/Method'));
-const WarriorsJourney = lazy(() => import('@/components/astrokalki/WarriorsJourney'));
-const Testimonials = lazy(() => import('@/components/astrokalki/Testimonials'));
-const DangerousKnowledge = lazy(() => import('@/components/astrokalki/DangerousKnowledge'));
-const PatternLibrary = lazy(() => import('@/components/astrokalki/PatternLibrary'));
-const MemberPreview = lazy(() => import('@/components/astrokalki/MemberPreview'));
-const EmailSignup = lazy(() => import('@/components/astrokalki/EmailSignup'));
-const Assessment = lazy(() => import('@/components/astrokalki/Assessment'));
-const FinalCTA = lazy(() => import('@/components/astrokalki/FinalCTA'));
-const Footer = lazy(() => import('@/components/astrokalki/Footer'));
-
-const LoadingFallback = () => (
-  <div className="py-16 md:py-24">
-    <div className="max-w-6xl mx-auto px-5 md:px-12">
-      <div className="h-12 bg-white/5 rounded animate-pulse" />
-    </div>
-  </div>
-);
+import Method from '@/components/astrokalki/Method';
+import WarriorsJourney from '@/components/astrokalki/WarriorsJourney';
+import Testimonials from '@/components/astrokalki/Testimonials';
+import DangerousKnowledge from '@/components/astrokalki/DangerousKnowledge';
+import PatternLibrary from '@/components/astrokalki/PatternLibrary';
+import MemberPreview from '@/components/astrokalki/MemberPreview';
+import EmailSignup from '@/components/astrokalki/EmailSignup';
+import Assessment from '@/components/astrokalki/Assessment';
+import FinalCTA from '@/components/astrokalki/FinalCTA';
+import Footer from '@/components/astrokalki/Footer';
 
 export default function Home() {
   return (
@@ -45,57 +34,37 @@ export default function Home() {
         <Services />
 
         {/* 4. Method — 4 steps */}
-        <Suspense fallback={<LoadingFallback />}>
-          <Method />
-        </Suspense>
+        <Method />
 
         {/* 5. Warrior's Journey — one powerful section */}
-        <Suspense fallback={<LoadingFallback />}>
-          <WarriorsJourney />
-        </Suspense>
+        <WarriorsJourney />
 
         {/* 6. Testimonials */}
-        <Suspense fallback={<LoadingFallback />}>
-          <Testimonials />
-        </Suspense>
+        <Testimonials />
 
         {/* 7. Dangerous Knowledge — 3 articles only */}
-        <Suspense fallback={<LoadingFallback />}>
-          <DangerousKnowledge />
-        </Suspense>
+        <DangerousKnowledge />
 
         {/* 7b. Pattern Library — 15 SEO cornerstone articles */}
-        <Suspense fallback={<LoadingFallback />}>
-          <PatternLibrary />
-        </Suspense>
+        <PatternLibrary />
 
         {/* 8. Member Preview — compact Pattern Intelligence System teaser */}
-        <Suspense fallback={<LoadingFallback />}>
-          <MemberPreview />
-        </Suspense>
+        <MemberPreview />
 
         {/* 9. Email Signup — owned audience */}
         <section className="bg-[#080808] py-12 md:py-16 border-t border-white/[0.04]">
           <div className="max-w-3xl mx-auto px-5 md:px-12">
-            <Suspense fallback={<LoadingFallback />}>
-              <EmailSignup />
-            </Suspense>
+            <EmailSignup />
           </div>
         </section>
 
         {/* 10. Assessment CTA */}
-        <Suspense fallback={<LoadingFallback />}>
-          <Assessment />
-        </Suspense>
+        <Assessment />
 
         {/* 11. Final CTA */}
-        <Suspense fallback={<LoadingFallback />}>
-          <FinalCTA />
-        </Suspense>
+        <FinalCTA />
 
-        <Suspense fallback={<LoadingFallback />}>
-          <Footer />
-        </Suspense>
+        <Footer />
       </main>
     </>
   );
