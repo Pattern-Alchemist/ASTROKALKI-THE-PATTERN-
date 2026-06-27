@@ -7,8 +7,9 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   allowedDevOrigins: [
-    "*.space-z.ai",
-    "preview-chat-*.space-z.ai",
+    "*.astrokalki.com",
+    "www.astrokalki.com",
+    "astrokalki.com",
   ],
   images: {
     formats: ['image/avif', 'image/webp'],

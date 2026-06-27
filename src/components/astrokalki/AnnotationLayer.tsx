@@ -186,8 +186,9 @@ export default function AnnotationLayer({ children, className = '' }: Annotation
             transition={SPRING.snappy}
             className="absolute z-50 w-72 bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/[0.08] p-4 pointer-events-auto"
             style={{
-              left: Math.min(popupPos.x - 144, (containerRef.current?.clientWidth ?? 288) - 288),
+              left: popupPos.x - 144,
               bottom: `calc(100% - ${popupPos.y}px + 16px)`,
+              maxWidth: 'min(288px, calc(100vw - 16px))',
             }}
             onClick={(e) => e.stopPropagation()}
             role="tooltip"
